@@ -1,6 +1,8 @@
-Weekly review of Microsoft guidance for the Power Platform Enterprise Blueprint. Follow `.github/copilot-instructions.md`.
+Daily review of Microsoft guidance for the Power Platform Enterprise Blueprint. Follow `.github/copilot-instructions.md` and use the skills `microsoft-guidance-refresh`, `blueprint-design-system` and `blueprint-diagrams`.
 
-## 1. Check these sources for changes since the last `CHANGELOG.md` entry
+## 1. Check these sources for changes in the review window
+
+The window starts at the later of the newest `CHANGELOG.md` entry and the last closed `architecture-refresh` issue. Search Microsoft Learn with the `microsoft-learn` MCP server. The links below are starting points, not the full scope.
 
 **Environments & governance (sheets 01, 02)**
 - [ ] https://learn.microsoft.com/power-platform/guidance/adoption/environment-strategy
@@ -41,7 +43,7 @@ Weekly review of Microsoft guidance for the Power Platform Enterprise Blueprint.
 
 - [ ] Edit `src/blueprint.src.html` only where a source shows a material change: a new or retired feature, a date, a limit, a renamed capability, or changed Microsoft guidance.
 - [ ] Re-check any dated warnings on the page (for example "Act now" banners) and remove ones that have passed.
-- [ ] Run `python build/build.py --check`.
+- [ ] Run `python build/build.py --check --strict` and fix every warning.
 - [ ] Bump the revision and add a `CHANGELOG.md` entry.
 
 ## 3. Report

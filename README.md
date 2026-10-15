@@ -12,14 +12,15 @@ The reference organisation is fictional. Swap in your own values using the param
 ## How it stays current
 
 ```
-Monday 06:00 UTC ─► "Architecture refresh" issue ─► Copilot coding agent reviews Microsoft guidance
+Weekdays 06:00 UTC ─► "Architecture refresh" issue ─► Copilot coding agent reviews Microsoft guidance
                                                      │
                      you review & merge ◄── pull request with sourced changes
                             │
                             └─► GitHub Pages redeploys
 ```
 
-- `.github/workflows/architecture-refresh.yml` opens the weekly issue and assigns it to Copilot.
+- `.github/workflows/architecture-refresh.yml` opens a refresh issue each weekday and assigns it to Copilot. While the previous refresh is still open, it skips the day.
+- `.github/skills/` holds three Copilot skills: the design system, the diagram rules and the research procedure.
 - `.github/refresh-issue.md` is the checklist of Microsoft sources Copilot reviews. Edit it to change the scope.
 - `.github/copilot-instructions.md` holds the editing rules Copilot follows: sourced facts only, keep diagrams aligned, keep it generic.
 - `.github/workflows/check.yml` validates every pull request. `pages.yml` deploys on every push to `main`.
@@ -38,13 +39,13 @@ Monday 06:00 UTC ─► "Architecture refresh" issue ─► Copilot coding agent
    ```bash
    gh secret set COPILOT_ASSIGN_TOKEN --repo crowdedLeopard/pp-enterprise-blueprint
    ```
-   Paste the token when prompted. Without it, the weekly issue still opens, but you assign it to Copilot by hand.
+   Paste the token when prompted. Without it, the daily issue still opens, but you assign it to Copilot by hand.
 4. **Approve workflow runs on Copilot's PRs.** GitHub asks for approval before running workflows on PRs opened by Copilot.
 
 ## Build locally
 
 ```bash
-python build/build.py --check   # offline validation
+python build/build.py --check --strict   # offline validation + diagram layout lint
 python build/build.py           # writes dist/index.html
 ```
 

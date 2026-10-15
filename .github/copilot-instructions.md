@@ -10,7 +10,7 @@ published to GitHub Pages from `main`.
 |---|---|
 | `src/blueprint.src.html` | **The only file you normally edit.** All sheets, diagrams (inline SVG), tables and text. |
 | `build/build.py` | Embeds Microsoft's official icons and validates the page. Writes `dist/index.html`. |
-| `.github/refresh-issue.md` | Body of the weekly "Architecture refresh" issue (the review checklist). |
+| `.github/refresh-issue.md` | Body of the daily "Architecture refresh" issue (the review checklist). |
 | `CHANGELOG.md` | One entry per revision. |
 
 `dist/` and `.cache/` are build output. Never commit them.
@@ -18,12 +18,19 @@ published to GitHub Pages from `main`.
 ## How to validate
 
 ```bash
-python build/build.py --check
+python build/build.py --check --strict
 ```
 
-It runs offline. It checks that every inline SVG is well-formed XML, every `{{IC:key}}` icon placeholder
+It runs offline. `--strict` also fails on diagram layout warnings, such as text running past its box or overlapping an icon. It checks that every inline SVG is well-formed XML, every `{{IC:key}}` icon placeholder
 is known, and every tab has a matching sheet. A full build (`python build/build.py`) downloads Microsoft's
 icon pack; you don't need it to validate.
+
+## Skills
+
+Use the repository skills in `.github/skills/`:
+- `blueprint-design-system`: components, tokens and writing style for any HTML change.
+- `blueprint-diagrams`: rules for editing the inline SVG diagrams.
+- `microsoft-guidance-refresh`: the research and PR procedure for refresh issues.
 
 ## Editing rules
 
@@ -61,7 +68,7 @@ icon pack; you don't need it to validate.
 ## Refresh tasks (issues labelled `architecture-refresh`)
 
 Follow the checklist in the issue. In short: review the listed Microsoft sources for anything that
-changed since the last CHANGELOG entry, update the page, run `python build/build.py --check`, add a
+changed since the last CHANGELOG entry, update the page, run `python build/build.py --check --strict`, add a
 CHANGELOG entry, and open one pull request. The PR description must list **each change with the
 source URL that justifies it**. If nothing material changed, don't open a PR. Comment on the issue
 with what you checked and close it.

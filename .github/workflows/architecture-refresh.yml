@@ -1,12 +1,12 @@
 name: Architecture refresh (Copilot)
 
-# Every Monday, open an issue asking the Copilot coding agent to review Microsoft's
+# Every weekday, open an issue asking the Copilot coding agent to review Microsoft's
 # guidance and propose updates as a pull request. You review and merge the PR;
-# merging redeploys GitHub Pages.
+# merging redeploys GitHub Pages. A day is skipped while the previous refresh is open.
 
 on:
   schedule:
-    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+    - cron: "0 6 * * 1-5" # weekdays 06:00 UTC
   workflow_dispatch:
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh label create architecture-refresh --repo "$GITHUB_REPOSITORY" --color 0F6CBD \
-            --description "Weekly Microsoft guidance review" 2>/dev/null || true
+            --description "Daily Microsoft guidance review" 2>/dev/null || true
           url=$(gh issue create --repo "$GITHUB_REPOSITORY" \
             --title "Architecture refresh: $(date -u +%Y-%m-%d)" \
             --label architecture-refresh \

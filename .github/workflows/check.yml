@@ -18,6 +18,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: Offline validation
-        run: python build/build.py --check
+        run: python build/build.py --check --strict
       - name: Full build
         run: python build/build.py
