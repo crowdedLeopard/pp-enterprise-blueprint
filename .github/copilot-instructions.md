@@ -46,6 +46,18 @@ icon pack; you don't need it to validate.
 - **Revision:** bump the template revision (e.g. `rev 3.0` → `rev 3.1`) in the app bar, footer and
   CHANGELOG for content changes. Update the "as of" date on the Sources sheet.
 
+## Researching Microsoft guidance
+
+- **Search Microsoft Learn first.** Use the `microsoft-learn` MCP server's search and fetch tools for every
+  checklist item, including items that have no link. Treat the links in the checklist as starting points,
+  not the full scope. Search for what changed: renamed features, new GA or retirement dates, new limits.
+- **Message-center posts** aren't on Microsoft Learn. Read them through the mirror at `https://mc.merill.net`.
+- **Only these hosts are reachable:** `learn.microsoft.com` (also through the MCP server) and `mc.merill.net`,
+  plus GitHub's default allowlist. If a source you need is blocked, say so in the PR or issue comment
+  instead of guessing its content.
+- Prefer Microsoft Learn over third-party blogs. Use a third-party source only when Microsoft has nothing,
+  and label it as third party on the Sources sheet.
+
 ## Refresh tasks (issues labelled `architecture-refresh`)
 
 Follow the checklist in the issue. In short: review the listed Microsoft sources for anything that

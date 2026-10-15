@@ -27,9 +27,12 @@ Monday 06:00 UTC ─► "Architecture refresh" issue ─► Copilot coding agent
 ## One-time setup
 
 1. **Turn on the Copilot coding agent** for this repository. It needs a Copilot plan that includes the coding agent.
-2. **Let Copilot read Microsoft's docs.** The coding agent runs behind a firewall. Under
-   *Settings → Copilot → Coding agent*, add `learn.microsoft.com` and `mc.merill.net` to the custom allowlist.
-   Alternatively, configure the Microsoft Learn MCP server for the agent.
+2. **Let Copilot read Microsoft's docs.** *(Done for this repo.)* The agent runs behind a firewall. Under
+   *Settings → Copilot → Internet access → Custom allowlist*, `learn.microsoft.com` and `mc.merill.net` are allowed.
+   Under *Settings → Copilot → MCP servers*, the Microsoft Learn MCP server gives the agent search:
+   ```json
+   {"mcpServers": {"microsoft-learn": {"type": "http", "url": "https://learn.microsoft.com/api/mcp", "tools": ["*"]}}}
+   ```
 3. **Add the assignment token.** Create a fine-grained personal access token for this repo with read access to
    metadata and read/write access to actions, contents, issues and pull requests. Then run:
    ```bash
