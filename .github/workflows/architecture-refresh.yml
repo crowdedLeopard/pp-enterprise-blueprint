@@ -1,0 +1,58 @@
+name: Architecture refresh (Copilot)
+
+# Every Monday, open an issue asking the Copilot coding agent to review Microsoft's
+# guidance and propose updates as a pull request. You review and merge the PR;
+# merging redeploys GitHub Pages.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  open-refresh-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Skip if a refresh is already open
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --label architecture-refresh --state open --json number --jq 'length' 2>/dev/null || echo 0)
+          echo "count=$n" >> "$GITHUB_OUTPUT"
+          if [ "$n" != "0" ]; then echo "::notice::A refresh issue is already open; not opening another."; fi
+
+      - name: Open refresh issue
+        id: issue
+        if: steps.existing.outputs.count == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create architecture-refresh --repo "$GITHUB_REPOSITORY" --color 0F6CBD \
+            --description "Weekly Microsoft guidance review" 2>/dev/null || true
+          url=$(gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "Architecture refresh: $(date -u +%Y-%m-%d)" \
+            --label architecture-refresh \
+            --body-file .github/refresh-issue.md)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Opened $url"
+
+      # Assigning the Copilot coding agent needs a user token, not GITHUB_TOKEN.
+      # Store one as the repository secret COPILOT_ASSIGN_TOKEN (see README).
+      - name: Assign to Copilot coding agent
+        if: steps.existing.outputs.count == '0'
+        env:
+          GH_TOKEN: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::COPILOT_ASSIGN_TOKEN is not set, so the issue is unassigned. Assign it to Copilot by hand or add the secret."
+            exit 0
+          fi
+          gh issue edit "${{ steps.issue.outputs.url }}" --add-assignee "@copilot" \
+            || echo "::warning::Couldn't assign Copilot. Check that the Copilot coding agent is enabled for this repo and the token has the required scopes."
