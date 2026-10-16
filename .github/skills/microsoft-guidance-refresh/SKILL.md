@@ -26,6 +26,7 @@ Good searches, by sheet:
 | 05 Credits | "Copilot Credits", "AI Builder credits", "capacity allocation environment", "pay-as-you-go billing policy", "auto-claim licensing" |
 | 06 Reporting | "Power Platform inventory", "admin center data export", "Power Platform advisor", "CoE Starter Kit" |
 | 07 Security | "Copilot Studio security governance", "Entra Agent ID", "IP firewall Power Platform", "customer-managed key Dataverse", "virtual network support" |
+| 10 Scenarios | "GitHub Copilot harness admin controls", "Copilot Credits allocation environment group rule", "agent monthly consumption limit", "advanced connector policies custom connectors", "billing policy cost allocation" |
 | Roadmap | "Power Platform release plan", "Copilot Studio release plan" |
 
 Message-center posts aren't on Learn. Read them through `https://mc.merill.net` and search for Power Platform,
@@ -62,5 +63,7 @@ Every row needs a source. If two sources disagree, use the newer Microsoft one, 
 
 ## 6. Report
 
-- **Changes found:** open one PR titled `Architecture refresh YYYY-MM-DD: <short summary>`, containing the evidence table and a short "not changed" list of sources you checked.
-- **Nothing material:** don't open a PR. Comment on the issue with the review window, the sources checked (as a bullet list) and "No material changes". Then close the issue.
+Copilot always works in a pull request, so every refresh ends in one.
+
+- **Changes found:** title the PR `Architecture refresh YYYY-MM-DD: <short summary>`. Its description holds the evidence table and a short "not changed" list of the sources you checked.
+- **Nothing material:** make no file changes. Title the PR `Architecture refresh YYYY-MM-DD: no material changes` and list the review window and sources checked. The refresh workflow closes no-change PRs and their issues automatically.

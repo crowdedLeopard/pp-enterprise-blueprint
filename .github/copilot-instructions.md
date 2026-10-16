@@ -70,5 +70,6 @@ Use the repository skills in `.github/skills/`:
 Follow the checklist in the issue. In short: review the listed Microsoft sources for anything that
 changed since the last CHANGELOG entry, update the page, run `python build/build.py --check --strict`, add a
 CHANGELOG entry, and open one pull request. The PR description must list **each change with the
-source URL that justifies it**. If nothing material changed, don't open a PR. Comment on the issue
-with what you checked and close it.
+source URL that justifies it**. If nothing material changed, make no file changes. Title the PR
+`Architecture refresh YYYY-MM-DD: no material changes` and list the sources you checked in its
+description. The workflow closes no-change PRs and their issues automatically.

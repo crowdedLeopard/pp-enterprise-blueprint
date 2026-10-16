@@ -12,12 +12,33 @@ on:
 permissions:
   contents: read
   issues: write
+  pull-requests: write
 
 jobs:
   open-refresh-issue:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # Copilot always opens a PR when it takes an issue. If its review found nothing
+      # material, the PR has no file changes. Close those (and their issues) once
+      # Copilot has been idle on them for 2 hours, so the next refresh can start.
+      - name: Close no-change refresh PRs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr list --repo "$GITHUB_REPOSITORY" --state open --author "app/copilot-swe-agent" \
+            --json number,changedFiles,updatedAt,closingIssuesReferences \
+            --jq '.[] | select(.changedFiles == 0 and (now - (.updatedAt | fromdateiso8601)) > 7200)
+                  | "\(.number) \([.closingIssuesReferences[].number] | join(","))"' |
+          while read -r pr issues; do
+            gh pr close "$pr" --repo "$GITHUB_REPOSITORY" --delete-branch \
+              --comment "No material changes found in this refresh. Closed automatically."
+            for i in ${issues//,/ }; do
+              gh issue close "$i" --repo "$GITHUB_REPOSITORY" --reason completed \
+                --comment "Reviewed; no material changes (see #$pr)."
+            done
+          done
 
       - name: Skip if a refresh is already open
         id: existing

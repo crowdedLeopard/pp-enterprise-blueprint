@@ -64,6 +64,14 @@ On phones, script turns rows into stacked cards using the header text, so every 
 **Product chips and icons.** Use only the icon placeholders `{{IC:pp|apps|auto|pages|dv|aib|cs}}`. Always show the
 product name next to an icon. Never resize an icon so it distorts, and never crop or recolour one (Microsoft's icon terms).
 
+**Scenarios (sheet 10).** Each governance scenario is a `.scenario` panel inside the sheet's `.scen-set`, with a
+matching `.scen-tab` button (`data-target` = the panel id; only the first panel is visible, the rest have `hidden`).
+Every scenario has, in order:
+a `.question` (the business question in one sentence) → a diagram card (code `PPA-10A`, `PPA-10B`…; see the diagrams skill)
+→ `.details` with a **Steps** panel (`<ol class="steps">`, in real execution order), a **Watch out for** panel
+(`.panel.note`), an optional wide table, and a wide **Sources** panel linking the Microsoft pages it relies on.
+To add a scenario, add a button and a panel with the next letter, and give its SVG markers unique ids (`m13`, `m14`…).
+
 **Decision cards.** Use `.decisions > .decision` with `<span class="id">D# · TOPIC</span><p>…</p>`.
 
 ## Writing style

@@ -34,6 +34,13 @@ The window starts at the later of the newest `CHANGELOG.md` entry and the last c
 - [ ] https://learn.microsoft.com/power-platform/architecture/reference-architectures/secure-access-azure-resources
 - [ ] Copilot Studio governance and security on Microsoft Learn
 
+**Governance scenarios (sheet 10)**
+- [ ] https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview
+- [ ] https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness: cost controls, group rules, preview-billing dates
+- [ ] https://learn.microsoft.com/microsoft-copilot-studio/guidance/govern-credit-consumption
+- [ ] https://learn.microsoft.com/power-platform/admin/advanced-connector-policies: scope, custom/HTTP and MCP support
+- [ ] Any new admin switch to turn the GitHub Copilot harness on or off. Scenario C says none is documented.
+
 **Roadmap signals**
 - [ ] Power Platform and Copilot Studio release plans: https://learn.microsoft.com/power-platform/release-plan/
 - [ ] Microsoft 365 message center posts tagged Power Platform or Copilot Studio (mirror: https://mc.merill.net)
@@ -48,5 +55,5 @@ The window starts at the later of the newest `CHANGELOG.md` entry and the last c
 
 ## 3. Report
 
-- [ ] Open **one** pull request. In its description, list each change with its source URL.
-- [ ] If nothing material changed, don't open a PR. Comment on this issue with the sources you checked, then close it.
+- [ ] In your pull request description, list each change with its source URL.
+- [ ] If nothing material changed, make no file changes. Title the PR `Architecture refresh YYYY-MM-DD: no material changes` and list the sources you checked. It's closed automatically.
