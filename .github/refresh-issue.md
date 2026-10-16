@@ -41,6 +41,13 @@ The window starts at the later of the newest `CHANGELOG.md` entry and the last c
 - [ ] https://learn.microsoft.com/power-platform/admin/advanced-connector-policies: scope, custom/HTTP and MCP support
 - [ ] Any new admin switch to turn the GitHub Copilot harness on or off. Scenario C says none is documented.
 
+**Operate (sheet 11) and dated warnings**
+- [ ] https://learn.microsoft.com/power-platform/admin/environment-groups-rules: has the rule count or list changed?
+- [ ] https://learn.microsoft.com/power-platform/admin/monitoring/alerts: alert frequencies, predefined alerts
+- [ ] https://learn.microsoft.com/power-platform/admin/managed-environment-licensing: February 2027 enforcement
+- [ ] https://learn.microsoft.com/ai-builder/endofaibcredits: AI Builder credit dates
+- [ ] https://learn.microsoft.com/power-platform/important-changes-coming: new deprecations
+
 **Roadmap signals**
 - [ ] Power Platform and Copilot Studio release plans: https://learn.microsoft.com/power-platform/release-plan/
 - [ ] Microsoft 365 message center posts tagged Power Platform or Copilot Studio (mirror: https://mc.merill.net)

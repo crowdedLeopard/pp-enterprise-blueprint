@@ -27,6 +27,7 @@ Good searches, by sheet:
 | 06 Reporting | "Power Platform inventory", "admin center data export", "Power Platform advisor", "CoE Starter Kit" |
 | 07 Security | "Copilot Studio security governance", "Entra Agent ID", "IP firewall Power Platform", "customer-managed key Dataverse", "virtual network support" |
 | 10 Scenarios | "GitHub Copilot harness admin controls", "Copilot Credits allocation environment group rule", "agent monthly consumption limit", "advanced connector policies custom connectors", "billing policy cost allocation" |
+| 11 Operate | "environment group rules list", "Monitor alerts Power Platform", "Dataverse capacity notifications", "license consumption report", "managed environments licensing compliance", "security overview environment group" |
 | Roadmap | "Power Platform release plan", "Copilot Studio release plan" |
 
 Message-center posts aren't on Learn. Read them through `https://mc.merill.net` and search for Power Platform,

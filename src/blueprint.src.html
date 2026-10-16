@@ -198,7 +198,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <header class="appbar">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.1</small></span></a>
+      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.2</small></span></a>
       <div class="builton"><span>For</span><svg viewBox="0 0 23 23" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="12" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="12" width="10" height="10" fill="#00A4EF"/><rect x="12" y="12" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft Power Platform</b></div>
     </div>
     <nav class="tabs" aria-label="Sheets">
@@ -213,6 +213,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <a class="tab" href="#s08" data-sheet="s08"><span class="n">08</span>Operating model</a>
       <a class="tab" href="#s09" data-sheet="s09"><span class="n">09</span>Roadmap</a>
       <a class="tab" href="#s10" data-sheet="s10"><span class="n">10</span>Scenarios</a>
+      <a class="tab" href="#s11" data-sheet="s11"><span class="n">11</span>Operate</a>
       <a class="tab" href="#src" data-sheet="src"><span class="n">··</span>Sources</a>
     </nav>
   </div>
@@ -226,11 +227,11 @@ footer p{margin:0 0 4px;max-width:110ch}
     <div>
       <p class="eyebrow">Template · Power Platform target architecture</p>
       <h1>Power Platform Enterprise Blueprint</h1>
-      <p class="sum">A reference architecture for running Power Apps, Power Automate and Copilot Studio in a global organisation. It covers how environments are laid out, how data policies stack, how capacity is paid for and charged back, and how the platform reports on itself. Each sheet shows a diagram first, then the detail behind it. Sheet 10 works through common governance scenarios, such as cross-charging and restricting the GitHub Copilot harness.</p>
+      <p class="sum">A reference architecture for running Power Apps, Power Automate and Copilot Studio in a global organisation. It covers how environments are laid out, how data policies stack, how capacity is paid for and charged back, and how the platform reports on itself. Each sheet shows a diagram first, then the detail behind it. Sheet 10 works through common governance scenarios, such as cross-charging and restricting the GitHub Copilot harness. Sheet 11 covers the operating loop: control, monitor, report and cross-charge.</p>
     </div>
     <div class="stats">
       <div class="stat"><b>5</b><span>operating regions, each owning its P&amp;L</span></div>
-      <div class="stat"><b>26</b><span>environment groups on six rule templates</span></div>
+      <div class="stat"><b>26</b><span>environment groups, six rule baselines</span></div>
       <div class="stat"><b>3</b><span>data-policy zones: personal, business, restricted</span></div>
       <div class="stat"><b>2</b><span>release paths: Pipelines and pro-dev CI/CD</span></div>
     </div>
@@ -239,8 +240,14 @@ footer p{margin:0 0 4px;max-width:110ch}
   <div class="details">
     <div class="panel alert wide">
       <span class="kicker">Act now</span>
-      <h2>AI Builder credits end on 1 November 2026</h2>
-      <p>AI Builder capacity add-ons retire on that date, and so do seeded AI Builder credits for existing customers. Any flow or app that uses AI Builder (document processing, prompts, prediction) then needs Copilot Credits capacity. Inventory AI Builder use now, allocate Copilot Credits to the affected environments, and turn off auto-renewal of the AI Builder add-ons. Sheet 05 has the detail.</p>
+      <h2>No new AI Builder credits from 1 November 2026</h2>
+      <p>From that date, AI Builder capacity add-ons reach end of life and new or renewed premium licences no longer include seeded AI Builder credits. Credits you already hold are honoured to the end of your contract term. After that, AI Builder features keep working but draw Copilot Credits, and fail if none are available. Inventory AI Builder use now, plan Copilot Credits for the affected environments, and turn off auto-renew of AI Builder add-ons. Sheet 05 has the detail.</p>
+    </div>
+
+    <div class="panel alert wide">
+      <span class="kicker">Plan now</span>
+      <h2>Managed environments need premium licences, enforced from February 2027</h2>
+      <p>Every user who runs an app or cloud flow in a managed environment needs a premium licence (Power Apps Premium, Power Automate Premium or a qualifying Dynamics 365 licence) or a pay-as-you-go meter. Microsoft has shown in-app warnings since June 2026. From February 2027, unlicensed users can't open apps in managed environments. This blueprint makes most environments managed (D4), so run the <i>Users requiring licenses in Managed Environments</i> report and budget for the result before you scale out.</p>
     </div>
 
     <div class="panel wide">
@@ -254,7 +261,7 @@ footer p{margin:0 0 4px;max-width:110ch}
         <div class="prod"><img src="{{IC:cs}}" alt=""><span><b>Copilot Studio</b><small>agents, Copilot Credits</small></span></div>
         <div class="prod"><img src="{{IC:pages}}" alt=""><span><b>Power Pages</b><small>supplier &amp; dealer portals</small></span></div>
         <div class="prod"><img src="{{IC:dv}}" alt=""><span><b>Dataverse</b><small>data, security, capacity</small></span></div>
-        <div class="prod"><img src="{{IC:aib}}" alt=""><span><b>AI Builder</b><small>credits retire 1 Nov 2026</small></span></div>
+        <div class="prod"><img src="{{IC:aib}}" alt=""><span><b>AI Builder</b><small>no new credits from 1 Nov 2026</small></span></div>
       </div>
     </div>
 
@@ -266,7 +273,7 @@ footer p{margin:0 0 4px;max-width:110ch}
         <thead><tr><th>Parameter</th><th>Reference value</th><th>If yours differs</th></tr></thead>
         <tbody>
           <tr><td class="k">Operating regions</td><td>5, each owning its P&amp;L: NA, EU, ME (Middle East &amp; Africa), LA (Latin America), AP</td><td>Groups = tiers × regions + 1 (sheet 02). If business units own budgets instead of regions, cut the columns by BU.</td></tr>
-          <tr><td class="k">Power Platform geos</td><td>United States, Europe, UAE, Brazil, India / Asia</td><td>Pick the geo nearest each region's users and its residency law (sheets 02, 07).</td></tr>
+          <tr><td class="k">Power Platform geos</td><td>United States, Europe, UAE, South America (Brazil), Asia</td><td>Pick the geo nearest each region's users and its residency law (sheets 02, 07). You can create environments in the India geo only if your tenant is in India.</td></tr>
           <tr><td class="k">Tenant home geo</td><td>Europe</td><td>The default environment lives here. Choose where most of your Microsoft 365 data already sits.</td></tr>
           <tr><td class="k">Business unit codes</td><td>MFG · PUR · QLT · ENG · SAL · FIN · HR · LEG · IT</td><td>Swap in your own three-letter codes (naming convention, sheet 02).</td></tr>
           <tr><td class="k">Restricted data classes</td><td>HR, finance, legal, engineering IP, connected-product and customer data</td><td>Map Zone R to whatever carries your "Highly Confidential" sensitivity label.</td></tr>
@@ -283,14 +290,14 @@ footer p{margin:0 0 4px;max-width:110ch}
       <h2>Ten decisions this blueprint makes</h2>
       <div class="decisions">
         <div class="decision"><span class="id">D1 · TENANT SHAPE</span><p>One global tenant. Environment groups are cut by <b>tier × region</b> to mirror the operating regions.</p></div>
-        <div class="decision"><span class="id">D2 · DEFAULT ENV</span><p>The default environment becomes <b>Personal Productivity</b>, with M365 connectors only, routing on and Share with Everyone off.</p></div>
+        <div class="decision"><span class="id">D2 · DEFAULT ENV</span><p>The default environment becomes <b>Personal Productivity</b>: core Microsoft 365 and non-blockable connectors only, routing on, Share with Everyone off.</p></div>
         <div class="decision"><span class="id">D3 · DATA ZONES</span><p>Three zones: <span class="tag tg">G</span> personal, <span class="tag ta">A</span> business, <span class="tag tr">R</span> restricted, each mapped 1:1 to environment groups. Allowlisting starts in Zone R.</p></div>
-        <div class="decision"><span class="id">D4 · MANAGED</span><p>Every environment except the default and Teams environments is <b>managed</b>. Group rules hold the settings, so they can't drift.</p></div>
+        <div class="decision"><span class="id">D4 · MANAGED</span><p>Every environment except the default and Teams environments is <b>managed</b>, so group rules hold the settings. The trade-off: their users need premium licences, enforced from Feb 2027.</p></div>
         <div class="decision"><span class="id">D5 · RELEASE</span><p>Production accepts <b>managed solutions only</b>, deployed by Pipelines as a service principal. Zone R uses pro-dev CI/CD.</p></div>
         <div class="decision"><span class="id">D6 · PAYING</span><p>A prepaid baseline is pooled and allocated per environment. Growth runs on <b>pay-as-you-go</b> through one billing policy per region × cost owner.</p></div>
-        <div class="decision"><span class="id">D7 · AI CREDITS</span><p>AI Builder credits end on <b>1 Nov 2026</b>. Move every AI Builder use to Copilot Credits now.</p></div>
+        <div class="decision"><span class="id">D7 · AI CREDITS</span><p>No new AI Builder credits after <b>1 Nov 2026</b>; existing ones run to contract end. Plan Copilot Credits for every AI Builder use.</p></div>
         <div class="decision"><span class="id">D8 · TELEMETRY</span><p>Native inventory and data export feed a <b>Fabric governance lakehouse</b>. The CoE Starter Kit is not the base for new build.</p></div>
-        <div class="decision"><span class="id">D9 · AGENTS</span><p>Agents are identities: each gets an <b>Entra Agent ID</b>, quarterly access reviews and zone-specific connector rules.</p></div>
+        <div class="decision"><span class="id">D9 · AGENTS</span><p>Agents are identities: new ones get an <b>Entra Agent ID</b>. Add quarterly access reviews and zone-specific connector rules.</p></div>
         <div class="decision"><span class="id">D10 · PEOPLE</span><p>A global Platform CoE, regional hubs and BU champions. Three maker tiers with <b>promotion triggers read from inventory</b>.</p></div>
       </div>
     </div>
@@ -336,14 +343,14 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-c" x="24" y="137">CONTROL PLANE · TENANT-WIDE</text>
 <rect class="s-box" x="20" y="146" width="210" height="118" rx="8"/>
 <text class="s-h" x="32" y="167">Microsoft Entra ID</text>
-<text class="s-m" x="32" y="187">Conditional Access policies</text><text class="s-m" x="32" y="203">PIM for Power Platform Admin</text><text class="s-m" x="32" y="219">Security groups bound to envs</text><text class="s-m" x="32" y="235">Service principals for ALM</text><text class="s-m" x="32" y="251">Entra Agent ID for agents</text>
+<text class="s-m" x="32" y="187">Conditional Access policies</text><text class="s-m" x="32" y="203">PIM for Power Platform Admin</text><text class="s-m" x="32" y="219">Security groups bound to envs</text><text class="s-m" x="32" y="235">Service principals for ALM</text><text class="s-m" x="32" y="251">Entra Agent ID (new agents)</text>
 <rect class="s-acc" x="242" y="146" width="210" height="118" rx="8"/>
 <image href="{{IC:pp}}" x="254" y="153" width="18" height="18"/>
 <text class="s-h" x="278" y="167">Admin center (PPAC)</text>
 <text class="s-m" x="254" y="187">Tenant settings &amp; isolation</text><text class="s-m" x="254" y="203">Environment groups + rules</text><text class="s-m" x="254" y="219">Data policies + ACP allowlist</text><text class="s-m" x="254" y="235">Billing policies → Azure</text><text class="s-m" x="254" y="251">Inventory · Advisor · Actions</text>
 <rect class="s-box" x="465" y="146" width="210" height="118" rx="8"/>
 <text class="s-h" x="477" y="167">Microsoft Purview</text>
-<text class="s-m" x="477" y="187">Unified audit log</text><text class="s-m" x="477" y="203">Sensitivity labels on data</text><text class="s-m" x="477" y="219">DSPM for AI (agents)</text><text class="s-m" x="477" y="235">Retention &amp; eDiscovery</text><text class="s-m" x="477" y="251">Residency evidence</text>
+<text class="s-m" x="477" y="187">Unified audit log</text><text class="s-m" x="477" y="203">Sensitivity labels on data</text><text class="s-m" x="477" y="219">DSPM for AI apps &amp; agents</text><text class="s-m" x="477" y="235">Retention &amp; eDiscovery</text><text class="s-m" x="477" y="251">Residency evidence</text>
 <rect class="s-box" x="687" y="146" width="210" height="118" rx="8"/>
 <text class="s-h" x="699" y="167">Defender &amp; Sentinel</text>
 <text class="s-m" x="699" y="187">Defender for Cloud Apps</text><text class="s-m" x="699" y="203">Sentinel Power Platform data</text><text class="s-m" x="699" y="219">Analytics rules → SOC</text><text class="s-m" x="699" y="235">Session controls on apps</text><text class="s-m" x="699" y="251">Incident playbooks</text>
@@ -358,7 +365,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-g" x="20" y="326" width="250" height="200" rx="10"/>
 <text class="s-h s-cg" x="32" y="347">Zone G · Personal</text>
 <image href="{{IC:apps}}" x="222" y="334" width="18" height="18"/><image href="{{IC:auto}}" x="244" y="334" width="18" height="18"/>
-<text class="s-m" x="32" y="363">M365 connectors · sharing ≤ 20</text>
+<text class="s-m" x="32" y="363">core M365 connectors only</text>
 <rect class="s-box" x="30" y="374" width="230" height="30" rx="6"/><text class="s-t" x="42" y="393">Personal Productivity (default)</text>
 <rect class="s-box" x="30" y="410" width="230" height="30" rx="6"/><text class="s-t" x="42" y="429">Routed developer envs</text>
 <rect class="s-box" x="30" y="446" width="230" height="30" rx="6"/><text class="s-t" x="42" y="465">Trial envs · 30-day POCs</text>
@@ -367,7 +374,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-h s-cA" x="294" y="347">Zone A · Business</text>
 <image href="{{IC:apps}}" x="502" y="334" width="18" height="18"/><image href="{{IC:auto}}" x="524" y="334" width="18" height="18"/><image href="{{IC:pages}}" x="546" y="334" width="18" height="18"/>
 <text class="s-m" x="294" y="363">approved business connectors · ALM</text>
-<rect class="s-box" x="292" y="374" width="270" height="30" rx="6"/><text class="s-t" x="304" y="393">Dataverse for Teams (team tools)</text>
+<rect class="s-box" x="292" y="374" width="270" height="30" rx="6"/><text class="s-t" x="304" y="393">Teams envs (tenant policy only)</text>
 <rect class="s-box" x="292" y="410" width="270" height="30" rx="6"/><text class="s-t" x="304" y="429">Shared dev sandboxes</text>
 <rect class="s-box" x="292" y="446" width="270" height="30" rx="6"/><text class="s-t" x="304" y="465">UAT · managed solutions</text>
 <rect class="s-box" x="292" y="482" width="270" height="30" rx="6"/><text class="s-t" x="304" y="501">BU production × 5 regions</text>
@@ -406,7 +413,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-band" x="10" y="684" width="1120" height="86" rx="12"/>
 <text class="s-c" x="24" y="701">OBSERVABILITY · FINOPS</text>
 <rect class="s-box" x="20" y="710" width="150" height="50" rx="8"/><text class="s-h" x="30" y="730">Inventory API</text><text class="s-m" x="30" y="748">apps · flows · agents</text>
-<rect class="s-box" x="180" y="710" width="150" height="50" rx="8"/><text class="s-h" x="190" y="730">Usage export</text><text class="s-m" x="190" y="748">ADLS Gen2 · daily</text>
+<rect class="s-box" x="180" y="710" width="150" height="50" rx="8"/><text class="s-h" x="190" y="730">Usage export</text><text class="s-m" x="190" y="748">ADLS Gen2 · preview</text>
 <rect class="s-box" x="340" y="710" width="150" height="50" rx="8"/><text class="s-h" x="350" y="730">Audit &amp; telemetry</text><text class="s-m" x="350" y="748">Purview · App Insights</text>
 <rect class="s-box" x="500" y="710" width="150" height="50" rx="8"/><text class="s-h" x="510" y="730">Cost exports</text><text class="s-m" x="510" y="748">Azure Cost Mgmt</text>
 <line class="s-ln" x1="652" y1="735" x2="687" y2="735" marker-end="url(#m1)"/>
@@ -417,7 +424,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-c s-ca" transform="translate(1185 400) rotate(-90)" text-anchor="middle">DASHBOARDS · ALERTS · GOVERNANCE ACTIONS</text>
 </svg>
     </div>
-    <figcaption><b>Read top to bottom, then follow the blue loop back up.</b> The control plane is the only place policy is set. Zones are policy bundles, not regions; each zone repeats in every region on sheet 02. Only four paths lead out of an environment: Microsoft connectors, the APIM gateway, VNet delegation and on-prem gateways. Each is a choke point the data policies can name. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+    <figcaption><b>Read top to bottom, then follow the blue loop back up.</b> The control plane is the only place policy is set. Zones are policy bundles, not regions; each zone repeats in every region on sheet 02. Only four paths lead out of an environment: Microsoft connectors, the APIM gateway, VNet delegation and on-prem gateways. Each is a choke point the data policies can name. Zone R reaches SQL through VNet support, not gateways, because gateway SQL connections aren't supported in VNet-linked environments. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
     <div class="panel"><h2>Why five layers</h2><p>Each layer has one owner and one change process. The control plane changes through the CoE change board; zones change through group rule templates; integration paths change through Security. That keeps a change in one place from silently weakening another.</p></div>
@@ -447,14 +454,14 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-band" x="210" y="20" width="186" height="46" rx="8"/><text class="s-h" x="303" y="40" text-anchor="middle">North America</text><text class="s-c" x="303" y="57" text-anchor="middle">GEO: UNITED STATES</text>
 <rect class="s-band" x="404" y="20" width="186" height="46" rx="8"/><text class="s-h" x="497" y="40" text-anchor="middle">Europe</text><text class="s-c" x="497" y="57" text-anchor="middle">GEO: EUROPE</text>
 <rect class="s-band" x="598" y="20" width="186" height="46" rx="8"/><text class="s-h" x="691" y="40" text-anchor="middle">Middle East &amp; Africa</text><text class="s-c" x="691" y="57" text-anchor="middle">GEO: UAE</text>
-<rect class="s-band" x="792" y="20" width="186" height="46" rx="8"/><text class="s-h" x="885" y="40" text-anchor="middle">Latin America</text><text class="s-c" x="885" y="57" text-anchor="middle">GEO: BRAZIL</text>
-<rect class="s-band" x="986" y="20" width="186" height="46" rx="8"/><text class="s-h" x="1079" y="40" text-anchor="middle">Asia Pacific</text><text class="s-c" x="1079" y="57" text-anchor="middle">GEO: INDIA / ASIA</text>
+<rect class="s-band" x="792" y="20" width="186" height="46" rx="8"/><text class="s-h" x="885" y="40" text-anchor="middle">Latin America</text><text class="s-c" x="885" y="57" text-anchor="middle">GEO: SOUTH AMERICA</text>
+<rect class="s-band" x="986" y="20" width="186" height="46" rx="8"/><text class="s-h" x="1079" y="40" text-anchor="middle">Asia Pacific</text><text class="s-c" x="1079" y="57" text-anchor="middle">GEO: ASIA</text>
 
 <rect class="s-band" x="20" y="76" width="180" height="46" rx="8"/><text class="s-h" x="32" y="96">Default</text><text class="s-c" x="32" y="112">TENANT · ZONE G</text>
 <rect class="s-g" x="210" y="76" width="962" height="46" rx="8"/>
 <image href="{{IC:pp}}" x="222" y="88" width="22" height="22"/>
 <text class="s-h" x="254" y="96">Personal Productivity: the renamed default environment, one per tenant (home geo assumed Europe)</text>
-<text class="s-m" x="254" y="112">M365 connectors only · canvas sharing ≤ 20 people · Share with Everyone off · custom connector URL pattern * blocked</text>
+<text class="s-m" x="254" y="112">Core M365 + non-blockable connectors · not managed, so sharing is watched, not capped · Share with Everyone off · custom connector URL * blocked</text>
 
 <text class="s-c s-ca" x="110" y="142" text-anchor="middle">ENV ROUTING ↓</text>
 <line class="s-lna" x1="303" y1="124" x2="303" y2="149" marker-end="url(#m2a)"/>
@@ -463,12 +470,12 @@ footer p{margin:0 0 4px;max-width:110ch}
 <line class="s-lna" x1="885" y1="124" x2="885" y2="149" marker-end="url(#m2a)"/>
 <line class="s-lna" x1="1079" y1="124" x2="1079" y2="149" marker-end="url(#m2a)"/>
 
-<rect class="s-band" x="20" y="152" width="180" height="64" rx="8"/><text class="s-h" x="32" y="171">Personal dev</text><text class="s-c" x="32" y="187">EG-G-PDEV-{R}</text><text class="s-m" x="32" y="204">sharing ≤ 5 · 90-day cleanup</text>
-<rect class="s-g" x="210" y="152" width="186" height="64" rx="8"/><text class="s-t" x="222" y="176">Routed developer envs</text><text class="s-c" x="222" y="194">EG-G-PDEV-NA</text><text class="s-m" x="222" y="209">≤ 3 per maker</text>
-<rect class="s-g" x="404" y="152" width="186" height="64" rx="8"/><text class="s-t" x="416" y="176">Routed developer envs</text><text class="s-c" x="416" y="194">EG-G-PDEV-EU</text><text class="s-m" x="416" y="209">≤ 3 per maker</text>
-<rect class="s-g" x="598" y="152" width="186" height="64" rx="8"/><text class="s-t" x="610" y="176">Routed developer envs</text><text class="s-c" x="610" y="194">EG-G-PDEV-ME</text><text class="s-m" x="610" y="209">≤ 3 per maker</text>
-<rect class="s-g" x="792" y="152" width="186" height="64" rx="8"/><text class="s-t" x="804" y="176">Routed developer envs</text><text class="s-c" x="804" y="194">EG-G-PDEV-LA</text><text class="s-m" x="804" y="209">≤ 3 per maker</text>
-<rect class="s-g" x="986" y="152" width="186" height="64" rx="8"/><text class="s-t" x="998" y="176">Routed developer envs</text><text class="s-c" x="998" y="194">EG-G-PDEV-AP</text><text class="s-m" x="998" y="209">≤ 3 per maker</text>
+<rect class="s-band" x="20" y="152" width="180" height="64" rx="8"/><text class="s-h" x="32" y="171">Personal dev</text><text class="s-c" x="32" y="187">EG-G-PDEV-{R}</text><text class="s-m" x="32" y="204">sharing ≤ 5 · off at 60 days</text>
+<rect class="s-g" x="210" y="152" width="186" height="64" rx="8"/><text class="s-t" x="222" y="176">Routed developer envs</text><text class="s-c" x="222" y="194">EG-G-PDEV-NA</text><text class="s-m" x="222" y="209">1 per maker (routed)</text>
+<rect class="s-g" x="404" y="152" width="186" height="64" rx="8"/><text class="s-t" x="416" y="176">Routed developer envs</text><text class="s-c" x="416" y="194">EG-G-PDEV-EU</text><text class="s-m" x="416" y="209">1 per maker (routed)</text>
+<rect class="s-g" x="598" y="152" width="186" height="64" rx="8"/><text class="s-t" x="610" y="176">Routed developer envs</text><text class="s-c" x="610" y="194">EG-G-PDEV-ME</text><text class="s-m" x="610" y="209">1 per maker (routed)</text>
+<rect class="s-g" x="792" y="152" width="186" height="64" rx="8"/><text class="s-t" x="804" y="176">Routed developer envs</text><text class="s-c" x="804" y="194">EG-G-PDEV-LA</text><text class="s-m" x="804" y="209">1 per maker (routed)</text>
+<rect class="s-g" x="986" y="152" width="186" height="64" rx="8"/><text class="s-t" x="998" y="176">Routed developer envs</text><text class="s-c" x="998" y="194">EG-G-PDEV-AP</text><text class="s-m" x="998" y="209">1 per maker (routed)</text>
 
 <rect class="s-band" x="20" y="228" width="180" height="56" rx="8"/><text class="s-h" x="32" y="247">Shared dev</text><text class="s-c" x="32" y="263">EG-A-SHDEV-{R}</text><text class="s-m" x="32" y="277">multi-maker sandboxes</text>
 <rect class="s-a" x="210" y="228" width="186" height="56" rx="8"/><text class="s-t" x="222" y="250">Shared dev sandboxes</text><text class="s-c" x="222" y="268">SHD-NA-{BU}-{PROJ}</text>
@@ -516,7 +523,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-r" x="404" y="426" width="186" height="88" rx="8"/><text class="s-t" x="416" y="448">Restricted production</text><text class="s-m" x="416" y="466">HR · Finance · Legal</text><text class="s-m" x="416" y="482">Eng. IP · product data</text><text class="s-c" x="416" y="502">PRD-EU-R-*</text>
 <rect class="s-r" x="598" y="426" width="186" height="88" rx="8"/><text class="s-t" x="610" y="448">Restricted production</text><text class="s-m" x="610" y="466">HR · Finance · Legal</text><text class="s-m" x="610" y="482">customer data</text><text class="s-c" x="610" y="502">PRD-ME-R-*</text>
 <rect class="s-r" x="792" y="426" width="186" height="88" rx="8"/><text class="s-t" x="804" y="448">Restricted production</text><text class="s-m" x="804" y="466">HR · Finance · Legal</text><text class="s-m" x="804" y="482">customer data (LGPD)</text><text class="s-c" x="804" y="502">PRD-LA-R-*</text>
-<rect class="s-r" x="986" y="426" width="186" height="88" rx="8"/><text class="s-t" x="998" y="448">Restricted production</text><text class="s-m" x="998" y="466">HR · Finance · Legal</text><text class="s-m" x="998" y="482">customer data (DPDP)</text><text class="s-c" x="998" y="502">PRD-AP-R-*</text>
+<rect class="s-r" x="986" y="426" width="186" height="88" rx="8"/><text class="s-t" x="998" y="448">Restricted production</text><text class="s-m" x="998" y="466">HR · Finance · Legal</text><text class="s-m" x="998" y="482">customer data (APAC)</text><text class="s-c" x="998" y="502">PRD-AP-R-*</text>
 
 <rect class="s-band" x="20" y="526" width="180" height="64" rx="8"/><text class="s-h" x="32" y="545">Platform</text><text class="s-c" x="32" y="561">EG-P-PLATFORM</text><text class="s-m" x="32" y="578">admins only</text>
 <rect class="s-acc" x="210" y="526" width="186" height="64" rx="8"/><text class="s-t" x="222" y="548">Pipelines host</text><text class="s-c" x="222" y="566">PIPE-NA-Host</text><text class="s-m" x="222" y="582">deploys within geo</text>
@@ -526,21 +533,21 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-acc" x="986" y="526" width="186" height="64" rx="8"/><text class="s-t" x="998" y="548">Pipelines host</text><text class="s-c" x="998" y="566">PIPE-AP-Host</text><text class="s-m" x="998" y="582">deploys within geo</text>
 </svg>
     </div>
-    <figcaption><b>Six tiers × five regions = 26 environment groups</b> (25 cells plus the platform group), run on six rule templates, so a change to a template reaches every region at once. Blue arrows are environment routing: makers in the licensed-maker security group land in their own developer environment, governed from the first minute. Sovereign-cloud jurisdictions such as China sit outside this matrix. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+    <figcaption><b>Five regional group types × five regions + one platform group = 26 environment groups.</b> The default environment sits outside any group. Groups have no templates or inheritance, so each group type has a rule baseline that a script or the Power Platform API applies to all five regions. Blue arrows are environment routing: makers in the licensed-maker security group land in their own developer environment, governed from the first minute. The India geo is only available to India-based tenants, and sovereign-cloud jurisdictions such as China sit outside this matrix. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
     <div class="panel wide">
       <h2>Group rules by tier</h2>
-      <p>Group rules cover sharing limits, usage insights, maker welcome content, solution-checker enforcement, backup retention and AI-generated descriptions. Customer-managed keys, Lockbox, IP firewall and VNet aren't group rules today, so the provisioning script sets them per environment.</p>
+      <p>Microsoft now offers 28 group rules, picked from a rules gallery. They include sharing controls for canvas apps, solution-aware flows and agents; solution checker enforcement; unmanaged customizations; back-up retention; advanced connector policies; knowledge sources and skills for agents; generative AI settings; and the cost control <i>Draw from tenant credit pool</i>. IP firewall and IP cookie binding aren't rules, but you can apply them to a whole group from <b>Security › Overview</b>. Customer-managed keys, Lockbox and VNet are still set per environment by the provisioning script. Back-up retention above the 7-day default applies only to production managed environments. Sharing rules can exclude security groups and cap individuals; they can't allow-list named groups.</p>
       <table class="rt">
         <thead><tr><th>Group</th><th>Zone</th><th>Canvas sharing</th><th>Solution checker</th><th>Backup</th><th>Set per environment</th><th>Who creates</th></tr></thead>
         <tbody>
           <tr><td class="k mono">EG-G-PDEV-{R}</td><td><span class="tag tg">G</span></td><td>≤ 5 individuals, no groups</td><td>Warn</td><td>7 days</td><td>—</td><td>Routing (auto)</td></tr>
           <tr><td class="k mono">EG-A-SHDEV-{R}</td><td><span class="tag ta">A</span></td><td>≤ 50 individuals, no groups</td><td>Warn</td><td>7 days</td><td>—</td><td>Regional hub</td></tr>
-          <tr><td class="k mono">EG-A-NP-{R}</td><td><span class="tag ta">A</span></td><td>Named test security groups</td><td>Block critical</td><td>7 days</td><td>—</td><td>Regional hub</td></tr>
-          <tr><td class="k mono">EG-A-PRD-{R}</td><td><span class="tag ta">A</span></td><td>Security groups, never Everyone</td><td>Block critical</td><td>28 days</td><td>Pipelines target only</td><td>Regional hub</td></tr>
-          <tr><td class="k mono">EG-R-PRD-{R}</td><td><span class="tag tr">R</span></td><td>Named security groups only</td><td>Block critical + high</td><td>28 days</td><td>CMK, Lockbox, IP firewall, VNet</td><td>Platform CoE</td></tr>
-          <tr><td class="k mono">EG-P-PLATFORM</td><td><span class="tag tp">P</span></td><td>Admins only</td><td>Block critical</td><td>28 days</td><td>IP firewall</td><td>Platform CoE</td></tr>
+          <tr><td class="k mono">EG-A-NP-{R}</td><td><span class="tag ta">A</span></td><td>Security groups allowed, no cap</td><td>Block critical</td><td>7 days</td><td>—</td><td>Regional hub</td></tr>
+          <tr><td class="k mono">EG-A-PRD-{R}</td><td><span class="tag ta">A</span></td><td>Security groups allowed; Everyone blocked tenant-wide</td><td>Block critical</td><td>28 days</td><td>Group rule: block unmanaged customizations</td><td>Regional hub</td></tr>
+          <tr><td class="k mono">EG-R-PRD-{R}</td><td><span class="tag tr">R</span></td><td>Security groups allowed; named groups agreed at review</td><td>Block (critical); high findings reviewed in CI</td><td>28 days</td><td>CMK, Lockbox, VNet; IP firewall applied to the group</td><td>Platform CoE</td></tr>
+          <tr><td class="k mono">EG-P-PLATFORM</td><td><span class="tag tp">P</span></td><td>Environment security group limits access</td><td>Block critical</td><td>28 days</td><td>IP firewall applied to the group</td><td>Platform CoE</td></tr>
         </tbody>
       </table>
     </div>
@@ -559,7 +566,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <h2>Creation &amp; clean-up</h2>
       <ul>
         <li><b>Creation is restricted.</b> Only admins create production, sandbox and trial environments. Developer environments come only through routing; everything else goes through an intake form.</li>
-        <li><b>Licence auto-claim is on.</b> A user who opens a premium or managed-environment app gets a licence on demand.</li>
+        <li><b>Licence auto-claim is on.</b> A user who opens a premium or managed-environment app gets a Power Apps licence, if one is free in the pool. Keep headroom in the pool, because unlicensed users are blocked in managed environments from February 2027.</li>
         <li><b>The default environment gets cleaned out.</b> Shared multi-maker assets move to shared dev, then production. Single-maker assets move to the owner's dev environment. Anything unused for 90 days goes to quarantine after the owner is told.</li>
       </ul>
     </div>
@@ -598,14 +605,14 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-m" x="286" y="114">Custom connector URL pattern * blocked unless the host is on the allowlist</text>
 <rect class="s-a" x="270" y="150" width="480" height="86" rx="10"/>
 <text class="s-h" x="286" y="172">2 · Zone policy (G, A or R), named after its environment group</text>
-<text class="s-c" x="286" y="190">SCOPE: ENVIRONMENTS IN THAT GROUP</text>
+<text class="s-c" x="286" y="190">SCOPE: ENV LIST KEPT IN SYNC WITH THE GROUP</text>
 <text class="s-m" x="286" y="208">Business vs non-business grouping per zone; data can't mix across the two groups</text>
-<text class="s-m" x="286" y="224">Endpoint filtering: SQL, HTTP, Blob and SMTP only to approved hosts</text>
+<text class="s-m" x="286" y="224">Endpoint filtering (preview): HTTP, SQL, Blob, SMTP · static values only</text>
 <rect class="s-r" x="270" y="260" width="480" height="86" rx="10"/>
 <text class="s-h" x="286" y="282">3 · Advanced connector policy (ACP): allowlist</text>
 <text class="s-c" x="286" y="300">SCOPE: ZONE R GROUPS FIRST, THEN ZONE A</text>
 <text class="s-m" x="286" y="318">Default-deny; control by action and trigger; covers MCP servers</text>
-<text class="s-m" x="286" y="334">Certified connectors only; custom and HTTP connectors stay on layer 2</text>
+<text class="s-m" x="286" y="334">Certified only; custom, HTTP and agent virtual connectors stay on layer 2</text>
 <path class="s-ln" d="M750,83 H780 M750,193 H780 M750,303 H780 M780,83 V303"/>
 <line class="s-ln" x1="780" y1="193" x2="816" y2="193" marker-end="url(#m3)"/>
 <polygon class="s-acc" points="818,193 880,143 942,193 880,243"/>
@@ -619,17 +626,17 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-h s-cr" x="1004" y="250">Blocked at design time</text><text class="s-m" x="1004" y="268">maker sees the reason</text><text class="s-m" x="1004" y="284">exception → CoE intake</text>
 <line class="s-ln" x1="1085" y1="296" x2="1085" y2="337" marker-end="url(#m3)"/>
 <rect class="s-box" x="990" y="340" width="190" height="60" rx="10"/>
-<text class="s-h" x="1004" y="364">Purview audit + Sentinel</text><text class="s-m" x="1004" y="382">blocks and policy changes</text>
+<text class="s-h" x="1004" y="364">Purview audit + Sentinel</text><text class="s-m" x="1004" y="382">data policy changes</text>
 <rect class="s-band" x="20" y="380" width="930" height="76" rx="12"/>
 <text class="s-c" x="32" y="398">CONTROLS THAT SIT OUTSIDE DATA POLICIES</text>
 <rect class="s-box" x="30" y="408" width="176" height="36" rx="8"/><text class="s-t" x="118" y="430" text-anchor="middle">Cross-tenant isolation</text>
 <rect class="s-box" x="214" y="408" width="176" height="36" rx="8"/><text class="s-t" x="302" y="430" text-anchor="middle">Share with Everyone off</text>
-<rect class="s-box" x="398" y="408" width="176" height="36" rx="8"/><text class="s-t" x="486" y="430" text-anchor="middle">Agent channel &amp; auth rules</text>
+<rect class="s-box" x="398" y="408" width="176" height="36" rx="8"/><text class="s-t" x="486" y="430" text-anchor="middle">Agent sharing limits</text>
 <rect class="s-box" x="582" y="408" width="176" height="36" rx="8"/><text class="s-t" x="670" y="430" text-anchor="middle">Purview sensitivity labels</text>
-<rect class="s-box" x="766" y="408" width="176" height="36" rx="8"/><text class="s-t" x="854" y="430" text-anchor="middle">Secure Exchange integration</text>
+<rect class="s-box" x="766" y="408" width="176" height="36" rx="8"/><text class="s-t" x="854" y="430" text-anchor="middle">Exchange mail-flow rules</text>
 </svg>
     </div>
-    <figcaption><b>Three layers, one decision.</b> Layer 1 changes rarely and needs Security approval. Layer 2 is where most connector requests land. Layer 3 covers certified connectors only, so custom connectors and HTTP stay governed by layer 2's endpoint filtering. That's why APIM is the only allowlisted custom-connector host. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+    <figcaption><b>Three layers, one decision.</b> Layer 1 changes rarely and needs Security approval. Layer 2 is where most connector requests land. Layer 3 covers certified connectors only. Custom and HTTP connectors, and the Copilot Studio virtual connectors for channels, authentication and knowledge sources, stay on layer 2. That's why APIM is the only allowlisted custom-connector host, and why Zone R stays in mixed mode rather than ACP-only. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
     <div class="panel wide">
@@ -639,22 +646,23 @@ footer p{margin:0 0 4px;max-width:110ch}
         <tbody>
           <tr><td class="k">M365 core: SharePoint, OneDrive, Outlook, Teams, Approvals, Planner, Excel Online</td><td>Business</td><td>Business</td><td>Allow; delete and send-as actions need review</td></tr>
           <tr><td class="k">Dataverse, Office 365 Users</td><td>Business</td><td>Business</td><td>Allow</td></tr>
-          <tr><td class="k">SQL Server, Azure SQL</td><td>Blocked</td><td>Business; endpoint filter to approved servers</td><td>Allow; private endpoints via VNet only</td></tr>
+          <tr><td class="k">SQL Server, Azure SQL</td><td>Blocked</td><td>Business; endpoint filter to approved servers</td><td>Allow; reach private endpoints through VNet support</td></tr>
           <tr><td class="k">HTTP, HTTP with Entra ID</td><td>Blocked</td><td>Business; endpoint filter to APIM hosts</td><td>Layer 2 filter: APIM hosts only</td></tr>
           <tr><td class="k">Custom connectors</td><td>Blocked (URL pattern *)</td><td>APIM host patterns only</td><td>APIM host patterns only</td></tr>
           <tr><td class="k">SAP ERP</td><td>Blocked</td><td>Business via gateway cluster</td><td>Allow named actions only</td></tr>
           <tr><td class="k">Enterprise SaaS: ServiceNow, Salesforce, Workday</td><td>Blocked</td><td>Business</td><td>Case-by-case allow</td></tr>
-          <tr><td class="k">Azure OpenAI and AI services</td><td>Blocked</td><td>Business; approved deployments</td><td>Allow; approved endpoints</td></tr>
+          <tr><td class="k">Azure OpenAI and AI services</td><td>Blocked</td><td>Business; deployments approved at intake</td><td>Allow; endpoints approved at intake</td></tr>
           <tr><td class="k">MCP servers (agent tools)</td><td>Blocked</td><td>Blocked by default; exception</td><td>Allow per named server</td></tr>
           <tr><td class="k">Consumer social, personal mail &amp; storage</td><td>Blocked</td><td>Blocked</td><td>Not on allowlist</td></tr>
-          <tr><td class="k">Desktop flow modules (RPA)</td><td>Blocked</td><td>Approved module list</td><td>Approved module list</td></tr>
+          <tr><td class="k">Desktop flow modules (RPA)</td><td>Blocked (modules must be classified explicitly)</td><td>Approved module list</td><td>Layer 2: approved modules classified explicitly</td></tr>
+          <tr><td class="k">Copilot Studio channels, authentication, knowledge (virtual connectors)</td><td>Teams and Microsoft 365 channels only; authentication required</td><td>Adds SharePoint channel; public websites blocked</td><td>Layer 2 policy; public websites and Bing search off</td></tr>
           <tr><td class="k">Newly released connectors</td><td>Blocked by default</td><td>Non-business until reviewed</td><td>Not on allowlist until reviewed</td></tr>
         </tbody>
       </table>
     </div>
     <div class="panel note wide">
       <span class="kicker">Status check</span>
-      <p>Microsoft reported ACP as generally available on 4 June 2026. A later message-center update said design-time enforcement in Power Apps had been re-enabled after a pause. Before relying on it, confirm in your tenant under Security › Data and privacy. Roll it out the way Microsoft recommends: review connector use in Inventory first, test on one environment, then run in mixed mode on the Zone R groups.</p>
+      <p>Microsoft Learn documents ACP as generally available per workload once design-time enforcement reaches that maker portal (Power Automate, then Copilot Studio, then Power Apps). Until then it is enforced at runtime only for that workload. Start in mixed mode (the default). Don't switch Zone R to ACP-only while custom, HTTP, desktop-flow and Copilot Studio virtual-connector controls still live in the classic layer 2 policy. Endpoint filtering is still in preview and doesn't evaluate values held in environment variables.</p>
     </div>
   </div>
 </section>
@@ -688,14 +696,14 @@ footer p{margin:0 0 4px;max-width:110ch}
 <path class="s-ln" d="M440,66 H460 V193 H477" marker-end="url(#m4)"/>
 <text class="s-m" x="452" y="150" text-anchor="end">deploy request</text>
 <rect class="s-box" x="480" y="158" width="200" height="70" rx="10"/>
-<text class="s-h" x="494" y="182">Pre-deployment checks</text><text class="s-m" x="494" y="200">checker: block on critical</text><text class="s-m" x="494" y="216">dependency &amp; env-var check</text>
+<text class="s-h" x="494" y="182">Preflight validation</text><text class="s-m" x="494" y="200">checker blocks at target import</text><text class="s-m" x="494" y="216">dependency &amp; env-var check</text>
 <line class="s-ln" x1="680" y1="193" x2="707" y2="193" marker-end="url(#m4)"/>
 <rect class="s-box" x="710" y="158" width="200" height="70" rx="10"/>
-<text class="s-h" x="724" y="182">Approval gate</text><text class="s-m" x="724" y="200">product owner (all zones)</text><text class="s-m" x="724" y="216">+ CoE architect for Zone R</text>
+<text class="s-h" x="724" y="182">Approval gate</text><text class="s-m" x="724" y="200">product owner (all zones)</text><text class="s-m" x="724" y="216">+ champion review (Tier 2)</text>
 <line class="s-ln" x1="910" y1="193" x2="937" y2="193" marker-end="url(#m4)"/>
 <rect class="s-acc" x="940" y="158" width="230" height="70" rx="10"/>
 <image href="{{IC:pp}}" x="1142" y="165" width="18" height="18"/>
-<text class="s-h" x="954" y="182">Delegated deployment</text><text class="s-m" x="954" y="200">runs as a service principal</text><text class="s-m" x="954" y="216">S2S app user in each target</text>
+<text class="s-h" x="954" y="182">Delegated deployment</text><text class="s-m" x="954" y="200">runs as a service principal</text><text class="s-m" x="954" y="216">S2S app user in host + targets</text>
 <path class="s-ln" d="M970,228 V250 H810 V277" marker-end="url(#m4)"/>
 <text class="s-c" x="822" y="268">STAGE 1</text>
 <path class="s-ln" d="M1100,228 V277" marker-end="url(#m4)"/>
@@ -704,14 +712,14 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-h" x="724" y="302">UAT · managed</text><text class="s-m" x="724" y="320">production-like test data</text><text class="s-m" x="724" y="336">business sign-off</text>
 <line class="s-ln" x1="910" y1="312" x2="937" y2="312" marker-end="url(#m4)"/>
 <rect class="s-a" x="940" y="280" width="230" height="64" rx="10"/>
-<text class="s-h" x="954" y="302">PRD · managed only</text><text class="s-m" x="954" y="320">unmanaged changes blocked</text><text class="s-m" x="954" y="336">28-day backup retention</text>
+<text class="s-h" x="954" y="302">PRD · managed only</text><text class="s-m" x="954" y="320">block unmanaged customizations</text><text class="s-m" x="954" y="336">28-day backup retention</text>
 <path class="s-ln" d="M315,102 V389" marker-end="url(#m4)"/>
 <text class="s-m" x="325" y="250">commit to source</text>
 <rect class="s-box" x="190" y="392" width="250" height="70" rx="10"/>
 <text class="s-h" x="204" y="416">Azure DevOps Git repo</text><text class="s-m" x="204" y="434">Dataverse Git integration</text><text class="s-m" x="204" y="450">branch per feature · PR review</text>
 <line class="s-ln" x1="440" y1="427" x2="477" y2="427" marker-end="url(#m4)"/>
 <rect class="s-box" x="480" y="392" width="290" height="70" rx="10"/>
-<text class="s-h" x="494" y="416">Azure DevOps / GitHub Actions</text><text class="s-m" x="494" y="434">pac CLI · Build Tools · Test Engine</text><text class="s-m" x="494" y="450">builds the managed artifact</text>
+<text class="s-h" x="494" y="416">Azure DevOps / GitHub Actions</text><text class="s-m" x="494" y="434">pac CLI · Build Tools · Playwright</text><text class="s-m" x="494" y="450">builds the managed artifact</text>
 <path class="s-lna s-dash" d="M770,427 H1055 V347" marker-end="url(#m4a)"/>
 <text class="s-m s-ca" x="790" y="418">Zone R and Tier 3: CI/CD deploys as a service principal</text>
 </svg>
@@ -720,12 +728,13 @@ footer p{margin:0 0 4px;max-width:110ch}
   </figure>
   <div class="details">
     <div class="panel"><h2>Solution standards</h2><ul>
-      <li><b>Preferred solution</b> is on in every dev environment, so new assets land in a solution by default.</li>
-      <li>Every endpoint, site URL and ID goes in an <b>environment variable</b>. Every connection goes through a <b>connection reference</b> owned by a service account, never a person.</li>
-      <li>The <b>solution checker</b> is enforced by group rule: block on critical outside personal dev, and on high in Zone R.</li></ul></div>
+      <li>Turn on <b>Create new canvas apps and cloud flows in Dataverse solutions</b> in every dev environment, and have each maker set a <b>preferred solution</b>, so new assets land in a solution.</li>
+      <li>Every endpoint, site URL and ID goes in an <b>environment variable</b>. Every connection goes through a <b>connection reference</b> owned by a service account, never a person. Endpoint filtering doesn't evaluate values held in environment variables, so for those endpoints the API gateway is the real control.</li>
+      <li>The <b>solution checker</b> is enforced by group rule: Block in every target (Block stops imports with critical issues only). Review high findings in the pull request for Zone R.</li></ul></div>
     <div class="panel"><h2>Source &amp; identity</h2><ul>
-      <li><b>Dataverse Git integration</b> is on for shared dev and every Tier 2 or Tier 3 solution, so any version can be rebuilt.</li>
-      <li>One deployment service principal per geo, owned in Entra by the Platform CoE, with System Administrator only in target environments.</li>
+      <li><b>Dataverse Git integration</b> (Azure DevOps, or GitHub in preview; requires managed environments) is on for shared dev and every Tier 2 or Tier 3 solution, so any version can be rebuilt.</li>
+      <li>One deployment service principal per geo, owned in Entra by the Platform CoE, with Deployment Pipeline Administrator in the pipelines host and System Administrator in target environments.</li>
+      <li>Pipelines targets must be managed environments. From October 2026, Pipelines warns admins about unmanaged targets and blocks deployments to them after 30 days.</li>
       <li>Approvals run as a flow in the Pipelines host, so every gate leaves an audit trail.</li></ul></div>
   </div>
 </section>
@@ -752,15 +761,15 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-c" x="24" y="27">PREPAID &amp; LICENCE PATH</text>
 <rect class="s-band" x="10" y="292" width="1180" height="180" rx="12"/>
 <text class="s-c" x="24" y="309">METERED PATH · PAY-AS-YOU-GO</text>
-<rect class="s-r s-dash" x="20" y="40" width="200" height="60" rx="10"/><image href="{{IC:aib}}" x="192" y="47" width="20" height="20"/><text class="s-h s-cr" x="32" y="62">AI Builder credits</text><text class="s-m" x="32" y="80">retire 1 Nov 2026</text>
+<rect class="s-r s-dash" x="20" y="40" width="200" height="60" rx="10"/><image href="{{IC:aib}}" x="192" y="47" width="20" height="20"/><text class="s-h s-cr" x="32" y="62">AI Builder credits</text><text class="s-m" x="32" y="80">no renewals from 1 Nov 2026</text>
 <rect class="s-box" x="20" y="110" width="200" height="60" rx="10"/><text class="s-h" x="32" y="132">Per-user licences</text><text class="s-m" x="32" y="150">Premium · auto-claim on use</text>
 <rect class="s-box" x="20" y="180" width="200" height="60" rx="10"/><text class="s-h" x="32" y="202">Prepaid capacity packs</text><text class="s-m" x="32" y="220">Copilot Credits · Dataverse</text>
 <path class="s-lnr s-dash" d="M220,70 H240"/><path class="s-ln" d="M220,140 H240 M220,210 H240 M240,70 V210"/>
 <line class="s-ln" x1="240" y1="140" x2="257" y2="140" marker-end="url(#m5)"/>
 <rect class="s-acc" x="260" y="70" width="200" height="140" rx="10"/><image href="{{IC:dv}}" x="432" y="77" width="20" height="20"/><text class="s-h" x="272" y="92">Tenant capacity pool</text>
-<text class="s-m" x="272" y="114">Dataverse DB · file · log</text><text class="s-m" x="272" y="130">Copilot Credits balance</text><text class="s-m" x="272" y="146">pooled across the tenant</text><text class="s-m" x="272" y="162">25k credits per pack / month</text><text class="s-m s-cr" x="272" y="190">AI Builder: until 1 Nov 2026</text>
+<text class="s-m" x="272" y="114">Dataverse DB · file · log</text><text class="s-m" x="272" y="130">Copilot Credits balance</text><text class="s-m" x="272" y="146">shared with M365 Cowork</text><text class="s-m" x="272" y="162">25k credits per pack / month</text><text class="s-m s-cr" x="272" y="190">AI Builder: to contract end</text>
 <line class="s-ln" x1="460" y1="140" x2="497" y2="140" marker-end="url(#m5)"/>
-<rect class="s-box" x="500" y="95" width="200" height="90" rx="10"/><text class="s-h" x="512" y="117">Capacity allocation</text><text class="s-m" x="512" y="137">credits assigned per env</text><text class="s-m" x="512" y="153">caps stop one env draining</text><text class="s-m" x="512" y="169">reviewed monthly</text>
+<rect class="s-box" x="500" y="95" width="200" height="90" rx="10"/><text class="s-h" x="512" y="117">Capacity allocation</text><text class="s-m" x="512" y="137">credits assigned per env</text><text class="s-m" x="512" y="153">cap only if tenant draw is off</text><text class="s-m" x="512" y="169">reviewed monthly</text>
 <path class="s-ln" d="M700,140 H720 M720,61 V217"/>
 <line class="s-ln" x1="720" y1="61" x2="737" y2="61" marker-end="url(#m5)"/>
 <line class="s-ln" x1="720" y1="113" x2="737" y2="113" marker-end="url(#m5)"/>
@@ -776,7 +785,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <path class="s-lna s-dash" d="M840,238 V272 H360 V317" marker-end="url(#m5a)"/>
 <text class="s-m s-ca" x="600" y="286" text-anchor="middle">Zone R overflow, agent pilots and growth are metered through a billing policy</text>
 <path class="s-ln" d="M1080,185 V317" marker-end="url(#m5)"/>
-<rect class="s-box" x="20" y="320" width="200" height="100" rx="10"/><text class="s-h" x="32" y="342">Pay-as-you-go meters</text><text class="s-m" x="32" y="362">per app per user per month</text><text class="s-m" x="32" y="378">Copilot Credits PAYG</text><text class="s-m" x="32" y="394">Dataverse overage</text>
+<rect class="s-box" x="20" y="320" width="200" height="100" rx="10"/><text class="s-h" x="32" y="342">Pay-as-you-go meters</text><text class="s-m" x="32" y="362">per app per user per month</text><text class="s-m" x="32" y="378">Copilot Credits PAYG</text><text class="s-m" x="32" y="394">Dataverse overage</text><text class="s-m" x="32" y="410">flow runs, Pages (preview)</text>
 <line class="s-ln" x1="220" y1="370" x2="257" y2="370" marker-end="url(#m5)"/>
 <rect class="s-acc" x="260" y="320" width="200" height="100" rx="10"/><text class="s-h" x="272" y="342">Billing policies</text><text class="s-m" x="272" y="362">one per region × cost owner</text><text class="s-m" x="272" y="378">links envs → subscription</text><text class="s-m" x="272" y="394">unlink anytime to stop</text>
 <line class="s-ln" x1="460" y1="370" x2="497" y2="370" marker-end="url(#m5)"/>
@@ -785,28 +794,29 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-box" x="740" y="320" width="200" height="100" rx="10"/><text class="s-h" x="752" y="342">Azure Cost Management</text><text class="s-m" x="752" y="362">budgets at 50 / 80 / 100 %</text><text class="s-m" x="752" y="378">anomaly alerts</text><text class="s-m" x="752" y="394">daily exports to lakehouse</text>
 <line class="s-ln" x1="940" y1="370" x2="977" y2="370" marker-end="url(#m5)"/>
 <rect class="s-acc" x="980" y="320" width="200" height="100" rx="10"/><text class="s-h" x="992" y="342">Chargeback</text><text class="s-m" x="992" y="362">to region P&amp;L, monthly</text><text class="s-m" x="992" y="378">FinOps review board</text><text class="s-m" x="992" y="394">unit costs per workload</text>
-<text class="s-m" x="24" y="452">PAYG has no spending cap of its own. The Azure budget and its alerts are the only brake, so no billing policy goes live without one.</text>
+<text class="s-m" x="24" y="452">Azure budgets only alert; they never stop usage. Agent monthly limits (hard stop) are the brake, so no billing policy goes live without budgets and agent limits.</text>
 </svg>
     </div>
     <figcaption><b>Rule of thumb:</b> pay for the predictable baseline with prepaid packs and licences, run anything new, spiky or experimental on pay-as-you-go until its pattern is known, then move the baseline back to prepaid at the next true-up. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
+    <div class="panel note wide"><span class="kicker">Pay-as-you-go caveat</span><p>Linking an environment to a billing policy changes what it can use: Process licences, the unattended RPA add-on, app passes and Power Pages capacity are ignored there. Keep RPA and app-pass workloads in environments without a billing policy.</p></div>
     <div class="panel wide">
       <h2>Meters, who pays, what to watch</h2>
       <table class="rt">
         <thead><tr><th>Consumption</th><th>Paid from</th><th>Typical leak</th><th>Control</th></tr></thead>
         <tbody>
-          <tr><td class="k">Premium per-user licences</td><td>Central pool, cross-charged to regions</td><td>Licences held by people who stopped using premium apps</td><td>Auto-claim on use; reclaim after 60 days idle</td></tr>
+          <tr><td class="k">Premium per-user licences</td><td>Central pool, cross-charged to regions</td><td>Licences held by people who stopped using premium apps</td><td>Auto-claim on use (if licences are free in the pool); our process reclaims after 60 days idle</td></tr>
           <tr><td class="k">Per-app pay-as-you-go</td><td>Billing policy → regional subscription</td><td>Occasional users of many metered apps</td><td>Above roughly two metered apps a month, a per-user licence is usually cheaper. Check your price sheet.</td></tr>
-          <tr><td class="k">Copilot Credits</td><td>Prepaid packs allocated per env; PAYG overflow</td><td>Generative answers over large knowledge sources; looping topics</td><td>Per-env caps, Azure budgets, credits per conversation tracked per agent</td></tr>
-          <tr><td class="k">Dataverse DB, file, log</td><td>Tenant pool; overage on PAYG envs goes to Azure</td><td>Audit log and attachment growth; forgotten sandboxes</td><td>Retention policies; cold data to Fabric; quarterly sandbox sweep</td></tr>
-          <tr><td class="k">AI Builder credits</td><td>Tenant pool until 1 Nov 2026</td><td>Flows that fail silently after the credits expire</td><td>Inventory now; allocate Copilot Credits to affected envs</td></tr>
-          <tr><td class="k">Unattended RPA</td><td>Per bot, regional budget</td><td>Idle bots on paid licences</td><td>Utilisation by machine group; reassign or release</td></tr>
+          <tr><td class="k">Copilot Credits</td><td>Prepaid packs allocated per env; PAYG overflow</td><td>Generative answers over large knowledge sources; looping topics</td><td>Allocation with tenant draw off, agent monthly limits, Azure budgets for alerts</td></tr>
+          <tr><td class="k">Dataverse DB, file, log</td><td>Tenant pool (can be allocated per environment, alerts only); PAYG environments get 1 GB DB + 1 GB file, the rest billed to Azure</td><td>Audit log and attachment growth; forgotten sandboxes</td><td>Retention policies; cold data to Fabric; quarterly sandbox sweep</td></tr>
+          <tr><td class="k">AI Builder credits</td><td>Existing credits until contract end; no renewals from 1 Nov 2026</td><td>Usage falls back to Copilot Credits unbudgeted, then fails with an entitlement error when none are left</td><td>Inventory now; plan Copilot Credits for affected environments</td></tr>
+          <tr><td class="k">Process &amp; Hosted Process licences (RPA)</td><td>Per bot, regional budget</td><td>Idle bots on paid licences</td><td>Utilisation by machine group; keep RPA out of PAYG-linked environments, where Process licences don't apply</td></tr>
         </tbody>
       </table>
     </div>
     <div class="panel"><span class="kicker">FinOps phase 1</span><h2>Inform</h2><ul><li>Every environment tagged with region, BU, cost centre and owner</li><li>Daily cost and capacity data in the lakehouse</li><li>Showback dashboard per region</li></ul></div>
-    <div class="panel"><span class="kicker">FinOps phase 2</span><h2>Optimize</h2><ul><li>Reclaim idle licences; right-size per-app vs per-user</li><li>Move steady PAYG workloads to prepaid packs</li><li>Archive Dataverse data that's growing cold</li></ul></div>
+    <div class="panel"><span class="kicker">FinOps phase 2</span><h2>Optimize</h2><ul><li>Reclaim idle licences; right-size per-app meter vs per-user</li><li>Move steady PAYG workloads to prepaid packs</li><li>Archive Dataverse data that's growing cold</li></ul></div>
     <div class="panel wide"><span class="kicker">FinOps phase 3</span><h2>Operate</h2><ul><li>Monthly FinOps board with every region</li><li>Budgets in place before any billing policy goes live</li><li>Unit costs tracked: per active app, per flow run, per resolved agent conversation</li></ul></div>
   </div>
 </section>
@@ -831,9 +841,9 @@ footer p{margin:0 0 4px;max-width:110ch}
 </defs>
 <text class="s-c" x="20" y="26">SOURCES</text><text class="s-c" x="310" y="26">LAND &amp; MODEL</text><text class="s-c" x="620" y="26">REPORT</text><text class="s-c" x="920" y="26">ACT</text>
 <rect class="s-box" x="20" y="40" width="240" height="46" rx="8"/><image href="{{IC:pp}}" x="236" y="46" width="16" height="16"/><text class="s-h" x="32" y="59">Power Platform Inventory API</text><text class="s-m" x="32" y="76">apps · flows · agents · envs (KQL)</text>
-<rect class="s-box" x="20" y="96" width="240" height="46" rx="8"/><text class="s-h" x="32" y="115">Usage &amp; admin data export</text><text class="s-m" x="32" y="132">to ADLS Gen2, daily</text>
+<rect class="s-box" x="20" y="96" width="240" height="46" rx="8"/><text class="s-h" x="32" y="115">Apps &amp; flows usage export</text><text class="s-m" x="32" y="132">ADLS Gen2, daily (preview)</text>
 <rect class="s-box" x="20" y="152" width="240" height="46" rx="8"/><text class="s-h" x="32" y="171">Unified audit log (Purview)</text><text class="s-m" x="32" y="188">maker &amp; admin activity</text>
-<rect class="s-box" x="20" y="208" width="240" height="46" rx="8"/><text class="s-h" x="32" y="227">Application Insights</text><text class="s-m" x="32" y="244">app &amp; flow telemetry, errors</text>
+<rect class="s-box" x="20" y="208" width="240" height="46" rx="8"/><text class="s-h" x="32" y="227">Application Insights</text><text class="s-m" x="32" y="244">managed envs; flows in preview</text>
 <rect class="s-box" x="20" y="264" width="240" height="46" rx="8"/><text class="s-h" x="32" y="283">Licensing &amp; capacity</text><text class="s-m" x="32" y="300">PPAC reports · Copilot Credits</text>
 <rect class="s-box" x="20" y="320" width="240" height="46" rx="8"/><text class="s-h" x="32" y="339">Azure cost exports</text><text class="s-m" x="32" y="356">daily, by tag</text>
 <line class="s-ln" x1="260" y1="63" x2="307" y2="63" marker-end="url(#m6)"/>
@@ -869,7 +879,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-m s-ca" x="600" y="438" text-anchor="middle">Changes land in the tenant and appear in the next day's telemetry</text>
 </svg>
     </div>
-    <figcaption><b>The silver layer is where the value is.</b> Raw Power Platform data knows environments and users, not regions, BUs or cost centres. Joining it to Entra org data and the cost-centre hierarchy lets each region see only its own estate through row-level security. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+    <figcaption><b>The silver layer is where the value is.</b> Raw Power Platform data knows environments and users, not regions, BUs or cost centres. Joining it to Entra org data and the cost-centre hierarchy lets each region see only its own estate through row-level security. The Inventory API needs a delegated admin account, because it doesn't accept service principals or managed identities. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
     <div class="panel wide">
@@ -890,7 +900,7 @@ footer p{margin:0 0 4px;max-width:110ch}
         </tbody>
       </table>
     </div>
-    <div class="panel note wide"><span class="kicker">CoE Starter Kit</span><p>The kit had its final major monthly release in February 2026, and third-party reports describe it as no longer maintained. Use the native sources in the diagram for new build. If the kit is already installed, keep it only until the lakehouse covers the same KPIs.</p></div>
+    <div class="panel note wide"><span class="kicker">CoE Starter Kit</span><p>Microsoft states the kit is no longer actively maintained: issues aren't reviewed, its last release was February 2026, and the repository was archived in July 2026. Its core scenarios now live in the admin center's Inventory, Usage, Monitor and Actions pages. If the kit is already installed, keep it only until the lakehouse covers the same KPIs.</p></div>
   </div>
 </section>
 
@@ -898,7 +908,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <section class="sheet" id="s07" data-title="Security & identity" hidden>
   <div class="sheet-hero">
     <div><p class="eyebrow">Sheet 07 · Security &amp; identity</p><h1>Trust boundaries</h1>
-      <p class="sum">Every request crosses three boundaries: identity, tenant and environment. Outbound traffic leaves only through paths the platform owns. Copilot Studio agents now get their own Entra Agent ID, so they can be reviewed, put under Conditional Access and audited like any other workload.</p></div>
+      <p class="sum">Every request crosses three boundaries: identity, tenant and environment. Outbound traffic is designed to leave only through paths the platform team owns. New Copilot Studio agents (since May 2026) get an Entra Agent ID, so they can be reviewed and audited like other workloads. Conditional Access on an agent's identity is enforced only in Teams today.</p></div>
     <div><span class="prod-label">Products on this sheet</span><div class="chips">
       <span class="pchip"><img src="{{IC:cs}}" alt="">Copilot Studio</span><span class="pchip"><img src="{{IC:dv}}" alt="">Dataverse</span><span class="pchip"><img src="{{IC:pp}}" alt="">Power Platform</span></div></div>
   </div>
@@ -926,7 +936,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-c s-ca" x="232" y="94">CONDITIONAL ACCESS</text><text class="s-m" x="232" y="112">compliant device</text><text class="s-m" x="232" y="128">named locations</text><text class="s-m" x="232" y="144">sign-in risk</text>
 <text class="s-c s-ca" x="232" y="174">ADMINS</text><text class="s-m" x="232" y="192">phishing-resistant MFA</text><text class="s-m" x="232" y="208">PIM: just-in-time</text><text class="s-m" x="232" y="224">tiered admin roles</text>
 <text class="s-c s-ca" x="232" y="254">LIFECYCLE</text><text class="s-m" x="232" y="272">access reviews: guests</text><text class="s-m" x="232" y="288">access reviews: agents</text><text class="s-m" x="232" y="304">joiner · mover · leaver</text>
-<text class="s-c s-ca" x="232" y="334">WORKLOAD IDS</text><text class="s-m" x="232" y="352">Agent ID per agent</text><text class="s-m" x="232" y="368">app users per env</text><text class="s-m" x="232" y="384">certificates, no secrets</text>
+<text class="s-c s-ca" x="232" y="334">WORKLOAD IDS</text><text class="s-m" x="232" y="352">Agent ID (new agents)</text><text class="s-m" x="232" y="368">app users per env</text><text class="s-m" x="232" y="384">certificates, no secrets</text>
 <rect class="s-frame s-dash" x="410" y="20" width="520" height="480" rx="14"/>
 <text class="s-c" x="426" y="40">POWER PLATFORM TENANT · CROSS-TENANT ISOLATION IN + OUT</text>
 <rect class="s-r" x="440" y="56" width="460" height="430" rx="12"/>
@@ -936,9 +946,9 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-box" x="470" y="90" width="410" height="58" rx="8"/><text class="s-h" x="486" y="112">1 · Environment security group</text><text class="s-m" x="486" y="132">only members of the bound group can be given access</text>
 <rect class="s-box" x="470" y="160" width="410" height="58" rx="8"/><text class="s-h" x="486" y="182">2 · IP firewall + IP cookie binding</text><text class="s-m" x="486" y="202">requests only from corporate egress ranges; session replay blocked</text>
 <rect class="s-box" x="470" y="230" width="410" height="58" rx="8"/><image href="{{IC:dv}}" x="852" y="237" width="20" height="20"/><text class="s-h" x="486" y="252">3 · Dataverse security model</text><text class="s-m" x="486" y="272">security roles · business units · column-level security</text>
-<rect class="s-box" x="470" y="300" width="410" height="58" rx="8"/><text class="s-h" x="486" y="322">4 · Customer-managed key</text><text class="s-m" x="486" y="342">data encrypted with a key held in Azure Key Vault (HSM)</text>
+<rect class="s-box" x="470" y="300" width="410" height="58" rx="8"/><text class="s-h" x="486" y="322">4 · Customer-managed key</text><text class="s-m" x="486" y="342">Dataverse encrypted with your key in Azure Key Vault or HSM</text>
 <rect class="s-box" x="470" y="370" width="410" height="58" rx="8"/><text class="s-h" x="486" y="392">5 · Customer Lockbox</text><text class="s-m" x="486" y="412">Microsoft engineer access to data needs your approval</text>
-<text class="s-m" x="470" y="460">Each layer writes to the Purview audit log; Sentinel correlates all five.</text>
+<text class="s-m" x="470" y="460">Admin changes to each layer are audited in Purview; Sentinel correlates them.</text>
 <line class="s-ln" x1="900" y1="105" x2="967" y2="105" marker-end="url(#m7)"/>
 <line class="s-ln" x1="900" y1="205" x2="967" y2="205" marker-end="url(#m7)"/>
 <line class="s-ln" x1="900" y1="305" x2="967" y2="305" marker-end="url(#m7)"/>
@@ -947,7 +957,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-box" x="970" y="70" width="210" height="70" rx="10"/><text class="s-h" x="982" y="94">Azure VNet delegation</text><text class="s-m" x="982" y="112">private SQL · Key Vault · Storage</text><text class="s-m" x="982" y="128">paired-region failover</text>
 <rect class="s-box" x="970" y="170" width="210" height="70" rx="10"/><text class="s-h" x="982" y="194">APIM gateway</text><text class="s-m" x="982" y="212">custom connectors &amp; HTTP</text><text class="s-m" x="982" y="228">allowlisted hosts only</text>
 <rect class="s-box" x="970" y="270" width="210" height="70" rx="10"/><text class="s-h" x="982" y="294">Data gateway cluster</text><text class="s-m" x="982" y="312">plant DMZ · MES · file shares</text><text class="s-m" x="982" y="328">high-availability pair</text>
-<rect class="s-r s-dash" x="970" y="370" width="210" height="70" rx="10"/><text class="s-h s-cr" x="982" y="394">Other tenants</text><text class="s-m" x="982" y="412">blocked by tenant isolation</text><text class="s-m" x="982" y="428">named partners allowlisted</text>
+<rect class="s-r s-dash" x="970" y="370" width="210" height="70" rx="10"/><text class="s-h s-cr" x="982" y="394">Other tenants</text><text class="s-m" x="982" y="412">Entra-auth links blocked</text><text class="s-m" x="982" y="428">named partners allowlisted</text>
 </svg>
     </div>
     <figcaption><b>Zone A uses layers 1 and 3 only.</b> Layers 2, 4 and 5 add operational cost (IP ranges to maintain, key rotation, approval latency), so they're reserved for Zone R, where a breach would touch regulated, personal or IP-sensitive data. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
@@ -959,9 +969,9 @@ footer p{margin:0 0 4px;max-width:110ch}
       <table class="rt">
         <thead><tr><th>Requirement</th><th>Applies to</th><th>Architectural control</th></tr></thead>
         <tbody>
-          <tr><td class="k">GDPR</td><td>Europe region; EU data subjects anywhere</td><td>EU environments pinned to the Europe geo; Purview audit and retention; personal data only in Zone A or R</td></tr>
-          <tr><td class="k">LGPD (Brazil)</td><td>Latin America</td><td>LA customer and HR data in Brazil-geo Zone R environments</td></tr>
-          <tr><td class="k">DPDP Act 2023 (India)</td><td>Asia Pacific</td><td>Personal data of Indian residents in India-geo environments</td></tr>
+          <tr><td class="k">GDPR</td><td>Europe region; EU data subjects anywhere</td><td>EU environments pinned to the Europe geo; Purview audit and retention; personal data only in Zone A or R; Bing web search and cross-region AI data movement off in Zone R</td></tr>
+          <tr><td class="k">LGPD (Brazil)</td><td>Latin America</td><td>LA customer and HR data in South America (Brazil) geo Zone R environments</td></tr>
+          <tr><td class="k">DPDP Act 2023 (India)</td><td>Asia Pacific</td><td>Personal data of Indian residents in India-geo environments, which need an India-based tenant. Otherwise use the Asia geo after legal review.</td></tr>
           <tr><td class="k">TISAX (VDA ISA) <span class="tag tx">overlay</span></td><td>Prototype, partner and supplier data</td><td>Engineering IP only in Zone R; supplier access as B2B guests with quarterly access reviews</td></tr>
           <tr><td class="k">UN R155 · ISO/SAE 21434 <span class="tag tx">overlay</span></td><td>Connected-product data and services</td><td>Product telemetry reaches Power Platform only through APIM in Zone R. Low-code never sits in an on-product or over-the-air update path.</td></tr>
           <tr><td class="k">SOX-style controls <span class="tag tx">if listed</span></td><td>Finance automations</td><td>Zone R, segregation of duties via pipeline approvals, managed-only production</td></tr>
@@ -1003,7 +1013,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <rect class="s-r" x="880" y="30" width="300" height="230" rx="14"/>
 <image href="{{IC:cs}}" x="1116" y="42" width="20" height="20"/><image href="{{IC:dv}}" x="1142" y="42" width="20" height="20"/>
 <text class="s-h s-cr" x="898" y="58">Tier 3 · Enterprise</text><text class="s-c" x="898" y="76">ZONE R · COE-REVIEWED</text>
-<text class="s-m" x="898" y="102">CoE architecture &amp; security review</text><text class="s-m" x="898" y="120">Zone R or multi-region deployment</text><text class="s-m" x="898" y="138">pro-dev CI/CD with Test Engine</text><text class="s-m" x="898" y="156">product owner + support SLA</text><text class="s-m" x="898" y="174">listed in the application portfolio</text>
+<text class="s-m" x="898" y="102">CoE architecture &amp; security review</text><text class="s-m" x="898" y="120">Zone R or multi-region deployment</text><text class="s-m" x="898" y="138">pro-dev CI/CD with Playwright</text><text class="s-m" x="898" y="156">product owner + support SLA</text><text class="s-m" x="898" y="174">listed in the application portfolio</text>
 <line class="s-lnm" x1="898" y1="200" x2="1162" y2="200"/>
 <text class="s-t" x="898" y="226">Support: IT run team, 24 × 5</text>
 <text class="s-c" x="385" y="94" text-anchor="middle">PROMOTE WHEN</text>
@@ -1048,10 +1058,10 @@ footer p{margin:0 0 4px;max-width:110ch}
       <p class="sum">Four steps, starting with the one deadline that can't move. Each phase leaves the tenant safer than it found it, so the programme can pause between phases without leaving gaps.</p></div>
   </div>
   <div class="details">
-    <div class="panel phase now"><span class="kicker" style="color:var(--r)">Now · before 1 Nov 2026</span><h2>Stop the bleeding</h2><ul><li>Inventory all AI Builder use; allocate Copilot Credits to affected environments</li><li>Turn on Power Platform Inventory and tenant data export</li><li>Rename and lock down the default environment</li><li>Cross-tenant isolation in audit mode</li></ul></div>
-    <div class="panel phase"><span class="kicker">Phase 1 · 0–90 days</span><h2>Foundation</h2><ul><li>Create the 26 environment groups and six rule templates</li><li>Environment routing for one pilot region, the one with the most active makers</li><li>Billing policies and Azure subscriptions per region, each with a budget</li><li>Pipelines host per geo; deployment service principals</li><li>Enforce tenant isolation with a partner allowlist</li></ul></div>
+    <div class="panel phase now"><span class="kicker" style="color:var(--r)">Now · before 1 Nov 2026</span><h2>Stop the bleeding</h2><ul><li>Inventory AI Builder use; plan Copilot Credits for when existing credits end</li><li>Run the managed-environment licence report; budget before Feb 2027</li><li>Baseline Power Platform Inventory; set up data export (preview)</li><li>Rename and lock down the default environment</li><li>Run cross-tenant isolation reports (preview) to draft the allowlist</li></ul></div>
+    <div class="panel phase"><span class="kicker">Phase 1 · 0–90 days</span><h2>Foundation</h2><ul><li>Create the 26 environment groups and apply six rule baselines by script</li><li>Environment routing for one pilot region, the one with the most active makers</li><li>Billing policies and Azure subscriptions per region, each with a budget</li><li>Pipelines host per geo; deployment service principals</li><li>Enforce tenant isolation with a partner allowlist</li></ul></div>
     <div class="panel phase"><span class="kicker">Phase 2 · 3–6 months</span><h2>Scale</h2><ul><li>Routing in every region</li><li>Default environment clean-out by the migration rules</li><li>ACP in mixed mode on Zone R groups</li><li>Governance lakehouse and Power BI app live; chargeback in the monthly close</li><li>Tier promotion triggers automated</li></ul></div>
-    <div class="panel phase"><span class="kicker">Phase 3 · 6–12 months</span><h2>Optimise</h2><ul><li>ACP extended to Zone A</li><li>Agent access reviews and Conditional Access for agent identities</li><li>Test Engine standard for Tier 3</li><li>Unit-cost FinOps targets per region</li><li>Retire any CoE Starter Kit components that remain</li></ul></div>
+    <div class="panel phase"><span class="kicker">Phase 3 · 6–12 months</span><h2>Optimise</h2><ul><li>ACP extended to Zone A</li><li>Agent access reviews and Conditional Access (Agent 365 licence; CA enforced in Teams only today)</li><li>Playwright test automation standard for Tier 3</li><li>Unit-cost FinOps targets per region</li><li>Retire any CoE Starter Kit components that remain</li></ul></div>
     <div class="panel wide"><h2>Open decisions</h2><ul>
       <li>Confirm the tenant home geo, and whether any region needs its own personal-productivity environment.</li>
       <li>Sovereign-cloud jurisdictions (for example China): a separate tenant, or no Power Platform there.</li>
@@ -1091,8 +1101,8 @@ footer p{margin:0 0 4px;max-width:110ch}
 </defs>
 <text class="s-c" x="20" y="26">COST SOURCE</text><text class="s-c" x="300" y="26">ATTRIBUTED BY</text><text class="s-c" x="640" y="26">MEASURED IN</text><text class="s-c" x="930" y="26">STATEMENT</text>
 
-<rect class="s-box" x="20" y="40" width="240" height="90" rx="10"/><text class="s-h" x="32" y="62">Pay-as-you-go usage</text><text class="s-m" x="32" y="84">per-app · Copilot Credits overflow</text><text class="s-m" x="32" y="100">Dataverse overage</text>
-<rect class="s-box" x="20" y="150" width="240" height="90" rx="10"/><image href="{{IC:cs}}" x="234" y="157" width="18" height="18"/><text class="s-h" x="32" y="172">Prepaid Copilot Credits</text><text class="s-m" x="32" y="194">capacity packs · P3 prepurchase</text><text class="s-m" x="32" y="210">shared with Microsoft 365 Copilot</text>
+<rect class="s-box" x="20" y="40" width="240" height="90" rx="10"/><text class="s-h" x="32" y="62">Pay-as-you-go usage</text><text class="s-m" x="32" y="84">per-app · credits · P3 draw-down</text><text class="s-m" x="32" y="100">Dataverse overage</text>
+<rect class="s-box" x="20" y="150" width="240" height="90" rx="10"/><image href="{{IC:cs}}" x="234" y="157" width="18" height="18"/><text class="s-h" x="32" y="172">Prepaid Copilot Credits</text><text class="s-m" x="32" y="194">monthly capacity packs</text><text class="s-m" x="32" y="210">shared with M365 Cowork, Work IQ</text>
 <rect class="s-box" x="20" y="260" width="240" height="90" rx="10"/><image href="{{IC:dv}}" x="234" y="267" width="18" height="18"/><text class="s-h" x="32" y="282">Licences &amp; Dataverse</text><text class="s-m" x="32" y="304">premium per-user licences</text><text class="s-m" x="32" y="320">Dataverse DB · file · log</text>
 <line class="s-ln" x1="260" y1="85" x2="297" y2="85" marker-end="url(#m10)"/>
 <line class="s-ln" x1="260" y1="195" x2="297" y2="195" marker-end="url(#m10)"/>
@@ -1106,7 +1116,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <line class="s-ln" x1="600" y1="305" x2="637" y2="305" marker-end="url(#m10)"/>
 
 <rect class="s-box" x="640" y="40" width="240" height="90" rx="10"/><text class="s-h" x="652" y="62">Azure cost export</text><text class="s-m" x="652" y="84">daily · by tag</text><text class="s-m" x="652" y="100">up to 24 hours behind</text>
-<rect class="s-box" x="640" y="150" width="240" height="90" rx="10"/><text class="s-h" x="652" y="172">Copilot Studio consumption</text><text class="s-m" x="652" y="194">per environment &amp; per agent</text><text class="s-m" x="652" y="210">PPAC report or API</text>
+<rect class="s-box" x="640" y="150" width="240" height="90" rx="10"/><text class="s-h" x="652" y="172">Copilot Studio consumption</text><text class="s-m" x="652" y="194">PPAC reports: env, agent, user</text><text class="s-m" x="652" y="210">API: environment totals only</text>
 <rect class="s-box" x="640" y="260" width="240" height="90" rx="10"/><text class="s-h" x="652" y="282">Licence &amp; capacity reports</text><text class="s-m" x="652" y="304">PPAC licensing pages</text><text class="s-m" x="652" y="320">joined to Entra attributes</text>
 <line class="s-ln" x1="880" y1="85" x2="927" y2="85" marker-end="url(#m10)"/>
 <line class="s-ln" x1="880" y1="195" x2="927" y2="195" marker-end="url(#m10)"/>
@@ -1138,8 +1148,8 @@ footer p{margin:0 0 4px;max-width:110ch}
           <ol class="steps">
             <li><b>Register a cost owner for every environment</b>: environment ID, region, BU, cost centre and owner, kept in the governance environment. The naming convention already carries region and BU.</li>
             <li><b>Choose how each environment is funded.</b> Use a prepaid allocation for predictable workloads and a pay-as-you-go billing policy for variable ones. Create one billing policy per cost owner per region, and tag its Azure subscription with the cost centre.</li>
-            <li><b>Allocate Copilot Credits per environment and switch off "Draw from the available capacity in my tenant"</b> so no usage goes unattributed. Enforce it at scale with the environment-group rule <i>Cost controls – Draw from tenant credit pool</i>.</li>
-            <li><b>Restrict the tenant's add-on capacity assignment setting to tenant admins.</b> Otherwise any environment admin can move credits between every environment in the tenant.</li>
+            <li><b>Allocate Copilot Credits per environment and switch off "Draw from the available capacity in my tenant"</b> so each environment's prepaid spend stops at its allocation. Enforce it at scale with the environment-group rule <i>Cost controls – Draw from tenant credit pool</i>.</li>
+            <li><b>Set the tenant's add-on capacity assignment setting to "Only specific admins".</b> If environment admins are allowed, they can allocate credits to every environment in the tenant, not just their own.</li>
             <li><b>Land the data monthly</b> in the governance lakehouse (sheet 06): Azure cost exports, the Copilot Studio consumption report, licence reports and inventory.</li>
             <li><b>Publish the statement</b> per region, BU and cost centre. Review it at the FinOps board and settle disputes before the books close.</li>
           </ol>
@@ -1149,9 +1159,9 @@ footer p{margin:0 0 4px;max-width:110ch}
           <h2>Common traps</h2>
           <ul>
             <li><b>An allocation alone isn't a boundary.</b> If the environment can still draw from the tenant pool or has a billing policy, it keeps spending.</li>
-            <li><b>Azure budgets alert but don't stop usage.</b> Where a workload needs a hard stop, add an agent monthly limit with <i>Stop usage</i>.</li>
+            <li><b>Azure budgets alert but don't stop usage.</b> Where a workload needs a hard stop, add an agent monthly limit with <i>Stop usage</i>, with a margin: it isn't applied instantly and doesn't stop the agent flows the agent calls.</li>
             <li><b>Prepaid credits are shared with Microsoft 365.</b> Credits allocated to Power Platform environments reduce what Copilot Cowork and Work IQ can use. Agree the split with the Microsoft 365 admin.</li>
-            <li><b>Reports lag.</b> Admin center dashboards refresh every few hours and Azure costs take up to 24 hours. Close the month from exported data, not dashboards.</li>
+            <li><b>Reports lag.</b> Copilot Studio consumption data is aggregated daily and can be delayed, and Azure costs take up to 24 hours. Close the month from exported data, not dashboards.</li>
           </ul>
         </div>
         <div class="panel wide">
@@ -1279,7 +1289,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 
 <rect class="s-box" x="220" y="30" width="190" height="200" rx="12"/>
 <text class="s-c s-ca" x="232" y="54">GATE 1 · WHO</text><text class="s-h" x="232" y="76">Who can build</text>
-<text class="s-m" x="232" y="102">environment security group</text><text class="s-m" x="232" y="120">maker role via group team</text><text class="s-m" x="232" y="138">AI lab access by package</text><text class="s-m" x="232" y="156">with approval + expiry</text>
+<text class="s-m" x="232" y="102">Copilot Studio authors group</text><text class="s-m" x="232" y="120">environment security group</text><text class="s-m" x="232" y="138">maker role via group team</text><text class="s-m" x="232" y="156">AI lab access by package</text>
 <line class="s-lnm" x1="232" y1="188" x2="398" y2="188"/><text class="s-c" x="232" y="212">ENTRA · ENV SETTINGS</text>
 <line class="s-ln" x1="410" y1="130" x2="429" y2="130" marker-end="url(#m12)"/>
 
@@ -1291,13 +1301,13 @@ footer p{margin:0 0 4px;max-width:110ch}
 
 <rect class="s-box" x="644" y="30" width="190" height="200" rx="12"/>
 <text class="s-c s-ca" x="656" y="54">GATE 3 · WHAT</text><text class="s-h" x="656" y="76">What it can reach</text>
-<text class="s-m" x="656" y="102">data policies and ACP</text><text class="s-m" x="656" y="120">connectors, MCP servers</text><text class="s-m" x="656" y="138">knowledge incl. web search</text><text class="s-m" x="656" y="156">channels, authentication</text>
+<text class="s-m" x="656" y="102">data policies and ACP</text><text class="s-m" x="656" y="120">rules: knowledge, skills</text><text class="s-m" x="656" y="138">Bing search per environment</text><text class="s-m" x="656" y="156">channels, auth (layer 2)</text>
 <line class="s-lnm" x1="656" y1="188" x2="822" y2="188"/><text class="s-c" x="656" y="212">SECURITY · DATA POLICIES</text>
 <line class="s-ln" x1="834" y1="130" x2="853" y2="130" marker-end="url(#m12)"/>
 
 <rect class="s-acc" x="856" y="30" width="190" height="200" rx="12"/>
 <text class="s-c s-ca" x="868" y="54">GATE 4 · HOW MUCH</text><text class="s-h" x="868" y="76">How much it can spend</text>
-<text class="s-m" x="868" y="102">environment allocation</text><text class="s-m" x="868" y="120">draw from tenant pool: off</text><text class="s-m" x="868" y="138">agent limit + Stop usage</text><text class="s-m" x="868" y="156">PAYG only with a budget</text>
+<text class="s-m" x="868" y="102">environment allocation</text><text class="s-m" x="868" y="120">draw from tenant pool: off</text><text class="s-m" x="868" y="138">agent limit (not instant)</text><text class="s-m" x="868" y="156">PAYG only with a budget</text>
 <line class="s-lnm" x1="868" y1="188" x2="1034" y2="188"/><text class="s-c" x="868" y="212">LICENSING PAGES</text>
 <line class="s-ln" x1="1046" y1="130" x2="1063" y2="130" marker-end="url(#m12)"/>
 
@@ -1316,7 +1326,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <path class="s-lna" d="M951,284 V233" marker-end="url(#m12a)"/>
 </svg>
         </div>
-        <figcaption><b>There's no documented on/off switch for the harness</b> (as of 16 Oct 2026), so you control it at four gates: who can build, where an agent can run, what it can reach, and how much it can spend. The harness is a Copilot Studio runtime, not the GitHub Copilot service, and customer data isn't sent to GitHub. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+        <figcaption><b>There's no documented on/off switch for the harness</b> (as of 16 Oct 2026) beyond the tenant-wide <i>Copilot Studio authors</i> group, which limits who can build any agent. So you control it at four gates: who can build, where an agent can run, what it can reach, and how much it can spend. The harness is a Copilot Studio runtime, not the GitHub Copilot service, and customer data isn't sent to GitHub. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
       </figure>
       <div class="details">
         <div class="panel wide">
@@ -1334,11 +1344,11 @@ footer p{margin:0 0 4px;max-width:110ch}
         <div class="panel">
           <h2>Steps</h2>
           <ol class="steps">
-            <li><b>Restrict the add-on capacity assignment tenant setting</b> to tenant admins.</li>
+            <li><b>Set the add-on capacity assignment tenant setting</b> to "Only specific admins", and limit the <b>Copilot Studio authors</b> security group in tenant settings.</li>
             <li><b>Publish the rule <i>Cost controls – Draw from tenant credit pool</i> = off</b> on Zone G and AI lab groups, and don't link a billing policy to them.</li>
             <li><b>Create AI lab groups per region.</b> Allocate credits, then bind each environment to a security group and an access package.</li>
-            <li><b>Tighten what lab agents can reach.</b> In data policies and ACP, block web search and unneeded channels, and allow MCP servers by name only in Zone R.</li>
-            <li><b>Automate daily:</b> find agents with harness = GitHub Copilot in inventory, apply your development limit with Stop usage, and notify the owner. Admin center has no tenant-wide default agent limit.</li>
+            <li><b>Tighten what lab agents can reach.</b> In the classic data policy, block <i>Knowledge source with public websites and data</i> and unneeded channel connectors, and turn off Bing search on the environment. Use the group rules <i>Knowledge sources for agents</i> and <i>Skills in Copilot Studio</i>. In ACP, allow MCP servers by name only in Zone R.</li>
+            <li><b>Automate daily:</b> find agents with harness = GitHub Copilot in inventory, apply your development limit with Stop usage, and notify the owner. Admin center has no tenant-wide default agent limit, and the inventory API needs a delegated admin account.</li>
             <li><b>Promote to production only through a Tier 3 review</b> (sheet 08) with a cost owner, funding and a demand-based limit.</li>
           </ol>
         </div>
@@ -1353,6 +1363,290 @@ footer p{margin:0 0 4px;max-width:110ch}
           </ul>
         </div>
         <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview">Harnesses in Copilot Studio</a> · <a href="https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness">Manage costs for GitHub Copilot harness agents</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/guidance/govern-credit-consumption">Govern Copilot Credit consumption</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention">Configure data policies for agents</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 11 OPERATE ================= -->
+<section class="sheet" id="s11" data-title="Operate" hidden>
+  <div class="sheet-hero">
+    <div><p class="eyebrow">Sheet 11 · Run the platform</p><h1>Control, monitor, report, cross-charge</h1>
+      <p class="sum">The day-to-day operating loop. Controls stop problems before they happen, monitoring catches what gets through, reports show each owner where they stand, and the monthly cross-charge makes each business unit pay for what it uses.</p></div>
+    <div><span class="prod-label">Products on this sheet</span><div class="chips">
+      <span class="pchip"><img src="{{IC:pp}}" alt="">Power Platform</span><span class="pchip"><img src="{{IC:cs}}" alt="">Copilot Studio</span><span class="pchip"><img src="{{IC:dv}}" alt="">Dataverse</span></div></div>
+  </div>
+
+  <div class="scen-set">
+    <div class="scen-tabs" role="tablist" aria-label="Operating themes">
+      <button class="scen-tab" type="button" role="tab" aria-selected="true" data-target="op-control"><span class="sl">CONTROL</span>Prevent<small>Where each control lives</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="op-monitor"><span class="sl">MONITOR</span>Detect<small>Signals, freshness and alerts</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="op-report"><span class="sl">REPORT</span>Inform<small>Native reports vs the lakehouse</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="op-charge"><span class="sl">CROSS-CHARGE</span>Recover cost<small>Monthly close, rates and back-charges</small></button>
+    </div>
+
+    <!-- ---------- Control ---------- -->
+    <div class="scenario" id="op-control" role="tabpanel">
+      <p class="question">Which controls prevent problems, at which scope, and where do you set them?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-11A</span><span class="dtitle">Control layers, broadest to narrowest</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 395" role="img" aria-label="Four layers of preventive control: tenant settings, environment group rules, environment settings, and per-resource controls such as agent limits and sharing, each listing the controls set at that scope.">
+<defs>
+  <marker id="m13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-acc" x="20" y="20" width="210" height="80" rx="10"/><text class="s-h" x="34" y="52">Tenant</text><text class="s-c" x="34" y="74">TENANT SETTINGS · POLICIES</text>
+<rect class="s-box" x="244" y="20" width="936" height="80" rx="10"/>
+<text class="s-t" x="260" y="52">Tenant isolation (inbound + outbound)</text><text class="s-t" x="260" y="76">Share with Everyone: off</text>
+<text class="s-t" x="572" y="52">Environment creation: admins only</text><text class="s-t" x="572" y="76">Copilot Studio authors group</text>
+<text class="s-t" x="884" y="52">Add-on capacity: specific admins</text><text class="s-t" x="884" y="76">Tenant-scope data policy (baseline)</text>
+<line class="s-ln" x1="125" y1="100" x2="125" y2="113" marker-end="url(#m13)"/>
+
+<rect class="s-acc" x="20" y="115" width="210" height="80" rx="10"/><image href="{{IC:pp}}" x="202" y="122" width="18" height="18"/><text class="s-h" x="34" y="147">Environment group</text><text class="s-c" x="34" y="169">28 RULES · SECURITY PAGE</text>
+<rect class="s-box" x="244" y="115" width="936" height="80" rx="10"/>
+<text class="s-t" x="260" y="147">Advanced connector policy (allowlist)</text><text class="s-t" x="260" y="171">Sharing: apps, flows, agents</text>
+<text class="s-t" x="572" y="147">Solution checker: Block</text><text class="s-t" x="572" y="171">Unmanaged customizations: blocked</text>
+<text class="s-t" x="884" y="147">Draw from tenant credit pool: off</text><text class="s-t" x="884" y="171">IP firewall · cookie binding</text>
+<line class="s-ln" x1="125" y1="195" x2="125" y2="208" marker-end="url(#m13)"/>
+
+<rect class="s-acc" x="20" y="210" width="210" height="80" rx="10"/><image href="{{IC:dv}}" x="202" y="217" width="18" height="18"/><text class="s-h" x="34" y="242">Environment</text><text class="s-c" x="34" y="264">ENV SETTINGS · LICENSING</text>
+<rect class="s-box" x="244" y="210" width="936" height="80" rx="10"/>
+<text class="s-t" x="260" y="242">Environment security group</text><text class="s-t" x="260" y="266">Copilot Credit allocation</text>
+<text class="s-t" x="572" y="242">Dataverse capacity allocation</text><text class="s-t" x="572" y="266">Billing policy (pay-as-you-go)</text>
+<text class="s-t" x="884" y="242">CMK · Lockbox · VNet</text><text class="s-t" x="884" y="266">Bing web search on or off</text>
+<line class="s-ln" x1="125" y1="290" x2="125" y2="303" marker-end="url(#m13)"/>
+
+<rect class="s-acc" x="20" y="305" width="210" height="80" rx="10"/><image href="{{IC:cs}}" x="202" y="312" width="18" height="18"/><text class="s-h" x="34" y="337">App, flow or agent</text><text class="s-c" x="34" y="359">MAKER + ADMIN CENTER</text>
+<rect class="s-box" x="244" y="305" width="936" height="80" rx="10"/>
+<text class="s-t" x="260" y="337">Agent monthly limit + Stop usage</text><text class="s-t" x="260" y="361">Agent sharing: Editor or Viewer</text>
+<text class="s-t" x="572" y="337">Agent authentication and channels</text><text class="s-t" x="572" y="361">Connection references (service accounts)</text>
+<text class="s-t" x="884" y="337">Canvas app sharing within limits</text><text class="s-t" x="884" y="361">Run-only users for flows</text>
+</svg>
+        </div>
+        <figcaption><b>Set each control at the broadest scope that's right for it.</b> A tenant setting can't drift. A group rule locks the setting in every environment in the group. Environment and resource controls handle the exceptions. IP firewall and cookie binding aren't group rules, but the Security page applies them to whole groups. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Control catalogue</h2>
+          <table class="rt">
+            <thead><tr><th>Control</th><th>Scope</th><th>What it prevents</th><th>Where you set it</th><th>How you prove it's on</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Tenant isolation</td><td>Tenant</td><td>Connections to and from other tenants using Entra-authenticated connectors</td><td>Tenant settings</td><td>Security › Overview recommendation clears</td></tr>
+              <tr><td class="k">Environment creation and developer environment assignment</td><td>Tenant</td><td>Unaccounted environments and capacity use</td><td>Tenant settings</td><td>Inventory: no new environments outside groups</td></tr>
+              <tr><td class="k">Copilot Studio authors group</td><td>Tenant</td><td>Anyone building agents</td><td>Tenant settings</td><td>Setting shows the security group</td></tr>
+              <tr><td class="k">Add-on capacity assignment: Only specific admins</td><td>Tenant</td><td>Environment admins moving credits between environments</td><td>Tenant settings</td><td>Setting value</td></tr>
+              <tr><td class="k">Advanced connector policy</td><td>Group or environment</td><td>Any certified connector or action not on the allowlist, including MCP servers</td><td>Group › Rules</td><td>Policy status shows Applied</td></tr>
+              <tr><td class="k">Classic data policy</td><td>Tenant, or a list of environments</td><td>Mixing business and non-business data; custom, HTTP and Copilot Studio virtual connectors</td><td>Security › Data policies</td><td>Policy scope matches the group's environment list</td></tr>
+              <tr><td class="k">Sharing rules (apps, flows, agents)</td><td>Group</td><td>Oversharing; sharing with security groups where excluded</td><td>Group › Rules</td><td>Rule published; Security score</td></tr>
+              <tr><td class="k">Solution checker: Block · Unmanaged customizations</td><td>Group</td><td>Critical-issue imports; direct edits in production</td><td>Group › Rules</td><td>Rule published</td></tr>
+              <tr><td class="k">Draw from tenant credit pool: off</td><td>Group</td><td>An environment spending prepaid credits beyond its allocation</td><td>Group › Rules</td><td>Licensing › Copilot Studio shows the cap</td></tr>
+              <tr><td class="k">Agent monthly limit with Stop usage</td><td>Agent</td><td>One agent consuming far more credits than planned (not instant; doesn't stop agent flows)</td><td>Licensing › Copilot Studio › Manage agents</td><td>Agent status: Within limit</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Principles</h2><ul>
+          <li>Prefer a tenant setting or group rule over an environment setting. Rules lock the setting so environment admins can't change it.</li>
+          <li>Put controls in code: the Power Platform API and admin SDKs can apply allocations, advanced connector policies and group membership, so every region gets the same baseline.</li>
+          <li>Pair every restrictive control with a request path and an owner who can approve exceptions.</li></ul></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Managed-only features.</b> Group rules, sharing limits, IP firewall and alerts need managed environments, and managed environments need premium licences for every user (enforced from Feb 2027).</li>
+          <li><b>Removing a rule doesn't undo it.</b> Environments keep the last applied connector policy until you remove it on each one.</li>
+          <li><b>Exceptions drift.</b> Review approved exceptions quarterly and give each one an expiry date.</li></ul></div>
+      </div>
+    </div>
+
+    <!-- ---------- Monitor ---------- -->
+    <div class="scenario" id="op-monitor" role="tabpanel" hidden>
+      <p class="question">Which signals tell us something is going wrong, how quickly do they arrive, and who acts on them?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-11B</span><span class="dtitle">Signal freshness ladder</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 355" role="img" aria-label="Monitoring signals grouped by freshness, from minutes (Application Insights) through hourly and daily Monitor alerts, audit, consumption and cost data, to weekly Actions scans and monthly licence reports, each routed to the team that acts.">
+<defs>
+  <marker id="m14" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-acc" x="20" y="20" width="220" height="240" rx="12"/>
+<text class="s-c s-ca" x="34" y="44">MINUTES</text><text class="s-h" x="34" y="66">Application Insights</text>
+<text class="s-m" x="34" y="90">flows (preview), Dataverse,</text><text class="s-m" x="34" y="108">model-driven apps, agents</text><text class="s-m" x="34" y="126">managed environments only</text><text class="s-m" x="34" y="144">alerts via Azure Monitor</text>
+<rect class="s-box" x="252" y="20" width="220" height="240" rx="12"/>
+<text class="s-c s-ca" x="266" y="44">HOURLY</text><text class="s-h" x="266" y="66">Monitor alerts (1 hour)</text>
+<text class="s-m" x="266" y="90">selected health metrics</text><text class="s-m" x="266" y="108">custom alert rules</text><text class="s-m" x="266" y="126">managed environments only</text>
+<rect class="s-box" x="484" y="20" width="220" height="240" rx="12"/>
+<text class="s-c s-ca" x="498" y="44">DAILY</text><text class="s-h" x="498" y="66">Daily signals</text>
+<text class="s-m" x="498" y="90">Monitor metrics and logs</text><text class="s-m" x="498" y="108">Purview audit (about 24 h)</text><text class="s-m" x="498" y="126">Copilot Studio consumption</text><text class="s-m" x="498" y="144">Azure cost (up to 24 h)</text><text class="s-m" x="498" y="162">Dataverse allocation alerts</text><text class="s-m" x="498" y="180">agent limit notifications</text>
+<rect class="s-box" x="716" y="20" width="220" height="240" rx="12"/>
+<text class="s-c s-ca" x="730" y="44">WEEKLY</text><text class="s-h" x="730" y="66">Weekly signals</text>
+<text class="s-m" x="730" y="90">Actions page scan</text><text class="s-m" x="730" y="108">Teams summary card</text><text class="s-m" x="730" y="126">Dataverse capacity emails</text><text class="s-m" x="730" y="144">security score trend</text>
+<rect class="s-box" x="948" y="20" width="220" height="240" rx="12"/>
+<text class="s-c s-ca" x="962" y="44">MONTHLY</text><text class="s-h" x="962" y="66">Monthly signals</text>
+<text class="s-m" x="962" y="90">licence use (30-day view)</text><text class="s-m" x="962" y="108">users needing licences</text><text class="s-m" x="962" y="126">cross-charge statement</text>
+
+<text class="s-c" x="20" y="290">WHO ACTS</text>
+<line class="s-ln" x1="130" y1="260" x2="130" y2="297" marker-end="url(#m14)"/>
+<line class="s-ln" x1="362" y1="260" x2="362" y2="297" marker-end="url(#m14)"/>
+<line class="s-ln" x1="594" y1="260" x2="594" y2="297" marker-end="url(#m14)"/>
+<line class="s-ln" x1="826" y1="260" x2="826" y2="297" marker-end="url(#m14)"/>
+<line class="s-ln" x1="1058" y1="260" x2="1058" y2="297" marker-end="url(#m14)"/>
+<rect class="s-band" x="20" y="300" width="220" height="40" rx="8"/><text class="s-t" x="130" y="325" text-anchor="middle">App owner · ops on-call</text>
+<rect class="s-band" x="252" y="300" width="220" height="40" rx="8"/><text class="s-t" x="362" y="325" text-anchor="middle">Platform operations</text>
+<rect class="s-band" x="484" y="300" width="220" height="40" rx="8"/><text class="s-t" x="594" y="325" text-anchor="middle">SOC · FinOps · operations</text>
+<rect class="s-band" x="716" y="300" width="220" height="40" rx="8"/><text class="s-t" x="826" y="325" text-anchor="middle">Platform CoE · regional hubs</text>
+<rect class="s-band" x="948" y="300" width="220" height="40" rx="8"/><text class="s-t" x="1058" y="325" text-anchor="middle">FinOps office · regions</text>
+</svg>
+        </div>
+        <figcaption><b>Most Power Platform signals are daily, not real-time.</b> Monitor metrics are 24-hour aggregates (a few are hourly), audit events take up to about 24 hours, and so do Azure costs. For anything that needs minutes, such as a failing production flow, use Application Insights and Azure Monitor alerts. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Alert catalogue</h2>
+          <table class="rt">
+            <thead><tr><th>Alert</th><th>Source</th><th>Threshold</th><th>Freshness</th><th>Routed to</th></tr></thead>
+            <tbody>
+              <tr><td class="k">High-use app, flow or agent unhealthy</td><td>Monitor, predefined by Microsoft, on by default</td><td>Fixed: availability or success rate under 90% for high-use resources</td><td>Daily</td><td>Platform operations</td></tr>
+              <tr><td class="k">Production flow or app degraded</td><td>Monitor custom alert rule (managed environments only)</td><td>Proposal: success rate under 95%</td><td>Daily, or hourly for some metrics</td><td>App owner + regional hub</td></tr>
+              <tr><td class="k">Flow run failures</td><td>Application Insights + Azure Monitor alert</td><td>Proposal: 3 failures in 15 minutes</td><td>Minutes</td><td>App owner on-call</td></tr>
+              <tr><td class="k">Agent nearing its credit limit</td><td>Copilot Studio agent limit notification</td><td>Proposal: 80% of monthly limit</td><td>Daily</td><td>Agent owner + FinOps</td></tr>
+              <tr><td class="k">Environment out of Copilot Credits</td><td>Copilot Studio enforcement and admin notification</td><td>Allocation exhausted; prepaid tenant enforcement at 125%</td><td>Daily</td><td>FinOps office</td></tr>
+              <tr><td class="k">Dataverse capacity low</td><td>Microsoft email and banner</td><td>Fixed: under 15%, under 5%, overage</td><td>Weekly</td><td>Platform CoE</td></tr>
+              <tr><td class="k">Environment near its Dataverse allocation</td><td>Opt-in daily email per allocation</td><td>Proposal: 80% of allocation</td><td>Daily</td><td>Environment owner</td></tr>
+              <tr><td class="k">Budget or cost anomaly</td><td>Azure Cost Management budget and anomaly alerts</td><td>Proposal: 50 / 80 / 100%</td><td>Up to 24 h</td><td>FinOps office</td></tr>
+              <tr><td class="k">Risky activity in Zone R</td><td>Sentinel analytics rule over Purview audit</td><td>New connector use, bulk export, sharing to large groups</td><td>About 24 h</td><td>Cyber Defense Center</td></tr>
+              <tr><td class="k">Licence shortfall</td><td>Admin center notifications and Actions recommendations</td><td>Raised by Microsoft</td><td>As raised</td><td>Regional hub</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Set-up checklist</h2><ul>
+          <li>Turn on tenant-level analytics. Monitor metrics and the security score need it.</li>
+          <li>Enable managed environments where you need custom alerts, recommendations and Application Insights export.</li>
+          <li>Install the Power Apps app in Teams to get the weekly Actions summary card.</li>
+          <li>Set agent limits with notification thresholds on every agent outside personal dev.</li></ul></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Audit isn't real-time.</b> Don't build incident response on Purview events alone.</li>
+          <li><b>Alerts need managed environments,</b> so the unmanaged default environment is watched through inventory and usage reports instead.</li>
+          <li><b>Agent limits lag.</b> An agent can keep responding for a while after reaching its limit, so set thresholds with a margin.</li></ul></div>
+      </div>
+    </div>
+
+    <!-- ---------- Report ---------- -->
+    <div class="scenario" id="op-report" role="tabpanel" hidden>
+      <p class="question">Which questions can the admin center answer on its own, and which need our governance lakehouse?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-11C</span><span class="dtitle">Native first, lakehouse for the joins</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 380" role="img" aria-label="Questions answered natively in the Power Platform admin center (Inventory, Usage, Monitor, Licensing, Security and Actions) feed, through daily exports and APIs, four lakehouse reports that join platform data with organisation and cost data.">
+<defs>
+  <marker id="m15a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mka" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-band" x="10" y="10" width="1180" height="166" rx="12"/>
+<text class="s-c" x="24" y="30">ANSWERED NATIVELY IN THE ADMIN CENTER</text>
+<rect class="s-box" x="30" y="44" width="222" height="118" rx="10"/><image href="{{IC:pp}}" x="224" y="51" width="18" height="18"/><text class="s-h" x="44" y="66">Inventory</text><text class="s-m" x="44" y="90">What exists, who owns it?</text><text class="s-m" x="44" y="108">apps, flows, agents, envs</text><text class="s-m" x="44" y="126">harness, owner, created</text>
+<rect class="s-box" x="262" y="44" width="222" height="118" rx="10"/><text class="s-h" x="276" y="66">Usage</text><text class="s-m" x="276" y="90">What's used, by whom?</text><text class="s-m" x="276" y="108">top resources and owners</text>
+<rect class="s-box" x="494" y="44" width="222" height="118" rx="10"/><text class="s-h" x="508" y="66">Monitor</text><text class="s-m" x="508" y="90">Is it healthy?</text><text class="s-m" x="508" y="108">availability, success rates</text><text class="s-m" x="508" y="126">logs and recommendations</text>
+<rect class="s-box" x="726" y="44" width="222" height="118" rx="10"/><text class="s-h" x="740" y="66">Licensing</text><text class="s-m" x="740" y="90">Who uses which licence?</text><text class="s-m" x="740" y="108">credits by env, agent, user</text><text class="s-m" x="740" y="126">users needing licences</text>
+<rect class="s-box" x="958" y="44" width="222" height="118" rx="10"/><text class="s-h" x="972" y="66">Security · Actions</text><text class="s-m" x="972" y="90">Where are the gaps?</text><text class="s-m" x="972" y="108">security score</text><text class="s-m" x="972" y="126">weekly recommendations</text>
+
+<line class="s-lna" x1="600" y1="176" x2="600" y2="203" marker-end="url(#m15a)"/>
+<text class="s-m s-ca" x="612" y="194">exports, reports and APIs, landed daily</text>
+
+<rect class="s-band" x="10" y="206" width="1180" height="164" rx="12"/>
+<text class="s-c" x="24" y="226">NEEDS THE GOVERNANCE LAKEHOUSE · JOINS WITH ORG AND COST DATA</text>
+<rect class="s-acc" x="30" y="238" width="280" height="118" rx="10"/><text class="s-h" x="44" y="260">Executive scorecard</text><text class="s-m" x="44" y="284">value, risk and spend by region</text><text class="s-m" x="44" y="302">quarterly</text><text class="s-c" x="44" y="338">INVENTORY + COST + ORG</text>
+<rect class="s-acc" x="320" y="238" width="280" height="118" rx="10"/><text class="s-h" x="334" y="260">Regional operations</text><text class="s-m" x="334" y="284">adoption and hygiene, my region</text><text class="s-m" x="334" y="302">weekly</text><text class="s-c" x="334" y="338">INVENTORY + USAGE + ORG</text>
+<rect class="s-acc" x="610" y="238" width="280" height="118" rx="10"/><text class="s-h" x="624" y="260">FinOps statement</text><text class="s-m" x="624" y="284">who pays for what</text><text class="s-m" x="624" y="302">monthly</text><text class="s-c" x="624" y="338">COST + LICENCES + CREDITS</text>
+<rect class="s-acc" x="900" y="238" width="280" height="118" rx="10"/><text class="s-h" x="914" y="260">Security posture</text><text class="s-m" x="914" y="284">risky sharing and connectors</text><text class="s-m" x="914" y="302">daily</text><text class="s-c" x="914" y="338">AUDIT + INVENTORY</text>
+</svg>
+        </div>
+        <figcaption><b>Don't rebuild what the admin center already answers.</b> Use the native pages for "what is happening". Build lakehouse reports only for questions that need the org chart, cost centres or several sources joined together. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Report pack</h2>
+          <table class="rt">
+            <thead><tr><th>Report</th><th>Question it answers</th><th>Audience</th><th>Cadence</th><th>Built from</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Executive scorecard</td><td>Is the platform delivering value safely, and what does it cost by region?</td><td>CIO, regional COOs</td><td>Quarterly</td><td>Lakehouse: inventory, cost, org</td></tr>
+              <tr><td class="k">Regional operations</td><td>Adoption, default-environment hygiene, orphaned assets, time to environment</td><td>Regional hubs</td><td>Weekly</td><td>Lakehouse with row-level security by region</td></tr>
+              <tr><td class="k">FinOps statement</td><td>What does each cost centre owe this month, and why?</td><td>FinOps office, BU finance</td><td>Monthly</td><td>Lakehouse: Azure cost, Copilot Studio consumption, licences</td></tr>
+              <tr><td class="k">Licence compliance</td><td>Who runs apps in managed environments without a premium licence?</td><td>Regional hubs</td><td>Monthly, and weekly before Feb 2027</td><td>Native: <i>Users requiring licenses in Managed Environments</i> report</td></tr>
+              <tr><td class="k">Agent spend</td><td>Which agents use the most credits, and which are near their limit?</td><td>FinOps office, agent owners</td><td>Weekly</td><td>Native: Licensing › Copilot Studio, downloadable by environment, agent or user</td></tr>
+              <tr><td class="k">Operational health</td><td>Which business-critical apps, flows and agents are degraded?</td><td>Platform operations</td><td>Daily</td><td>Native: Monitor, with pinned critical resources</td></tr>
+              <tr><td class="k">Security posture</td><td>Risky sharing, new connectors in Zone R, score trend</td><td>Cyber Defense Center</td><td>Daily</td><td>Native security score + lakehouse over Purview audit</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Rules for every report</h2><ul>
+          <li>One semantic model, with row-level security by region.</li>
+          <li>Every number shows its source and its as-of date, because most sources lag by up to a day.</li>
+          <li>Every report names the action it drives and who owns that action.</li></ul></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Data export is in preview</b> and covers apps and flows only. Use the Inventory API for agents.</li>
+          <li><b>The Inventory API needs a delegated admin account.</b> Plan how the scheduled job signs in.</li>
+          <li><b>Licence reports use 30-day windows.</b> Don't compare them directly with calendar-month cost.</li></ul></div>
+      </div>
+    </div>
+
+    <!-- ---------- Cross-charge ---------- -->
+    <div class="scenario" id="op-charge" role="tabpanel" hidden>
+      <p class="question">How do we run the monthly cross-charge, and when do we back-charge?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-11D</span><span class="dtitle">Monthly close, day by day</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 330" role="img" aria-label="A ten-day monthly close: data cut-off and export on day 1, load and reconcile on days 2 to 3, compute on day 4, draft statements on day 5, a dispute window on days 5 to 8, and sign-off and journal posting on days 9 to 10; with definitions of showback, cross-charge and back-charge.">
+<defs>
+  <marker id="m16" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-box" x="36" y="40" width="178" height="120" rx="10"/><text class="s-c s-ca" x="48" y="62">DAY 1</text><text class="s-h" x="48" y="84">Cut-off &amp; export</text><text class="s-m" x="48" y="106">Azure cost export</text><text class="s-m" x="48" y="122">Copilot Studio report</text><text class="s-m" x="48" y="138">licence reports</text>
+<line class="s-ln" x1="214" y1="100" x2="223" y2="100" marker-end="url(#m16)"/>
+<rect class="s-box" x="226" y="40" width="178" height="120" rx="10"/><text class="s-c s-ca" x="238" y="62">DAYS 2–3</text><text class="s-h" x="238" y="84">Load &amp; reconcile</text><text class="s-m" x="238" y="106">totals tie to invoices</text><text class="s-m" x="238" y="122">unowned spend flagged</text>
+<line class="s-ln" x1="404" y1="100" x2="413" y2="100" marker-end="url(#m16)"/>
+<rect class="s-box" x="416" y="40" width="178" height="120" rx="10"/><text class="s-c s-ca" x="428" y="62">DAY 4</text><text class="s-h" x="428" y="84">Compute</text><text class="s-m" x="428" y="106">usage × rate card</text><text class="s-m" x="428" y="122">shared cost by key</text>
+<line class="s-ln" x1="594" y1="100" x2="603" y2="100" marker-end="url(#m16)"/>
+<rect class="s-box" x="606" y="40" width="178" height="120" rx="10"/><text class="s-c s-ca" x="618" y="62">DAY 5</text><text class="s-h" x="618" y="84">Draft statements</text><text class="s-m" x="618" y="106">region, BU, cost centre</text><text class="s-m" x="618" y="122">variance vs budget</text>
+<line class="s-ln" x1="784" y1="100" x2="793" y2="100" marker-end="url(#m16)"/>
+<rect class="s-a" x="796" y="40" width="178" height="120" rx="10"/><text class="s-c s-cA" x="808" y="62">DAYS 5–8</text><text class="s-h" x="808" y="84">Dispute window</text><text class="s-m" x="808" y="106">regional hubs query</text><text class="s-m" x="808" y="122">back-charges agreed</text>
+<line class="s-ln" x1="974" y1="100" x2="983" y2="100" marker-end="url(#m16)"/>
+<rect class="s-acc" x="986" y="40" width="178" height="120" rx="10"/><text class="s-c s-ca" x="998" y="62">DAYS 9–10</text><text class="s-h" x="998" y="84">Sign-off &amp; journal</text><text class="s-m" x="998" y="106">FinOps board approves</text><text class="s-m" x="998" y="122">journals posted</text>
+
+<rect class="s-band" x="10" y="186" width="1180" height="132" rx="12"/>
+<text class="s-c" x="24" y="206">THREE WAYS TO RECOVER COST</text>
+<rect class="s-box" x="24" y="216" width="376" height="90" rx="10"/><text class="s-h" x="38" y="240">Showback</text><text class="s-m" x="38" y="262">Report cost to owners; no money moves.</text><text class="s-m" x="38" y="280">Start here to build trust in the numbers.</text>
+<rect class="s-acc" x="412" y="216" width="376" height="90" rx="10"/><text class="s-h" x="426" y="240">Cross-charge</text><text class="s-m" x="426" y="262">Monthly internal journal that moves cost from</text><text class="s-m" x="426" y="280">the platform to the cost centre that used it.</text>
+<rect class="s-a" x="800" y="216" width="376" height="90" rx="10"/><text class="s-h s-cA" x="814" y="240">Back-charge</text><text class="s-m" x="814" y="262">Charge after the fact for unfunded use: overage,</text><text class="s-m" x="814" y="280">tenant-pool draw, or a corrected earlier error.</text>
+</svg>
+        </div>
+        <figcaption><b>A predictable calendar matters more than precision.</b> Cut off on day 1, publish drafts on day 5, and post journals by day 10. Regions get time to dispute the numbers, and finance gets numbers it can book. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Worked example: one cost centre, one month</h2>
+          <p style="color:var(--muted);font-size:13px">Illustrative figures only. Use your own price sheet and agreed rates.</p>
+          <table class="rt">
+            <thead><tr><th>Line</th><th>Basis</th><th>Calculation</th><th>Amount</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Pay-as-you-go (Azure)</td><td>Actual cost on the subscription tagged FIN-EU</td><td>Passed through</td><td>€4,200</td></tr>
+              <tr><td class="k">Prepaid Copilot Credits</td><td>Credits used in FIN-EU environments</td><td>180,000 × €0.008 internal rate</td><td>€1,440</td></tr>
+              <tr><td class="k">Premium licences</td><td>Users whose Entra cost centre is FIN-EU</td><td>120 × €19</td><td>€2,280</td></tr>
+              <tr><td class="k">Dataverse above share</td><td>GB above the environments' share of entitlement</td><td>40 GB × €38</td><td>€1,520</td></tr>
+              <tr><td class="k">Shared platform cost</td><td>8% of active makers × platform budget</td><td>8% × €60,000</td><td>€4,800</td></tr>
+              <tr><td class="k">Back-charge (last month)</td><td>Agreed overage that drew from the tenant pool</td><td>30,000 × €0.008</td><td>€240</td></tr>
+              <tr><td class="k">Total cross-charge</td><td></td><td></td><td><b>€14,480</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Back-charge rules</h2><ul>
+          <li><b>Overage:</b> credits drawn from the tenant pool above an environment's allocation are back-charged at the internal rate the following month.</li>
+          <li><b>Corrections:</b> errors found after close are fixed by back-charge or credit in the next cycle, never by reopening a closed month.</li>
+          <li><b>Unowned spend:</b> charged to the platform budget, and the environment goes to quarantine until it has an owner.</li>
+          <li><b>Disputes:</b> raised by the regional hub in the dispute window, and decided by the FinOps board.</li></ul></div>
+        <div class="panel"><h2>Maturity path</h2><ol class="steps">
+          <li><b>Showback</b> for two or three months, until regions trust the numbers.</li>
+          <li><b>Cross-charge direct costs:</b> pay-as-you-go and licences.</li>
+          <li><b>Add prepaid credits and Dataverse</b> at agreed internal rates.</li>
+          <li><b>Add shared platform cost and back-charges</b> with an allocation key agreed once a year.</li></ol></div>
       </div>
     </div>
   </div>
@@ -1380,7 +1674,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li><a href="https://learn.microsoft.com/en-us/power-platform/architecture/reference-architectures/secure-access-azure-resources">Secure access to Azure resources (VNet)</a>, Microsoft Learn</li>
       <li><a href="https://github.com/microsoft/industry/blob/main/foundations/powerPlatform">Power Platform landing zones</a>, Microsoft industry repo</li>
       <li><a href="https://learn.microsoft.com/en-us/training/modules/deploy-pipeline/configure-delegated-deployment-service-principal">Delegated deployment with a service principal</a>, Microsoft Learn training</li>
-      <li><a href="https://rencore.com/en/blog/power-platform-coe-starter-kit-end-of-life">CoE Starter Kit end of life</a>, Rencore (third party)</li>
+      <li><a href="https://learn.microsoft.com/power-platform/guidance/coe/starter-kit">CoE Starter Kit transition to the admin center</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/en-us/power-platform/guidance/icons">Microsoft Power Platform icons</a> and their terms of use, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview">Harnesses in Copilot Studio</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness">Manage costs for agents powered by the GitHub Copilot harness</a>, Microsoft Learn</li>
@@ -1388,13 +1682,25 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li><a href="https://learn.microsoft.com/power-platform/admin/advanced-connector-policies">Advanced connector policies</a> and <a href="https://learn.microsoft.com/power-platform/admin/programmability-tutorial-manage-advanced-connector-policies">programmatic management</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention">Configure data policies for agents</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-365/copilot/usage-based-billing-copilot-credits-setup">Usage-based billing for Copilot Credits</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/ai-builder/endofaibcredits">End of AI Builder credits</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/managed-environment-licensing">Licensing requirements for managed environments</a> (February 2027 enforcement), Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/environment-groups-rules">Rules for environment groups</a> (28 rules), Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/security/security-overview">Security overview</a>: group-level sharing, IP firewall and cookie binding, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/monitoring/monitoring-overview">Monitor</a> and <a href="https://learn.microsoft.com/power-platform/admin/monitoring/alerts">alerts</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/capacity-storage">Dataverse capacity-based storage</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/view-license-consumption-issues">License consumption reports</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/pay-as-you-go-meters">Pay-as-you-go meters</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/regions-overview">Regions</a> and <a href="https://learn.microsoft.com/power-platform/admin/automatic-environment-cleanup">automatic environment cleanup</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (Test Engine deprecation)</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/govern-agents-identities-overview">Agent identities and Conditional Access</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/connector-endpoint-filtering">Connector endpoint filtering (preview)</a>, Microsoft Learn</li>
     </ol>
   </div>
 </section>
 </main>
 
 <footer class="wrap">
-  <p>Power Platform Enterprise Blueprint · template rev 3.1 · 16 October 2026. The reference organisation is fictional; replace its parameters with your own.</p>
+  <p>Power Platform Enterprise Blueprint · template rev 3.2 · 16 October 2026. The reference organisation is fictional; replace its parameters with your own.</p>
   <p>Microsoft, Power Platform, Power Apps, Power Automate, Power Pages, Copilot Studio, Dataverse and AI Builder are trademarks of the Microsoft group of companies. Product icons are Microsoft's official icons, used under its terms for architecture documentation. This is not a Microsoft document.</p>
 </footer>
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## rev 3.2 · 2026-10-16
+
+**Fact-check against Microsoft Learn** (about 69 corrections; disputed claims checked in a browser). Highlights:
+
+- AI Builder: no new or renewed credits from 1 Nov 2026; existing credits are honoured to the end of the contract, then usage falls back to Copilot Credits.
+- New warning: managed environments require premium licences for every user, enforced from Feb 2027. This affects D4.
+- 28 environment-group rules (not 6). IP firewall, cookie binding and sharing can be applied to whole groups from the Security page.
+- Managed personal developer environments are cleaned up after 60 days of inactivity. Routing gives one environment per maker.
+- The India geo needs an India-based tenant, so Asia Pacific now uses the Asia geo and Brazil is labelled South America.
+- Test Engine deprecated (April 2026), replaced by Playwright. The solution checker blocks critical issues only. Pipelines targets must be managed.
+- Endpoint filtering is preview and static-only. Copilot Studio channels, authentication and knowledge are governed by classic data policies (virtual connectors).
+- Pay-as-you-go: agent limits are the hard stop, and Process licences and app passes don't apply in pay-as-you-go environments.
+- Entra Agent ID covers new agents only; Conditional Access on agent identities is enforced only in Teams.
+- CoE Starter Kit status now cited from Microsoft (no longer maintained; repo archived July 2026).
+
+**New sheet 11, Operate:** control layers and catalogue, monitoring freshness ladder and alert catalogue, report pack (native vs lakehouse), monthly cross-charge calendar with back-charge rules and a worked example.
+
 ## rev 3.1 · 2026-10-16
 
 New sheet 10, **Governance scenarios**, sourced from Microsoft Learn on 16 October 2026:
