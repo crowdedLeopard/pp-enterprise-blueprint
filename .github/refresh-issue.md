@@ -39,7 +39,7 @@ The window starts at the later of the newest `CHANGELOG.md` entry and the last c
 - [ ] https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness: cost controls, group rules, preview-billing dates
 - [ ] https://learn.microsoft.com/microsoft-copilot-studio/guidance/govern-credit-consumption
 - [ ] https://learn.microsoft.com/power-platform/admin/advanced-connector-policies: scope, custom/HTTP and MCP support
-- [ ] Any new admin switch to turn the GitHub Copilot harness on or off. Scenario C says none is documented.
+- [ ] https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/faqs-copilot-harness: does Microsoft still say there is no setting to turn the GitHub Copilot harness on or off? Scenario C depends on it.
 
 **Operate (sheet 11) and dated warnings**
 - [ ] https://learn.microsoft.com/power-platform/admin/environment-groups-rules: has the rule count or list changed?

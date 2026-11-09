@@ -1,5 +1,13 @@
 # Changelog
 
+## rev 3.3 · 2026-11-09
+
+**Logic and date review.** Eleven coherence fixes: Scenario B is now framed as the Phase 3 shape of Zone A (its connector-pack groups add to the 26 on sheet 02) and stays in mixed mode; the Tier 1 promotion trigger matches the dev-environment sharing rule (5) and default-environment limit (20); back-charges apply to approved tenant-pool exceptions and unbudgeted pay-as-you-go, since pool draw is otherwise off; Scenario C production uses Pipelines (Zone A) or CI/CD (Zone R) and the review its zone requires; owner names standardised on Cyber Defense Center; trials excluded from the coverage KPI. All "from 1 November 2026" wording moved to past tense now the date has passed.
+
+**GitHub Copilot harness, re-verified against Microsoft Learn.** Microsoft's FAQ now states outright that no setting turns the harness on or off, confirming Scenario C's premise. Correction: the *Copilot Studio authors* tenant setting is not an access block for the harness (users can enter the experience without a licence), so Gate 1 now relies on environment security groups and Dataverse security roles, and the zero-credit posture is described as the closest thing to a block.
+
+**Self-update repaired.** The refresh workflow had been skipping since 19 Oct because a branch-delete 403 aborted the step that closes finished issues. Tidy steps are now non-fatal, issues open for more than 3 days are closed as stale, completed reviews are logged to `.github/refresh-log.md`, and a missing assignment token fails the run loudly.
+
 ## rev 3.2 · 2026-10-16
 
 **Fact-check against Microsoft Learn** (about 69 corrections; disputed claims checked in a browser). Highlights:

@@ -19,7 +19,7 @@ Weekdays 06:00 UTC ─► "Architecture refresh" issue ─► Copilot coding age
                             └─► GitHub Pages redeploys
 ```
 
-- `.github/workflows/architecture-refresh.yml` opens a refresh issue each weekday and assigns it to Copilot. While the previous refresh is still open, it skips the day.
+- `.github/workflows/architecture-refresh.yml` opens a refresh issue each weekday and assigns it to Copilot. While the previous refresh is still open it skips the day; an issue left open for more than 3 days is closed as stale, no-change PRs are closed after 2 idle hours, and every completed review is logged in `.github/refresh-log.md`.
 - `.github/skills/` holds three Copilot skills: the design system, the diagram rules and the research procedure.
 - `.github/refresh-issue.md` is the checklist of Microsoft sources Copilot reviews. Edit it to change the scope.
 - `.github/copilot-instructions.md` holds the editing rules Copilot follows: sourced facts only, keep diagrams aligned, keep it generic.

@@ -95,7 +95,8 @@ jobs:
         run: |
           # Count only refresh issues younger than 3 days: older ones were just closed as stale,
           # and GitHub's search index can lag a few seconds behind that close.
-          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --label architecture-refresh --state open --json number,createdAt \n                --jq '[.[] | select((now - (.createdAt | fromdateiso8601)) <= 259200)] | length' 2>/dev/null || echo 0)
+          n=$(gh issue list --repo "$GITHUB_REPOSITORY" --label architecture-refresh --state open --json number,createdAt \
+                --jq '[.[] | select((now - (.createdAt | fromdateiso8601)) <= 259200)] | length' 2>/dev/null || echo 0)
           echo "count=$n" >> "$GITHUB_OUTPUT"
           if [ "$n" != "0" ]; then echo "::notice::A refresh issue is already open (less than 3 days old); not opening another."; fi
 
