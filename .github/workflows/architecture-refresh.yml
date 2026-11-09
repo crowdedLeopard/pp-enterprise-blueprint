@@ -2,7 +2,12 @@ name: Architecture refresh (Copilot)
 
 # Every weekday, open an issue asking the Copilot coding agent to review Microsoft's
 # guidance and propose updates as a pull request. You review and merge the PR;
-# merging redeploys GitHub Pages. A day is skipped while the previous refresh is open.
+# merging redeploys GitHub Pages.
+#
+# Self-healing: no-change PRs are closed after 2 idle hours, a refresh issue left
+# open for more than 3 days is closed as stale, and every completed review is
+# logged to .github/refresh-log.md so the repository stays active (GitHub disables
+# schedules in repositories with no activity for 60 days).
 
 on:
   schedule:
@@ -10,35 +15,78 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   issues: write
   pull-requests: write
 
+concurrency:
+  group: architecture-refresh
+  cancel-in-progress: false
+
 jobs:
-  open-refresh-issue:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       # Copilot always opens a PR when it takes an issue. If its review found nothing
       # material, the PR has no file changes. Close those (and their issues) once
-      # Copilot has been idle on them for 2 hours, so the next refresh can start.
+      # Copilot has been idle on them for 2 hours. Nothing here is fatal: a failure
+      # to close one PR must not stop the rest of the run.
       - name: Close no-change refresh PRs
+        id: tidy
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          set +e
+          logged=0
           gh pr list --repo "$GITHUB_REPOSITORY" --state open --author "app/copilot-swe-agent" \
             --json number,changedFiles,updatedAt,closingIssuesReferences \
             --jq '.[] | select(.changedFiles == 0 and (now - (.updatedAt | fromdateiso8601)) > 7200)
-                  | "\(.number) \([.closingIssuesReferences[].number] | join(","))"' |
+                  | "\(.number) \([.closingIssuesReferences[].number] | join(","))"' > /tmp/nochange.txt
           while read -r pr issues; do
-            gh pr close "$pr" --repo "$GITHUB_REPOSITORY" --delete-branch \
-              --comment "No material changes found in this refresh. Closed automatically."
+            [ -z "$pr" ] && continue
+            gh pr close "$pr" --repo "$GITHUB_REPOSITORY" \
+              --comment "No material changes found in this refresh. Closed automatically." \
+              || echo "::warning::Could not close PR #$pr"
             for i in ${issues//,/ }; do
               gh issue close "$i" --repo "$GITHUB_REPOSITORY" --reason completed \
-                --comment "Reviewed; no material changes (see #$pr)."
+                --comment "Reviewed; no material changes (see #$pr)." \
+                || echo "::warning::Could not close issue #$i"
             done
+            echo "| $(date -u +%Y-%m-%d) | #$pr | no material changes |" >> .github/refresh-log.md
+            logged=1
+          done < /tmp/nochange.txt
+          echo "logged=$logged" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      # A refresh issue that has been open for more than 3 days is stuck (Copilot
+      # failed to start, or its PR was closed without closing the issue). Close it so
+      # the next refresh can begin.
+      - name: Close stale refresh issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          gh issue list --repo "$GITHUB_REPOSITORY" --label architecture-refresh --state open \
+            --json number,createdAt \
+            --jq '.[] | select((now - (.createdAt | fromdateiso8601)) > 259200) | .number' |
+          while read -r n; do
+            [ -z "$n" ] && continue
+            gh issue close "$n" --repo "$GITHUB_REPOSITORY" --reason "not planned" \
+              --comment "Closed as stale: open for more than 3 days without a completed review. A new refresh issue replaces it." \
+              || echo "::warning::Could not close stale issue #$n"
+            echo "::warning::Closed stale refresh issue #$n"
           done
+          exit 0
+
+      - name: Record completed reviews
+        if: steps.tidy.outputs.logged == '1'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .github/refresh-log.md
+          git commit -m "Log completed architecture refresh" && git push || echo "::warning::Could not push refresh log"
 
       - name: Skip if a refresh is already open
         id: existing
@@ -47,7 +95,7 @@ jobs:
         run: |
           n=$(gh issue list --repo "$GITHUB_REPOSITORY" --label architecture-refresh --state open --json number --jq 'length' 2>/dev/null || echo 0)
           echo "count=$n" >> "$GITHUB_OUTPUT"
-          if [ "$n" != "0" ]; then echo "::notice::A refresh issue is already open; not opening another."; fi
+          if [ "$n" != "0" ]; then echo "::notice::A refresh issue is already open (less than 3 days old); not opening another."; fi
 
       - name: Open refresh issue
         id: issue
@@ -72,8 +120,8 @@ jobs:
           GH_TOKEN: ${{ secrets.COPILOT_ASSIGN_TOKEN }}
         run: |
           if [ -z "$GH_TOKEN" ]; then
-            echo "::warning::COPILOT_ASSIGN_TOKEN is not set, so the issue is unassigned. Assign it to Copilot by hand or add the secret."
-            exit 0
+            echo "::error::COPILOT_ASSIGN_TOKEN is not set or has expired, so the issue is unassigned. Create a new token and run: gh secret set COPILOT_ASSIGN_TOKEN"
+            exit 1
           fi
           gh issue edit "${{ steps.issue.outputs.url }}" --add-assignee "@copilot" \
-            || echo "::warning::Couldn't assign Copilot. Check that the Copilot coding agent is enabled for this repo and the token has the required scopes."
+            || { echo "::error::Couldn't assign Copilot. Check that the Copilot coding agent is enabled for this repo and the token has not expired."; exit 1; }
