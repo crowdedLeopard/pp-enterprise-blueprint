@@ -1,6 +1,6 @@
 ---
 name: blueprint-diagrams
-description: How to edit or add the hand-drawn inline SVG architecture diagrams in src/blueprint.src.html (sheets PPA-01 to PPA-08). Use whenever a change touches a diagram, such as box text, a new box or arrow, an icon, a legend or a whole new diagram, so it keeps the grid, the theme-aware classes and stays readable.
+description: How to edit or add the hand-drawn inline SVG architecture diagrams in src/blueprint.src.html (PPA-01 to PPA-08, the scenario diagrams PPA-10A to PPA-10C, the operate diagrams PPA-11A to PPA-11D and the strategy diagrams PPA-12A to PPA-12D). Use whenever a change touches a diagram, such as box text, a new box or arrow, an icon, a legend or a whole new diagram, so it keeps the grid, the theme-aware classes and stays readable.
 ---
 
 # Blueprint diagrams

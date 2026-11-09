@@ -1,5 +1,15 @@
 # Changelog
 
+## rev 3.4 · 2026-11-09
+
+**New sheet 12, Strategy.** Four tabs: *Line of sight* (each outcome on sheet 00 traced to decisions, controls, measures and sheets, plus how every decision D1–D10 is reversed and at what cost), *If Microsoft changes* (Microsoft's scheduled dates with pre-decided responses, and fourteen platform eventualities with their early signal and owner), *If the organisation changes* (acquisition, divestiture, region changes, funding model, regulation, demand, with the tenant-to-tenant move drawn step by step) and *If something breaks* (credits, storage, regional outage, deletions, restores, admin loss and the refresh workflow itself, with Microsoft's recovery numbers). Sheet 00 gains the strategic intent and principles the sheet aligns to.
+
+**Dated deprecations added, from Microsoft Learn.** Unmanaged developer environments: creation ends 15 Nov 2026, suspended 15 Dec 2026, deleted from 15 Jan 2027; one managed developer environment per user from then on. Dataverse for Teams: creation ends 15 Nov 2026, suspended 15 Sep 2027, decommissioned 30 Oct 2027 unless upgraded. New *Act now* banner, D4 and the coverage KPI reworded, roadmap "Now" and open decisions updated.
+
+**Copilot Managed Runtime (preview).** Routing for it is on in every tenant and can't be turned off; Microsoft keeps a managed default environment group; makers outside the routed security groups can't build its apps. The Copilot Studio *Create apps* path has an on/off switch and security-group scoping in the Microsoft 365 admin center, unlike the GitHub Copilot harness for agents. Added to sheet 02 and Scenario C.
+
+**Verified for this revision:** storage overage lifecycle (85%, T0, T0+30, T0+90; production never disabled), backup retention (7 days; 7–28 for production managed environments, group rule), deleted-environment recovery (7 days, 28 with Dynamics 365 apps), self-service disaster recovery (managed production, region pair, replication lag typically under 15 minutes, not in Brazil or South Africa), tenant-to-tenant moves (self-service, 7-day approval window, up to 24 hours, security groups not migrated).
+
 ## rev 3.3 · 2026-11-09
 
 **Logic and date review.** Eleven coherence fixes: Scenario B is now framed as the Phase 3 shape of Zone A (its connector-pack groups add to the 26 on sheet 02) and stays in mixed mode; the Tier 1 promotion trigger matches the dev-environment sharing rule (5) and default-environment limit (20); back-charges apply to approved tenant-pool exceptions and unbudgeted pay-as-you-go, since pool draw is otherwise off; Scenario C production uses Pipelines (Zone A) or CI/CD (Zone R) and the review its zone requires; owner names standardised on Cyber Defense Center; trials excluded from the coverage KPI. All "from 1 November 2026" wording moved to past tense now the date has passed.

@@ -28,6 +28,7 @@ Good searches, by sheet:
 | 07 Security | "Copilot Studio security governance", "Entra Agent ID", "IP firewall Power Platform", "customer-managed key Dataverse", "virtual network support" |
 | 10 Scenarios | "GitHub Copilot harness admin controls", "Copilot Credits allocation environment group rule", "agent monthly consumption limit", "advanced connector policies custom connectors", "billing policy cost allocation" |
 | 11 Operate | "environment group rules list", "Monitor alerts Power Platform", "Dataverse capacity notifications", "license consumption report", "managed environments licensing compliance", "security overview environment group" |
+| 12 Strategy | "important changes coming Power Platform", "Copilot Managed Runtime governance", "environment routing Copilot Managed Runtime", "storage overage lifecycle Dataverse", "backup retention managed environment", "self-service disaster recovery Dataverse", "tenant-to-tenant migration environment", "recover deleted environment" |
 | Roadmap | "Power Platform release plan", "Copilot Studio release plan" |
 
 Message-center posts aren't on Learn. Read them through `https://mc.merill.net` and search for Power Platform,

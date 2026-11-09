@@ -1,9 +1,10 @@
 # Power Platform Enterprise Blueprint
 
 A reference architecture template for governing Microsoft Power Platform (Power Apps, Power Automate,
-Copilot Studio, Dataverse) in a large global organisation. It has ten sheets, each with a diagram and the
-detail behind it: environment strategy, data policies, ALM, credits and FinOps, reporting, security and
-the operating model.
+Copilot Studio, Dataverse) in a large global organisation. It has thirteen sheets, each with a diagram and the
+detail behind it: environment strategy, data policies, ALM, credits and FinOps, reporting, security, the
+operating model, governance scenarios, the operating loop, and a strategy sheet that traces every outcome to
+its decisions, controls and measures and pre-decides the response to each eventuality.
 
 **Live page:** https://crowdedleopard.github.io/pp-enterprise-blueprint/
 

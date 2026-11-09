@@ -198,7 +198,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <header class="appbar">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.3</small></span></a>
+      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.4</small></span></a>
       <div class="builton"><span>For</span><svg viewBox="0 0 23 23" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="12" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="12" width="10" height="10" fill="#00A4EF"/><rect x="12" y="12" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft Power Platform</b></div>
     </div>
     <nav class="tabs" aria-label="Sheets">
@@ -214,6 +214,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <a class="tab" href="#s09" data-sheet="s09"><span class="n">09</span>Roadmap</a>
       <a class="tab" href="#s10" data-sheet="s10"><span class="n">10</span>Scenarios</a>
       <a class="tab" href="#s11" data-sheet="s11"><span class="n">11</span>Operate</a>
+      <a class="tab" href="#s12" data-sheet="s12"><span class="n">12</span>Strategy</a>
       <a class="tab" href="#src" data-sheet="src"><span class="n">··</span>Sources</a>
     </nav>
   </div>
@@ -227,7 +228,7 @@ footer p{margin:0 0 4px;max-width:110ch}
     <div>
       <p class="eyebrow">Template · Power Platform target architecture</p>
       <h1>Power Platform Enterprise Blueprint</h1>
-      <p class="sum">A reference architecture for running Power Apps, Power Automate and Copilot Studio in a global organisation. It covers how environments are laid out, how data policies stack, how capacity is paid for and charged back, and how the platform reports on itself. Each sheet shows a diagram first, then the detail behind it. Sheet 10 works through common governance scenarios, such as cross-charging and restricting the GitHub Copilot harness. Sheet 11 covers the operating loop: control, monitor, report and cross-charge.</p>
+      <p class="sum">A reference architecture for running Power Apps, Power Automate and Copilot Studio in a global organisation. It covers how environments are laid out, how data policies stack, how capacity is paid for and charged back, and how the platform reports on itself. Each sheet shows a diagram first, then the detail behind it. Sheet 10 works through common governance scenarios, such as cross-charging and restricting the GitHub Copilot harness. Sheet 11 covers the operating loop: control, monitor, report and cross-charge. Sheet 12 ties business outcomes to the decisions, controls and measures, and pre-decides the response to each eventuality: Microsoft changes, organisation changes and incidents.</p>
     </div>
     <div class="stats">
       <div class="stat"><b>5</b><span>operating regions, each owning its P&amp;L</span></div>
@@ -239,6 +240,12 @@ footer p{margin:0 0 4px;max-width:110ch}
 
   <div class="details">
     <div class="panel alert wide">
+      <span class="kicker">Act now · 15 November 2026</span>
+      <h2>Unmanaged developer and Dataverse for Teams environments are retiring</h2>
+      <p>From <b>15 Nov 2026</b> nobody can create an unmanaged developer environment or a Dataverse for Teams environment. Unmanaged developer environments are suspended from <b>15 Dec 2026</b> and deleted from <b>15 Jan 2027</b>. Dataverse for Teams environments keep working until <b>15 Sep 2027</b>, are then suspended, and are decommissioned on <b>30 Oct 2027</b> unless upgraded to Dataverse. Developer environments created by routing are managed and unaffected, and each user can hold one managed developer environment. List both types now (Manage › Environments, filter by type and last activity), convert or move what's still needed, and let the rest expire. Sheet 12 keeps the dates.</p>
+    </div>
+
+    <div class="panel alert wide">
       <span class="kicker">In effect</span>
       <h2>AI Builder credits stopped on 1 November 2026</h2>
       <p>Since 1 November 2026, AI Builder capacity add-ons are end of life and new or renewed premium licences carry no seeded AI Builder credits. Credits you already hold are honoured to the end of your contract term. After that, AI Builder features keep working but draw Copilot Credits, and fail if none are available. If you haven't already, inventory AI Builder use, plan Copilot Credits for the affected environments, and make sure auto-renew is off on AI Builder add-ons. Sheet 05 has the detail.</p>
@@ -248,6 +255,32 @@ footer p{margin:0 0 4px;max-width:110ch}
       <span class="kicker">Plan now</span>
       <h2>Managed environments need premium licences, enforced from February 2027</h2>
       <p>Every user who runs an app or cloud flow in a managed environment needs a premium licence (Power Apps Premium, Power Automate Premium or a qualifying Dynamics 365 licence) or a pay-as-you-go meter. Microsoft has shown in-app warnings since June 2026. From February 2027, unlicensed users can't open apps in managed environments. This blueprint makes most environments managed (D4), so run the <i>Users requiring licenses in Managed Environments</i> report and budget for the result before you scale out.</p>
+    </div>
+
+    <div class="panel">
+      <span class="kicker">Strategic intent</span>
+      <h2>Outcomes the platform is steered by</h2>
+      <ul>
+        <li><b>Regions pay for what they use</b>, with a statement they can audit.</li>
+        <li><b>Data stays in its zone</b>: personal, business or restricted, never mixed.</li>
+        <li><b>Agents scale without surprise bills</b> and without unowned identities.</li>
+        <li><b>Audit-ready at any time</b>: every environment governed, every change traceable.</li>
+        <li><b>Makers are productive in minutes</b>, inside the guardrails from the first minute.</li>
+        <li><b>Nothing depends on one person</b>: automation runs as service principals, rights are just-in-time.</li>
+      </ul>
+      <p>Sheet 12 traces each outcome to the decisions, controls and measures that deliver it.</p>
+    </div>
+    <div class="panel">
+      <span class="kicker">Principles</span>
+      <h2>Rules this blueprint doesn't trade</h2>
+      <ul>
+        <li>Set each control at the broadest scope that is right for it: tenant, then group, then environment.</li>
+        <li>The cost owner is the environment owner. Nothing is funded from a pool without a name on it.</li>
+        <li>Default to managed and governed. Every exception has an owner and an expiry date.</li>
+        <li>Prefer native Microsoft capability over custom tooling, and retire what Microsoft retires.</li>
+        <li>Every product fact on this page carries a source and the date it was checked.</li>
+        <li>Pre-decide the response to foreseeable change (sheet 12). Decide the rest at the next steering.</li>
+      </ul>
     </div>
 
     <div class="panel wide">
@@ -292,7 +325,7 @@ footer p{margin:0 0 4px;max-width:110ch}
         <div class="decision"><span class="id">D1 · TENANT SHAPE</span><p>One global tenant. Environment groups are cut by <b>tier × region</b> to mirror the operating regions.</p></div>
         <div class="decision"><span class="id">D2 · DEFAULT ENV</span><p>The default environment becomes <b>Personal Productivity</b>: core Microsoft 365 and non-blockable connectors only, routing on, Share with Everyone off.</p></div>
         <div class="decision"><span class="id">D3 · DATA ZONES</span><p>Three zones: <span class="tag tg">G</span> personal, <span class="tag ta">A</span> business, <span class="tag tr">R</span> restricted; every environment group belongs to exactly one zone. Allowlisting starts in Zone R.</p></div>
-        <div class="decision"><span class="id">D4 · MANAGED</span><p>Every environment except the default and Teams environments is <b>managed</b>, so group rules hold the settings. The trade-off: their users need premium licences, enforced from Feb 2027.</p></div>
+        <div class="decision"><span class="id">D4 · MANAGED</span><p>Every environment except the default is <b>managed</b>, so group rules hold the settings. Dataverse for Teams environments are upgraded to Dataverse or left to expire (30 Oct 2027). The trade-off: users of managed environments need premium licences, enforced from Feb 2027.</p></div>
         <div class="decision"><span class="id">D5 · RELEASE</span><p>Production accepts <b>managed solutions only</b>, deployed by Pipelines as a service principal. Zone R uses pro-dev CI/CD.</p></div>
         <div class="decision"><span class="id">D6 · PAYING</span><p>A prepaid baseline is pooled and allocated per environment. Growth runs on <b>pay-as-you-go</b> through one billing policy per region × cost owner.</p></div>
         <div class="decision"><span class="id">D7 · AI CREDITS</span><p>AI Builder credits ended on <b>1 Nov 2026</b> for new and renewed licences; existing ones run to contract end. Plan Copilot Credits for every AI Builder use.</p></div>
@@ -565,7 +598,8 @@ footer p{margin:0 0 4px;max-width:110ch}
     <div class="panel">
       <h2>Creation &amp; clean-up</h2>
       <ul>
-        <li><b>Creation is restricted.</b> Only admins create production, sandbox and trial environments. Developer environments come only through routing; everything else goes through an intake form.</li>
+        <li><b>Creation is restricted.</b> Only admins create production, sandbox and trial environments. Developer environments come only through routing, which creates managed ones, one per user; unmanaged developer environments can't be created after 15 Nov 2026 and are deleted from 15 Jan 2027. Everything else goes through an intake form.</li>
+        <li><b>Copilot Managed Runtime routing is always on (preview).</b> Microsoft enables routing for Copilot Managed Runtime in every tenant and keeps a Microsoft-managed default environment group for it; neither can be removed. Because this blueprint routes only the licensed-maker security groups, makers outside them can't build Copilot Managed Runtime apps until you add them or create an <i>Everyone</i> rule, which must be last in priority. The Copilot Studio app-creation path itself can be turned off or scoped to security groups in the Microsoft 365 admin center (<i>Set up app creation spaces</i>).</li>
         <li><b>Licence auto-claim is on.</b> A user who opens a premium or managed-environment app gets a Power Apps licence, if one is free in the pool. Keep headroom in the pool, because unlicensed users are blocked in managed environments from February 2027.</li>
         <li><b>The default environment gets cleaned out.</b> Shared multi-maker assets move to shared dev, then production. Single-maker assets move to the owner's dev environment. Anything unused for 90 days goes to quarantine after the owner is told.</li>
       </ul>
@@ -887,7 +921,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <table class="rt">
         <thead><tr><th>KPI</th><th>Definition</th><th>Proposed target</th><th>Cadence</th><th>Owner</th></tr></thead>
         <tbody>
-          <tr><td class="k">Governance coverage</td><td>Environments managed and in a group, excluding default, Teams and 30-day trials</td><td>100%</td><td>Weekly</td><td>Platform CoE</td></tr>
+          <tr><td class="k">Governance coverage</td><td>Environments managed and in a group, excluding the default environment, 30-day trials and Dataverse for Teams environments awaiting upgrade or expiry</td><td>100%</td><td>Weekly</td><td>Platform CoE</td></tr>
           <tr><td class="k">Default env hygiene</td><td>Apps in the default env shared with more than 20 people</td><td>0</td><td>Weekly</td><td>Regional hubs</td></tr>
           <tr><td class="k">Orphaned assets</td><td>Apps, flows and agents whose owner has left</td><td>&lt; 1%, fixed within 30 days</td><td>Weekly</td><td>Regional hubs</td></tr>
           <tr><td class="k">Production ALM compliance</td><td>Production envs holding only managed solutions</td><td>100%</td><td>Weekly</td><td>Platform CoE</td></tr>
@@ -1058,7 +1092,7 @@ footer p{margin:0 0 4px;max-width:110ch}
       <p class="sum">Four steps, starting with the deadline that has passed (AI Builder, 1 Nov 2026) and the one that can't move (February 2027). Each phase leaves the tenant safer than it found it, so the programme can pause between phases without leaving gaps.</p></div>
   </div>
   <div class="details">
-    <div class="panel phase now"><span class="kicker" style="color:var(--r)">Now · AI Builder window closed; Feb 2027 next</span><h2>Stop the bleeding</h2><ul><li>Inventory AI Builder use; plan Copilot Credits for when existing credits end</li><li>Run the managed-environment licence report; budget before Feb 2027</li><li>Baseline Power Platform Inventory; set up data export (preview)</li><li>Rename and lock down the default environment</li><li>Run cross-tenant isolation reports (preview) to draft the allowlist</li></ul></div>
+    <div class="panel phase now"><span class="kicker" style="color:var(--r)">Now · AI Builder window closed; Feb 2027 next</span><h2>Stop the bleeding</h2><ul><li>Inventory AI Builder use; plan Copilot Credits for when existing credits end</li><li>Run the managed-environment licence report; budget before Feb 2027</li><li>Baseline Power Platform Inventory; set up data export (preview)</li><li>Rename and lock down the default environment</li><li>Run cross-tenant isolation reports (preview) to draft the allowlist</li><li>List unmanaged developer and Dataverse for Teams environments; convert, move or let them expire (dates on sheet 12)</li><li>Review the Microsoft-managed Copilot Managed Runtime group and its app-creation switches</li></ul></div>
     <div class="panel phase"><span class="kicker">Phase 1 · 0–90 days</span><h2>Foundation</h2><ul><li>Create the 26 environment groups and apply six rule baselines by script</li><li>Environment routing for one pilot region, the one with the most active makers</li><li>Billing policies and Azure subscriptions per region, each with a budget</li><li>Pipelines host per geo; deployment service principals</li><li>Enforce tenant isolation with a partner allowlist</li></ul></div>
     <div class="panel phase"><span class="kicker">Phase 2 · 3–6 months</span><h2>Scale</h2><ul><li>Routing in every region</li><li>AI lab environment groups per region for agent exploration (sheet 10)</li><li>Default environment clean-out by the migration rules</li><li>ACP in mixed mode on Zone R groups</li><li>Governance lakehouse and Power BI app live; chargeback in the monthly close</li><li>Tier promotion triggers automated</li></ul></div>
     <div class="panel phase"><span class="kicker">Phase 3 · 6–12 months</span><h2>Optimise</h2><ul><li>ACP extended to Zone A</li><li>Agent access reviews and Conditional Access (Agent 365 licence; CA enforced in Teams only today)</li><li>Playwright test automation standard for Tier 3</li><li>Unit-cost FinOps targets per region</li><li>Retire any CoE Starter Kit components that remain</li></ul></div>
@@ -1066,7 +1100,8 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li>Confirm the tenant home geo, and whether any region needs its own personal-productivity environment.</li>
       <li>Sovereign-cloud jurisdictions (for example China): a separate tenant, or no Power Platform there.</li>
       <li>Confirm that central licence funding with chargeback (sheet 05) survives each region's budget review.</li>
-      <li>Dataverse for Teams: allow it as a team-collaboration option, or route teams to shared dev.</li>
+      <li>Dataverse for Teams environments still in use: upgrade to Dataverse (needs capacity and licences) before 15 Sep 2027, or let them expire on 30 Oct 2027.</li>
+      <li>Which eventualities on sheet 12 get a funded contingency this year, for example self-service disaster recovery for Zone R production.</li>
       <li>How fast to move Zone A from classic data policies to ACP once Zone R is stable.</li></ul></div>
   </div>
 </section>
@@ -1361,9 +1396,10 @@ footer p{margin:0 0 4px;max-width:110ch}
             <li><b>Developer and trial environments are billed.</b> They moved to usage-based billing on 1 Sep 2026, so routed personal dev environments need the zero-credit posture above.</li>
             <li><b>Capacity controls hit everything in an environment</b>: standard agents, agent flows, prompts and harness agents alike. Check before you change them.</li>
             <li><b>The Harness column is admin-center only.</b> Automation has to derive the harness from inventory fields until <span class="mono">properties.harness</span> is returned.</li>
+            <li><b>Apps are not agents.</b> Copilot Studio's <i>Create apps</i> path (preview) runs on Copilot Managed Runtime, and that path does have a switch: turn it off, or scope it to security groups, in the Microsoft 365 admin center. Harness agents have no such switch.</li>
           </ul>
         </div>
-        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/faqs-copilot-harness">FAQ: can I turn off the GitHub Copilot harness?</a> · <a href="https://learn.microsoft.com/troubleshoot/power-platform/copilot-studio/licensing/authors-access">Copilot Studio authors setting and harness access</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview">Harnesses in Copilot Studio</a> · <a href="https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness">Manage costs for GitHub Copilot harness agents</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/guidance/govern-credit-consumption">Govern Copilot Credit consumption</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention">Configure data policies for agents</a></p></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/faqs-copilot-harness">FAQ: can I turn off the GitHub Copilot harness?</a> · <a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/">Copilot Managed Runtime: app-creation paths and their switches</a> · <a href="https://learn.microsoft.com/troubleshoot/power-platform/copilot-studio/licensing/authors-access">Copilot Studio authors setting and harness access</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/harnesses-overview">Harnesses in Copilot Studio</a> · <a href="https://learn.microsoft.com/power-platform/admin/manage-usage-github-copilot-harness">Manage costs for GitHub Copilot harness agents</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/guidance/govern-credit-consumption">Govern Copilot Credit consumption</a> · <a href="https://learn.microsoft.com/microsoft-copilot-studio/admin-data-loss-prevention">Configure data policies for agents</a></p></div>
       </div>
     </div>
   </div>
@@ -1653,6 +1689,328 @@ footer p{margin:0 0 4px;max-width:110ch}
   </div>
 </section>
 
+<!-- ================= 12 STRATEGY ================= -->
+<section class="sheet" id="s12" data-title="Strategy" hidden>
+  <div class="sheet-hero">
+    <div><p class="eyebrow">Sheet 12 · Strategic alignment and eventualities</p><h1>Line of sight, and what we do when things change</h1>
+      <p class="sum">Every outcome on sheet 00 traces to a decision, the controls that enforce it and the measure that proves it. The other three tabs pre-decide the response to each foreseeable eventuality, grouped by what triggers it: Microsoft changes the platform, the organisation changes shape, or something breaks. Each row names its early signal and its owner, so nothing is invented on the day.</p></div>
+    <div><span class="prod-label">Products on this sheet</span><div class="chips">
+      <span class="pchip"><img src="{{IC:pp}}" alt="">Power Platform</span><span class="pchip"><img src="{{IC:dv}}" alt="">Dataverse</span><span class="pchip"><img src="{{IC:cs}}" alt="">Copilot Studio</span></div></div>
+  </div>
+
+  <div class="scen-set">
+    <div class="scen-tabs" role="tablist" aria-label="Strategy themes">
+      <button class="scen-tab" type="button" role="tab" aria-selected="true" data-target="st-align"><span class="sl">ALIGN</span>Line of sight<small>Outcome → decision → control → measure</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="st-platform"><span class="sl">PLATFORM</span>If Microsoft changes<small>Dated retirements and pre-decided responses</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="st-business"><span class="sl">BUSINESS</span>If the organisation changes<small>M&amp;A, regions, regulation, funding</small></button>
+      <button class="scen-tab" type="button" role="tab" aria-selected="false" data-target="st-ops"><span class="sl">OPERATIONS</span>If something breaks<small>Credits, storage, outages, deletions, upkeep</small></button>
+    </div>
+
+    <!-- ---------- Align ---------- -->
+    <div class="scenario" id="st-align" role="tabpanel">
+      <p class="question">Can every control on this page be traced back to a business outcome, and every outcome forward to a number someone owns?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-12A</span><span class="dtitle">Line of sight from outcomes to measures, closed by the review loop</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 335" role="img" aria-label="Six business outcomes map left to right to the decisions on sheet 00, to the controls that enforce them and to the measures that prove them; a review loop below runs daily, monthly and quarterly and feeds back into the outcomes.">
+<defs>
+  <marker id="m30" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+  <marker id="m30a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mka" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-acc" x="20" y="20" width="250" height="200" rx="10"/>
+<text class="s-h" x="32" y="46">Business outcomes</text><text class="s-c" x="32" y="66">SHEET 00 · WHY</text>
+<text class="s-m" x="32" y="92">regions pay for what they use</text><text class="s-m" x="32" y="110">data stays in its zone</text><text class="s-m" x="32" y="128">agents scale without surprise bills</text><text class="s-m" x="32" y="146">audit-ready at any time</text><text class="s-m" x="32" y="164">makers productive in minutes</text><text class="s-m" x="32" y="182">nothing depends on one person</text>
+<line class="s-ln" x1="270" y1="120" x2="297" y2="120" marker-end="url(#m30)"/>
+
+<rect class="s-box" x="300" y="20" width="250" height="200" rx="10"/>
+<text class="s-h" x="312" y="46">Decisions</text><text class="s-c" x="312" y="66">SHEET 00 · D1 TO D10</text>
+<text class="s-m" x="312" y="92">D1 tier × region · D6 pay-as-you-go</text><text class="s-m" x="312" y="110">D2 default env · D3 three zones</text><text class="s-m" x="312" y="128">D7 Copilot Credits · D9 agent IDs</text><text class="s-m" x="312" y="146">D4 managed · D8 lakehouse</text><text class="s-m" x="312" y="164">D2 routing · D10 maker tiers</text><text class="s-m" x="312" y="182">D5 release path · D10 people</text>
+<line class="s-ln" x1="550" y1="120" x2="577" y2="120" marker-end="url(#m30)"/>
+
+<rect class="s-box" x="580" y="20" width="250" height="200" rx="10"/>
+<text class="s-h" x="592" y="46">Controls</text><text class="s-c" x="592" y="66">SHEETS 02 TO 07, 10, 11</text>
+<text class="s-m" x="592" y="92">billing policy per region × owner</text><text class="s-m" x="592" y="110">classic policies · ACP allowlists</text><text class="s-m" x="592" y="128">allocation · pool draw off · limits</text><text class="s-m" x="592" y="146">group rules · Purview audit</text><text class="s-m" x="592" y="164">routing · auto-claim · security groups</text><text class="s-m" x="592" y="182">service principals · PIM · champions</text>
+<line class="s-ln" x1="830" y1="120" x2="857" y2="120" marker-end="url(#m30)"/>
+
+<rect class="s-box" x="860" y="20" width="250" height="200" rx="10"/>
+<text class="s-h" x="872" y="46">Measures</text><text class="s-c" x="872" y="66">SHEETS 06 AND 11</text>
+<text class="s-m" x="872" y="92">cost ownership 100%</text><text class="s-m" x="872" y="110">Zone R exceptions under 10</text><text class="s-m" x="872" y="128">credit burn alert at 80%</text><text class="s-m" x="872" y="146">governance coverage 100%</text><text class="s-m" x="872" y="164">time to environment under 2 days</text><text class="s-m" x="872" y="182">orphaned assets under 1%</text>
+
+<rect class="s-band" x="10" y="240" width="1180" height="85" rx="12"/>
+<text class="s-c" x="24" y="258">REVIEW LOOP · WHO LOOKS, HOW OFTEN</text>
+<rect class="s-box" x="30" y="270" width="370" height="42" rx="8"/><text class="s-t" x="42" y="288">Daily · Microsoft guidance sweep</text><text class="s-m" x="42" y="304">Copilot coding agent opens a sourced pull request</text>
+<rect class="s-box" x="415" y="270" width="370" height="42" rx="8"/><text class="s-t" x="427" y="288">Monthly · KPIs, cost, exceptions</text><text class="s-m" x="427" y="304">Platform CoE board with the regional hubs</text>
+<rect class="s-box" x="800" y="270" width="370" height="42" rx="8"/><text class="s-t" x="812" y="288">Quarterly · decisions and eventualities</text><text class="s-m" x="812" y="304">steering committee re-reads this sheet</text>
+<path class="s-lna" d="M1172,270 V230 H145 V223" marker-end="url(#m30a)"/>
+</svg>
+        </div>
+        <figcaption><b>Read across, then round.</b> If a control can't be traced to an outcome, it's a candidate for removal. If an outcome has no measure, it isn't being managed. The loop at the bottom is what keeps the page true: a daily sweep of Microsoft's guidance, a monthly look at the numbers and a quarterly re-read of the decisions. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Line of sight</h2>
+          <table class="rt">
+            <thead><tr><th>Outcome</th><th>Decisions</th><th>Controls that deliver it</th><th>Measure that proves it</th><th>Sheets</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Regions pay for what they use</td><td>D6 pay-as-you-go for growth; D1 groups by tier × region</td><td>One billing policy per region × cost owner; per-environment Copilot Credit allocation; <i>Draw from tenant credit pool</i> off; monthly statement</td><td>Cost ownership 100%; credit burn vs allocation, alert at 80%</td><td>05, 10A, 11</td></tr>
+              <tr><td class="k">Data stays in its zone</td><td>D3 three zones; D2 default environment as personal productivity</td><td>Classic data policies per zone; advanced connector policy allowlists in Zone R; tenant isolation; APIM as the only host for custom and HTTP connectors</td><td>Zone R exceptions under 10, none expired; default-environment hygiene 0</td><td>03, 07, 10B</td></tr>
+              <tr><td class="k">Agents scale without surprise bills</td><td>D7 Copilot Credits plan; D9 agents are identities</td><td>Allocation per environment; agent monthly limits with Stop usage; zero-credit personal dev; Entra Agent ID and quarterly reviews</td><td>Credit burn vs allocation; agent identity hygiene 100%</td><td>05, 07, 10C</td></tr>
+              <tr><td class="k">Audit-ready at any time</td><td>D4 managed everywhere; D8 lakehouse telemetry</td><td>Group rules lock settings; Purview audit; inventory and data export into the lakehouse; report pack with owners</td><td>Governance coverage 100%; production ALM compliance 100%</td><td>02, 06, 11</td></tr>
+              <tr><td class="k">Makers productive in minutes</td><td>D2 routing to governed developer environments; D10 maker tiers</td><td>Environment routing for licensed makers; licence auto-claim with headroom; tier promotion triggers read from inventory</td><td>Time to environment under 2 business days</td><td>02, 08</td></tr>
+              <tr><td class="k">Nothing depends on one person</td><td>D5 Pipelines as a service principal; D10 CoE, hubs, champions</td><td>Delegated deployment; PIM for admin roles; one champion per 50 makers; orphan reassignment within 30 days</td><td>Orphaned assets under 1%</td><td>04, 07, 08</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel wide">
+          <h2>How each decision is reversed, if it has to be</h2>
+          <table class="rt">
+            <thead><tr><th>Decision</th><th>To reverse or change it</th><th>Effort</th><th>What you give up or must watch</th></tr></thead>
+            <tbody>
+              <tr><td class="k">D1 · One tenant, groups by tier × region</td><td>Environments move between groups (remove, then add). Regroup by business unit using the parameter table on sheet 00.</td><td>Days</td><td>A removed environment keeps the last applied rules but they unlock until it joins a group again.</td></tr>
+              <tr><td class="k">D2 · Default environment as personal productivity</td><td>Relax the default-environment data policy and sharing settings.</td><td>Hours</td><td>Sprawl returns. Routing for Copilot Managed Runtime can't be turned off, so personal developer environments keep appearing.</td></tr>
+              <tr><td class="k">D3 · Three data zones</td><td>Add a zone: one new group type across all regions, a new policy layer and connector rows.</td><td>Weeks</td><td>Classic policies scope to environment lists; keep every scope aligned with group membership.</td></tr>
+              <tr><td class="k">D4 · Managed everywhere</td><td>Remove the environment from its group, then disable Managed Environments in the admin center, PowerShell or <span class="mono">pac</span>.</td><td>Hours per environment</td><td>Loses group rules, sharing limits, alerts, 28-day backups and the February 2027 licence requirement.</td></tr>
+              <tr><td class="k">D5 · Managed solutions only in production</td><td>Remove the <i>unmanaged customizations</i> group rule.</td><td>Hours</td><td>Direct edits in production return; solution checker still runs.</td></tr>
+              <tr><td class="k">D6 · Pay-as-you-go for growth</td><td>Unlink the billing policy; buy prepaid packs instead.</td><td>Days</td><td>Under pay-as-you-go, Process licences and app passes don't apply, and sandboxes on pay-as-you-go sit outside the storage overage lifecycle.</td></tr>
+              <tr><td class="k">D7 · Copilot Credits for all AI</td><td>Not reversible: AI Builder credits ended on 1 Nov 2026 for new and renewed licences.</td><td>—</td><td>Existing credits run to contract end, then everything draws Copilot Credits.</td></tr>
+              <tr><td class="k">D8 · Lakehouse telemetry</td><td>Fall back to the admin center's Inventory, Usage and Monitor pages and Purview audit.</td><td>Weeks</td><td>No CoE Starter Kit fallback: the kit is no longer maintained and its repository is archived.</td></tr>
+              <tr><td class="k">D9 · Agents are identities</td><td>Not reversible: new Copilot Studio agents get an Entra Agent ID automatically.</td><td>—</td><td>What you decide is the review cadence and Conditional Access, enforced in Teams only today.</td></tr>
+              <tr><td class="k">D10 · CoE, hubs, champions</td><td>Scale hubs with the region count; relax the champion ratio.</td><td>Months</td><td>Controls live in group rules and code, so they keep working while people change.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel note"><span class="kicker">Assumptions this alignment relies on</span><ul>
+          <li>One Microsoft Entra tenant, home geo Europe, Microsoft 365 E3/E5 baseline, no sovereign-cloud jurisdiction in scope.</li>
+          <li>Licences funded centrally and charged back; Copilot Credits bought as prepaid packs with pay-as-you-go for growth.</li>
+          <li>If one of these changes, start with the matching row on the Business tab.</li></ul></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups: moving and removing environments</a> · <a href="https://learn.microsoft.com/power-platform/admin/managed-environment-enable">Enable or disable Managed Environments</a> · <a href="https://learn.microsoft.com/power-platform/developer/cli/reference/environment-management">pac environment-management (preview)</a> · <a href="https://learn.microsoft.com/business-applications/playbook/enterprise-solutions/power-platform-terraform-provider/">Power Platform Terraform provider</a></p></div>
+      </div>
+    </div>
+
+    <!-- ---------- Platform ---------- -->
+    <div class="scenario" id="st-platform" role="tabpanel" hidden>
+      <p class="question">When Microsoft changes a date, a limit, a price or a feature, what do we do, who does it, and how do we find out first?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-12B</span><span class="dtitle">From signal to recorded response</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 300" role="img" aria-label="Three kinds of signal, Microsoft changes, organisation changes and platform telemetry, feed a triage step that asks what the change affects; the answer routes to one of three responses, adjust a control, re-plan, or re-decide, and every response is recorded in one pull request.">
+<defs>
+  <marker id="m31" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-box" x="20" y="28" width="260" height="62" rx="10"/><text class="s-h" x="32" y="52">Microsoft changes</text><text class="s-m" x="32" y="72">Learn, message center, release plans</text>
+<rect class="s-box" x="20" y="103" width="260" height="62" rx="10"/><text class="s-h" x="32" y="127">Organisation changes</text><text class="s-m" x="32" y="147">M&amp;A, regions, regulation, funding</text>
+<rect class="s-box" x="20" y="178" width="260" height="62" rx="10"/><text class="s-h" x="32" y="202">Platform signals</text><text class="s-m" x="32" y="222">alerts, inventory, cost, audit</text>
+<line class="s-ln" x1="280" y1="59" x2="317" y2="59" marker-end="url(#m31)"/>
+<line class="s-ln" x1="280" y1="134" x2="317" y2="134" marker-end="url(#m31)"/>
+<line class="s-ln" x1="280" y1="209" x2="317" y2="209" marker-end="url(#m31)"/>
+
+<rect class="s-box" x="320" y="28" width="230" height="212" rx="12"/>
+<text class="s-c s-ca" x="332" y="52">TRIAGE · PLATFORM COE</text><text class="s-h" x="332" y="76">What does it change?</text>
+<text class="s-m" x="332" y="102">a date or deadline</text><text class="s-m" x="332" y="120">a limit, price or meter</text><text class="s-m" x="332" y="138">a control setting</text><text class="s-m" x="332" y="156">a decision, D1 to D10</text><text class="s-m" x="332" y="174">nothing material</text>
+<text class="s-c" x="332" y="224">SAME DAY · ONE OWNER</text>
+<line class="s-ln" x1="550" y1="59" x2="587" y2="59" marker-end="url(#m31)"/>
+<line class="s-ln" x1="550" y1="134" x2="587" y2="134" marker-end="url(#m31)"/>
+<line class="s-ln" x1="550" y1="209" x2="587" y2="209" marker-end="url(#m31)"/>
+
+<rect class="s-box" x="590" y="28" width="300" height="62" rx="10"/><text class="s-h" x="602" y="52">Adjust a control · hours</text><text class="s-m" x="602" y="72">rule, allocation, policy, alert threshold</text>
+<rect class="s-box" x="590" y="103" width="300" height="62" rx="10"/><text class="s-h" x="602" y="127">Re-plan · weeks</text><text class="s-m" x="602" y="147">roadmap phase, budget, exception, training</text>
+<rect class="s-box" x="590" y="178" width="300" height="62" rx="10"/><text class="s-h" x="602" y="202">Re-decide · next steering</text><text class="s-m" x="602" y="222">change a decision on sheet 00 and say why</text>
+<line class="s-ln" x1="890" y1="59" x2="927" y2="59" marker-end="url(#m31)"/>
+<line class="s-ln" x1="890" y1="134" x2="927" y2="134" marker-end="url(#m31)"/>
+<line class="s-ln" x1="890" y1="209" x2="927" y2="209" marker-end="url(#m31)"/>
+
+<rect class="s-acc" x="930" y="28" width="250" height="212" rx="12"/>
+<text class="s-c s-ca" x="942" y="52">RECORD AND PUBLISH</text><text class="s-h" x="942" y="76">One pull request</text>
+<text class="s-m" x="942" y="102">CHANGELOG entry with its source</text><text class="s-m" x="942" y="120">decision log on sheet 00</text><text class="s-m" x="942" y="138">revision and date bumped</text><text class="s-m" x="942" y="156">owners told what changed</text><text class="s-m" x="942" y="174">no change: logged as reviewed</text>
+<text class="s-c" x="942" y="224">GITHUB · PAGES REDEPLOYS</text>
+
+<rect class="s-band" x="10" y="256" width="1180" height="36" rx="12"/>
+<text class="s-c" x="24" y="279">EVERY ROW ON THIS SHEET NAMES ITS SIGNAL, ITS RESPONSE AND ITS OWNER, SO NO RESPONSE IS INVENTED ON THE DAY</text>
+</svg>
+        </div>
+        <figcaption><b>Triage asks one question: what does the change touch?</b> A date or a limit usually means a control or a plan changes. Only a changed decision goes to steering. Whatever the answer, the page itself is updated in the same pull request, so the blueprint never drifts from what the tenant does. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>Already scheduled by Microsoft</h2>
+          <table class="rt">
+            <thead><tr><th>Date</th><th>What happens</th><th>Pre-decided response</th><th>Owner</th></tr></thead>
+            <tbody>
+              <tr><td class="k">15 Nov 2026</td><td>No new unmanaged developer environments and no new Dataverse for Teams environments can be created.</td><td>Already covered: developer environments come only through routing (managed). Nothing to do beyond the inventory below.</td><td>Platform CoE</td></tr>
+              <tr><td class="k">15 Dec 2026</td><td>Existing unmanaged developer environments are suspended; deleted from 15 Jan 2027.</td><td>List them (type Developer, Managed = No). Convert the ones with licensed makers to managed, export solutions from the rest, then let them go.</td><td>Regional hubs</td></tr>
+              <tr><td class="k">Feb 2027</td><td>Unlicensed users can't open apps or flows in managed environments.</td><td>Run the <i>Users requiring licenses in Managed Environments</i> report monthly from now; keep auto-claim headroom; keep a demote list for environments that can't be licensed in time.</td><td>FinOps office</td></tr>
+              <tr><td class="k">15 Sep 2027</td><td>Dataverse for Teams environments not upgraded to Dataverse are suspended; decommissioned on 30 Oct 2027.</td><td>Inventory by last activity. Upgrade the ones still used (needs free Dataverse capacity equal to their size, and licences). Let the rest expire. Existing 2 GB limits and enforcement stay until then.</td><td>Regional hubs</td></tr>
+              <tr><td class="k">Contract end</td><td>Existing AI Builder credits stop; AI Builder features draw Copilot Credits.</td><td>Allocation planned per environment on sheet 05; auto-renew off on AI Builder add-ons.</td><td>FinOps office</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel wide">
+          <h2>If Microsoft changes the platform</h2>
+          <table class="rt">
+            <thead><tr><th>Eventuality</th><th>Early signal</th><th>Pre-decided response</th><th>Touches</th></tr></thead>
+            <tbody>
+              <tr><td class="k">Advanced connector policies add custom and HTTP connectors as a rule type</td><td>ACP page, <i>Known limitations</i>; message center</td><td>Move Zone R groups from mixed mode to <i>Advanced connector policies only</i> one group at a time, then Zone A. Retire the classic policies for those scopes. Keep classic policies for Copilot Studio virtual connectors until their own rules ship.</td><td>03, 10B</td></tr>
+              <tr><td class="k">Copilot Studio virtual connectors get dedicated governance rules</td><td>Data policies page; new group rules (for example <i>Skills in Copilot Studio</i>)</td><td>Re-map channel, authentication and knowledge controls to the rules; update gate 3 of Scenario C; remove the virtual-connector rows from the classic policy once covered.</td><td>03, 10C</td></tr>
+              <tr><td class="k">Copilot Credit pack size, price or the 125% enforcement point changes</td><td>Message center; licensing guide</td><td>Re-run the sizing on sheet 05, re-base allocations and cross-charge rates, FinOps board signs off before the next close.</td><td>05, 11</td></tr>
+              <tr><td class="k">The managed-environment licence enforcement date moves</td><td>Licensing page; in-app warnings</td><td>Keep D4. The monthly licence report and the demote list already exist; only the deadline on sheet 00 changes.</td><td>00, 02</td></tr>
+              <tr><td class="k">Group rules are added, renamed or get new defaults</td><td>Rules gallery; daily sweep</td><td>Quarterly rule-baseline review. Apply through the Power Platform API or <span class="mono">pac</span> so all regions match; remember a removed rule doesn't undo itself.</td><td>02, 11</td></tr>
+              <tr><td class="k">Data export (preview) or the inventory API changes or is withdrawn</td><td>Monitoring and data export pages</td><td>Lakehouse ingestion isolates reports from the source. Fall back to the admin center Inventory pages and Purview audit (about 24 hours behind).</td><td>06</td></tr>
+              <tr><td class="k">Connector endpoint filtering never leaves preview, or is removed</td><td>Endpoint filtering page</td><td>Nothing in Zone R depends on it: APIM allowlists and VNet delegation are the enforcement. Remove the layer-2 filter rows.</td><td>03, 07</td></tr>
+              <tr><td class="k">Microsoft adds an admin switch for the GitHub Copilot harness</td><td>Harness FAQ, checked daily</td><td>Add it as gate 0 of Scenario C and set it per the posture table. Keep the four gates: building still bills credits wherever the harness is allowed.</td><td>10C</td></tr>
+              <tr><td class="k">Conditional Access on agent identities extends beyond Teams</td><td>Agent identities page</td><td>Turn it on for Zone R agents first; bring roadmap phase 3 forward.</td><td>07, 09</td></tr>
+              <tr><td class="k">A new Power Platform geo opens, or a geo's rules change</td><td>Regions page</td><td>Update the region-to-geo row on sheet 00 for new environments. Treat relocating an existing environment as a migration project with its own plan.</td><td>00, 02, 07</td></tr>
+              <tr><td class="k">Dataverse storage validation or the capacity model changes</td><td>Capacity page; message center</td><td>The storage ladder on the Operations tab is the playbook; re-check which stages apply and whether pay-as-you-go sandboxes stay exempt.</td><td>05, 12</td></tr>
+              <tr><td class="k">Copilot Managed Runtime leaves preview, or its Microsoft-managed group gains rules</td><td>Microsoft 365 admin center › Apps; routing page</td><td>Review the Microsoft-managed default group and the app-creation switches each quarter. Keep its connector allowlist no wider than Zone G.</td><td>02, 10C</td></tr>
+              <tr><td class="k">Remaining CoE Starter Kit components fail</td><td>Flow failures; archived repository</td><td>Already not the base. Retire the component; the lakehouse and admin center pages cover the scenario.</td><td>06, 09</td></tr>
+              <tr><td class="k">Microsoft's icon pack or a cited Learn page moves</td><td>The build fails in <span class="mono">check.yml</span></td><td>Fix the URL in the build script or the source list. Icons are fetched at build time, never stored in the repository.</td><td>Repository</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Principles for platform change</h2><ul>
+          <li>A preview feature can hold a control only where a GA control also exists behind it.</li>
+          <li>Dates on this page are Microsoft's, in Microsoft's words; the daily sweep removes a warning the day after it passes.</li>
+          <li>A change that alters a number on sheet 05 goes to the FinOps board before it goes live.</li></ul></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Removing a rule isn't undoing it.</b> Environments keep the last applied connector policy until it's removed on each one.</li>
+          <li><b>Mixed mode hides which policy blocked a maker.</b> Move to ACP-only scope by scope, never tenant-wide in one step.</li>
+          <li><b>Copilot Managed Runtime routing can't be removed</b>, and its <i>Everyone</i> rule, once created, can't be deleted and must stay last.</li></ul></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (deprecations) coming</a> · <a href="https://learn.microsoft.com/power-platform/admin/advanced-connector-policies">Advanced connector policies: modes and known limitations</a> · <a href="https://learn.microsoft.com/power-platform/admin/wp-data-loss-prevention">Data policies: virtual connector transition</a> · <a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance">Copilot Managed Runtime default governance settings (preview)</a> · <a href="https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime">Environment routing for Copilot Managed Runtime</a> · <a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups</a></p></div>
+      </div>
+    </div>
+
+    <!-- ---------- Business ---------- -->
+    <div class="scenario" id="st-business" role="tabpanel" hidden>
+      <p class="question">When the organisation buys, sells, redraws regions or changes how it funds the platform, which parts of this design move and which stay?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-12C</span><span class="dtitle">Moving an environment to another tenant (divestiture or acquisition)</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 250" role="img" aria-label="A tenant-to-tenant environment move in five steps: the source admin requests it, the destination admin approves within seven days, users are mapped, the move runs within about a day keeping the URL and organisation ID, and managed settings, security groups and connections are re-enabled afterwards.">
+<defs>
+  <marker id="m32" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-box" x="20" y="22" width="570" height="52" rx="10"/><text class="s-h" x="32" y="44">What moves</text><text class="s-m" x="32" y="64">the Dataverse organisation with its URL, ID and name · sandbox or production environments</text>
+<rect class="s-box" x="610" y="22" width="570" height="52" rx="10"/><text class="s-h" x="622" y="44">What doesn't</text><text class="s-m" x="622" y="64">security groups · group membership · connections · flow state · managed setting · billing policy</text>
+
+<rect class="s-box" x="20" y="108" width="220" height="96" rx="10"/><text class="s-h" x="32" y="130">1 · Request</text><text class="s-m" x="32" y="150">source admin: Move environment</text><text class="s-m" x="32" y="166">in the admin center or PowerShell</text><text class="s-m" x="32" y="182">with the destination tenant ID</text>
+<line class="s-ln" x1="240" y1="156" x2="252" y2="156" marker-end="url(#m32)"/>
+<rect class="s-box" x="255" y="108" width="220" height="96" rx="10"/><text class="s-h" x="267" y="130">2 · Approve</text><text class="s-m" x="267" y="150">destination admin approves</text><text class="s-m" x="267" y="166">requests expire after 7 days</text><text class="s-m" x="267" y="182">cancel is allowed until it finishes</text>
+<line class="s-ln" x1="475" y1="156" x2="487" y2="156" marker-end="url(#m32)"/>
+<rect class="s-box" x="490" y="108" width="220" height="96" rx="10"/><text class="s-h" x="502" y="130">3 · Map users</text><text class="s-m" x="502" y="150">upload usermapping.csv</text><text class="s-m" x="502" y="166">every user active in the target</text><text class="s-m" x="502" y="182">unmapped users don't move</text>
+<line class="s-ln" x1="710" y1="156" x2="722" y2="156" marker-end="url(#m32)"/>
+<rect class="s-acc" x="725" y="108" width="220" height="96" rx="10"/><image href="{{IC:dv}}" x="917" y="115" width="18" height="18"/><text class="s-h" x="737" y="130">4 · Move</text><text class="s-m" x="737" y="150">Begin move; allow up to 24 h</text><text class="s-m" x="737" y="166">URL and org ID stay the same</text><text class="s-m" x="737" y="182">source keeps an empty shell</text>
+<line class="s-ln" x1="945" y1="156" x2="957" y2="156" marker-end="url(#m32)"/>
+<rect class="s-box" x="960" y="108" width="220" height="96" rx="10"/><text class="s-h" x="972" y="130">5 · Re-enable</text><text class="s-m" x="972" y="150">managed, security groups, roles</text><text class="s-m" x="972" y="166">connections, flows, HTTP URLs</text><text class="s-m" x="972" y="182">place in a group, apply rules</text>
+
+<text class="s-c" x="20" y="238">ALSO USED INBOUND FOR ACQUISITIONS · KEEP THE OTHER TENANT ON THE ISOLATION ALLOWLIST ONLY WHILE THE MOVE RUNS (SHEET 07)</text>
+</svg>
+        </div>
+        <figcaption><b>Tenant-to-tenant moves are self-service for environments with Dataverse.</b> Both admins act in the admin center or PowerShell; the destination approves. Everything that isn't the Dataverse organisation (security groups, connections, flow state, managed status, billing) is rebuilt on the other side, so plan the move as a short project with a checklist, not a button. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>If the organisation changes</h2>
+          <table class="rt">
+            <thead><tr><th>Eventuality</th><th>Early signal</th><th>Pre-decided response</th><th>Touches</th></tr></thead>
+            <tbody>
+              <tr><td class="k">An acquisition brings another tenant in</td><td>Deal announcement; integration plan</td><td>Day one: add their tenant to the inbound and outbound isolation allowlist with an expiry. Then move their Dataverse environments tenant-to-tenant (diagram), place each in a group, apply the zone's rules, map a cost owner and billing policy. Remove the allowlist entry when the last move completes.</td><td>07, 12</td></tr>
+              <tr><td class="k">A divestiture takes a business unit out</td><td>Carve-out plan</td><td>Inventory the unit's environments by business-unit tag. Export solutions for anything shared with the remaining business. Move the environments to the buyer's tenant; remove their billing policies, allocations and group memberships; close their cost centre in the monthly statement.</td><td>05, 11, 12</td></tr>
+              <tr><td class="k">Regions are merged or split</td><td>Organisation announcement</td><td>Groups are tier × region, so create the new region's groups from the baseline script, move environments between groups, rename to the convention and re-point billing policies. Nothing in the data policies changes.</td><td>02, 05</td></tr>
+              <tr><td class="k">Business units own budgets instead of regions</td><td>Finance operating-model change</td><td>Cut groups and billing policies by business unit (sheet 00 parameter table). Chargeback keys change; controls don't.</td><td>00, 05, 11</td></tr>
+              <tr><td class="k">A new regulation or residency law applies</td><td>Legal and compliance watch</td><td>Add a row to the regulatory mapping. New environments go into the right geo and zone; relocating existing data is a migration project with legal sign-off.</td><td>07</td></tr>
+              <tr><td class="k">Agent demand outruns the credit plan</td><td>80% alerts in many environments; request backlog</td><td>Approve a tenant-pool exception (back-charged), raise prepaid packs at the next true-up, allow pay-as-you-go only with an Azure budget. Agent limits stay the hard stop.</td><td>05, 10A, 10C</td></tr>
+              <tr><td class="k">Regions reject central licence funding</td><td>Budget review</td><td>Switch to regional purchase: report licence pools per region, keep allocation and billing policies per region, drop the central cross-charge line.</td><td>00, 05</td></tr>
+              <tr><td class="k">The Microsoft 365 baseline changes</td><td>Licensing change (E3/E5 mix, Copilot seats)</td><td>Re-run the licence report. The premium-licence need comes from managed environments, not from Microsoft 365. Copilot Credits are shared with Microsoft 365 Cowork and Work IQ, so re-agree the split.</td><td>05</td></tr>
+              <tr><td class="k">A sovereign-cloud jurisdiction comes into scope</td><td>Expansion plan</td><td>Out of this design by assumption. Decide at steering: a separate tenant with its own blueprint instance, or no Power Platform there.</td><td>00, 09</td></tr>
+              <tr><td class="k">A headcount freeze hits the CoE</td><td>Budget</td><td>Controls live in group rules and code, so they keep working. Reduce the loop to the daily sweep and the monthly board; relax the champion ratio and publish the change.</td><td>08, 12</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Steps · moving an environment out</h2><ol class="steps">
+          <li>Freeze changes: no deployments to the environment during the move window.</li>
+          <li>Source admin submits <i>Move environment</i> with the destination tenant ID. The destination admin approves within 7 days.</li>
+          <li>Upload the user-mapping file; validate that every mapped user is active in the destination.</li>
+          <li>Begin the move and allow up to 24 hours. Cancel is available until it completes.</li>
+          <li>In the destination: assign System Administrator, re-enable Managed Environments, rebuild security groups, connection references, HTTP trigger URLs, and turn child flows on before parent flows.</li>
+          <li>In the source: delete the empty shell, remove the billing policy and allocations, update the inventory and the cost statement.</li></ol></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Security groups don't migrate.</b> An admin who wasn't in the mapping file sees an empty environment: a permissions issue, not data loss.</li>
+          <li><b>Environments with finance and operations apps move whole</b>; the source keeps nothing.</li>
+          <li><b>Geo matters.</b> Moves are within a geo; a cross-geo divestiture is a rebuild, not a move.</li></ul></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/admin/move-environment-tenant">Tenant-to-tenant migrations</a> · <a href="https://learn.microsoft.com/power-platform/admin/cross-tenant-restrictions">Cross-tenant inbound and outbound restrictions</a> · <a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups: transfer between groups</a> · <a href="https://learn.microsoft.com/power-platform/guidance/adoption/environment-strategy">Tenant environment strategy at scale</a></p></div>
+      </div>
+    </div>
+
+    <!-- ---------- Operations ---------- -->
+    <div class="scenario" id="st-ops" role="tabpanel" hidden>
+      <p class="question">When credits run out, storage overflows, a region fails or something is deleted, what has Microsoft already decided, and what have we?</p>
+      <figure class="diagram">
+        <div class="dhead"><span class="dcode">PPA-12D</span><span class="dtitle">Two enforcement ladders: Dataverse storage and Copilot Credits</span>
+          <button class="expand" type="button">⤢ Expand</button></div>
+        <div class="dbody">
+<svg viewBox="0 0 1200 330" role="img" aria-label="Two ladders of what happens as limits are exceeded. Dataverse storage: notifications from 85 percent, lifecycle operations blocked at 100 percent, sandboxes in administration mode after 30 days and disabled after 90 days while production is never disabled. Copilot Credits: alert at 80 percent of an allocation, credit features fail at 100 percent when pool draw is off, prepaid tenant enforcement at 125 percent, and the agent monthly limit as the only per-agent hard stop.">
+<defs>
+  <marker id="m33" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
+</defs>
+<rect class="s-band" x="10" y="14" width="1180" height="142" rx="12"/>
+<text class="s-c" x="24" y="32">DATAVERSE STORAGE · TENANT OVER ITS ENTITLEMENT AFTER CROSS-TYPE BORROWING</text>
+<rect class="s-box" x="30" y="44" width="270" height="100" rx="10"/><text class="s-h" x="42" y="66">85% used</text><text class="s-m" x="42" y="86">weekly warning notifications</text><text class="s-m" x="42" y="102">review growth, free space</text><text class="s-m" x="42" y="118">archive cold data, add capacity</text>
+<line class="s-ln" x1="300" y1="94" x2="317" y2="94" marker-end="url(#m33)"/>
+<rect class="s-box" x="320" y="44" width="270" height="100" rx="10"/><text class="s-h s-cr" x="332" y="66">100% · day T0</text><text class="s-m" x="332" y="86">create, copy, restore and recover</text><text class="s-m" x="332" y="102">blocked (each needs 1 GB free)</text><text class="s-m" x="332" y="118">45-day extension is temporary</text>
+<line class="s-ln" x1="590" y1="94" x2="607" y2="94" marker-end="url(#m33)"/>
+<rect class="s-box" x="610" y="44" width="270" height="100" rx="10"/><text class="s-h s-cr" x="622" y="66">T0 + 30 days</text><text class="s-m" x="622" y="86">sandboxes enter administration</text><text class="s-m" x="622" y="102">mode; admins may lift it to fix</text><text class="s-m" x="622" y="118">the timer keeps running</text>
+<line class="s-ln" x1="880" y1="94" x2="897" y2="94" marker-end="url(#m33)"/>
+<rect class="s-box" x="900" y="44" width="270" height="100" rx="10"/><text class="s-h s-cr" x="912" y="66">T0 + 90 days</text><text class="s-m" x="912" y="86">sandbox sign-in blocked for all</text><text class="s-m" x="912" y="102">data export through support only</text><text class="s-m" x="912" y="118">production is never disabled</text>
+
+<rect class="s-band" x="10" y="172" width="1180" height="142" rx="12"/>
+<text class="s-c" x="24" y="190">COPILOT CREDITS · WHAT STOPS, AND WHEN</text>
+<rect class="s-box" x="30" y="202" width="270" height="100" rx="10"/><image href="{{IC:cs}}" x="274" y="209" width="18" height="18"/><text class="s-h" x="42" y="224">80% of allocation</text><text class="s-m" x="42" y="244">alert from Monitor (managed</text><text class="s-m" x="42" y="260">environments, 24-hour cadence)</text><text class="s-m" x="42" y="276">owner and FinOps office told</text>
+<line class="s-ln" x1="300" y1="252" x2="317" y2="252" marker-end="url(#m33)"/>
+<rect class="s-box" x="320" y="202" width="270" height="100" rx="10"/><text class="s-h s-cr" x="332" y="224">100% of allocation</text><text class="s-m" x="332" y="244">pool draw off: credit features fail</text><text class="s-m" x="332" y="260">pool draw on: keeps drawing from</text><text class="s-m" x="332" y="276">the tenant pool (back-charged)</text>
+<line class="s-ln" x1="590" y1="252" x2="607" y2="252" marker-end="url(#m33)"/>
+<rect class="s-box" x="610" y="202" width="270" height="100" rx="10"/><text class="s-h s-cr" x="622" y="224">125% of the prepaid pool</text><text class="s-m" x="622" y="244">Microsoft enforces the prepaid</text><text class="s-m" x="622" y="260">tenant pool at 125% of purchase</text><text class="s-m" x="622" y="276">only pay-as-you-go keeps going</text>
+<line class="s-ln" x1="880" y1="252" x2="897" y2="252" marker-end="url(#m33)"/>
+<rect class="s-acc" x="900" y="202" width="270" height="100" rx="10"/><text class="s-h" x="912" y="224">Agent monthly limit</text><text class="s-m" x="912" y="244">Stop usage halts that agent</text><text class="s-m" x="912" y="260">not instant; agent flows continue</text><text class="s-m" x="912" y="276">the only per-agent hard stop</text>
+</svg>
+        </div>
+        <figcaption><b>Microsoft has already decided most of what happens when a limit is crossed.</b> The blueprint's job is to act before the next rung: free storage before day 30, raise an allocation before 100%, and keep every agent under a monthly limit so one runaway can't drag an environment to enforcement. Production Dataverse environments are never put into administration mode or disabled by the storage lifecycle, but they can't be created, copied or restored while the tenant is over. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+      </figure>
+      <div class="details">
+        <div class="panel wide">
+          <h2>If something breaks</h2>
+          <table class="rt">
+            <thead><tr><th>Incident</th><th>How you'll know</th><th>Pre-decided response</th><th>Recovery facts</th></tr></thead>
+            <tbody>
+              <tr><td class="k">An environment runs out of Copilot Credits</td><td>Monitor alert at 80%; enforcement notice at 100%</td><td>The cost owner raises the allocation from their own budget, or approves pay-as-you-go with an Azure budget. Lower the limit on the heaviest agent first. Back-charge any tenant-pool draw.</td><td>With pool draw off, credit-consuming features in that environment fail until credits are added.</td></tr>
+              <tr><td class="k">The tenant goes over its Dataverse storage entitlement</td><td>Weekly notifications from 85%; banner in the admin center and maker portals</td><td>Free storage (audit logs, cold data), move busy sandboxes to pay-as-you-go, buy capacity or request a 45-day extension. Resolve before day 30.</td><td>Ladder in PPA-12D. Sandboxes on pay-as-you-go don't progress through it.</td></tr>
+              <tr><td class="k">A region's Dataverse is unavailable</td><td>Microsoft 365 service health; users</td><td>Zone R production environments with self-service disaster recovery on: run an emergency failover (the admin center shows the data loss first); fail back when the region returns. Everything else waits for Microsoft.</td><td>Self-service disaster recovery needs a managed production environment and an Azure region pair; replication lag is typically under 15 minutes; Fabric link doesn't fail over; not offered in Brazil or South Africa.</td></tr>
+              <tr><td class="k">Data leaves through a connector or an agent</td><td>Purview audit (about 24 hours); Sentinel; data policy violation</td><td>Quarantine the app or agent, tighten the policy, and run the incident process with the Cyber Defense Center using audit and inventory as evidence.</td><td>Quarantine removes end-user access without deleting anything.</td></tr>
+              <tr><td class="k">An environment is deleted by mistake</td><td>Environment history; owner</td><td>Recover it from <i>Recently deleted environments</i>, then re-enable solution flows (child before parent), re-authorise connections and check application users.</td><td>7 days to recover; 28 days for production with Dynamics 365 apps. Needs 1 GB of free capacity.</td></tr>
+              <tr><td class="k">Production data is deleted or corrupted</td><td>Owner report; audit</td><td>Restore a backup to a sandbox and copy the records back, or switch production to sandbox, restore, and switch back at once.</td><td>Backups: 7 days by default; 7, 14, 21 or 28 days for production managed environments, set by the group rule. You can't restore straight over a production environment.</td></tr>
+              <tr><td class="k">The default environment is warned of inactivity deletion</td><td>Admin emails; countdown in <i>Environment state</i></td><td>Trigger activity and find out why usage stopped. Tenants with premium licences are excluded from this cleanup anyway.</td><td>Default environments are deleted after 120 days of inactivity (402 with flows), recoverable as a sandbox for 7 days.</td></tr>
+              <tr><td class="k">A platform admin leaves or is unreachable</td><td>Leaver process; PIM activity</td><td>Admin rights are PIM-eligible, not permanent; two emergency-access accounts follow Microsoft Entra guidance; Pipelines and automation run as service principals, so nothing runs as a person.</td><td>Delegated deployment uses the service principal's rights, not the requester's.</td></tr>
+              <tr><td class="k">A restored environment behaves differently</td><td>Post-restore checks</td><td>Re-share apps with security groups (restores drop <i>Everyone</i> sharing), set connection references, re-create custom connectors if needed, turn solution flows on.</td><td>Canvas app IDs change after a restore; update bookmarks and links.</td></tr>
+              <tr><td class="k">The daily refresh stops working</td><td>The workflow fails loudly; no new rows in <span class="mono">.github/refresh-log.md</span></td><td>Renew <span class="mono">COPILOT_ASSIGN_TOKEN</span> (the current one expires about 13 Jan 2027). If the Copilot coding agent is unavailable, the issue still opens for a person to work through the checklist. The quarterly deep review catches anything the sweep missed.</td><td>Logging each review commits to the repository, which keeps GitHub from disabling the schedule after 60 idle days.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="panel"><h2>Resilience settings this blueprint turns on</h2><ul>
+          <li><b>Backup retention 28 days</b> as a group rule on every production group (Zone A, Zone R, Platform).</li>
+          <li><b>Self-service disaster recovery</b> on Zone R production environments where the geo has a region pair; drills twice a year on a copy, never on production.</li>
+          <li><b>Keep deleted Dataverse records</b> (up to 90 days) on Zone R production, accepting the extra storage.</li>
+          <li><b>Manual backup before every production deployment</b>, taken by the pipeline.</li></ul></div>
+        <div class="panel note"><span class="kicker">Watch out for</span><h2>Common traps</h2><ul>
+          <li><b>Disabling disaster recovery deletes the replica.</b> Confirm the environment name; you can't disable it while failed over.</li>
+          <li><b>Backups aren't replicated across regions</b> unless self-service disaster recovery is on.</li>
+          <li><b>Over-capacity blocks recovery too.</b> Keep at least a few gigabytes free so restore and recover stay possible.</li></ul></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/admin/backup-restore-environments">Back up and restore environments</a> · <a href="https://learn.microsoft.com/power-platform/admin/recover-environment">Recover a deleted environment</a> · <a href="https://learn.microsoft.com/power-platform/admin/capacity-storage">Dataverse capacity: storage overage lifecycle</a> · <a href="https://learn.microsoft.com/power-platform/admin/business-continuity-disaster-recovery">Business continuity and disaster recovery</a> · <a href="https://learn.microsoft.com/power-platform/admin/automatic-environment-cleanup">Automatic environment cleanup</a> · <a href="https://learn.microsoft.com/power-platform/admin/restore-deleted-table-records">Restore deleted Dataverse records</a></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= SOURCES ================= -->
 <section class="sheet" id="src" data-title="Sources" hidden>
   <div class="sheet-hero">
@@ -1696,13 +2054,21 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/govern-agents-identities-overview">Agent identities and Conditional Access</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/faqs-copilot-harness">FAQ for agents powered by the GitHub Copilot harness</a> and <a href="https://learn.microsoft.com/troubleshoot/power-platform/copilot-studio/licensing/authors-access">Copilot Studio authors access</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/connector-endpoint-filtering">Connector endpoint filtering (preview)</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes coming: Dataverse for Teams and unmanaged developer environment deprecations</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance">Copilot Managed Runtime default governance settings (preview)</a> and <a href="https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime">environment routing for Copilot Managed Runtime</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/">Copilot Managed Runtime overview for admins: app-creation paths and switches</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/move-environment-tenant">Tenant-to-tenant migrations</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/backup-restore-environments">Back up and restore environments</a> and <a href="https://learn.microsoft.com/power-platform/admin/recover-environment">recover a deleted environment</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/business-continuity-disaster-recovery">Business continuity and self-service disaster recovery</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/automatic-environment-cleanup">Automatic deletion of inactive environments</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/managed-environment-enable">Enable or disable Managed Environments</a>, <a href="https://learn.microsoft.com/power-platform/developer/cli/reference/environment-management">pac environment-management (preview)</a> and the <a href="https://learn.microsoft.com/business-applications/playbook/enterprise-solutions/power-platform-terraform-provider/">Power Platform Terraform provider</a>, Microsoft Learn</li>
     </ol>
   </div>
 </section>
 </main>
 
 <footer class="wrap">
-  <p>Power Platform Enterprise Blueprint · template rev 3.3 · 9 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
+  <p>Power Platform Enterprise Blueprint · template rev 3.4 · 9 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
   <p>Microsoft, Power Platform, Power Apps, Power Automate, Power Pages, Copilot Studio, Dataverse and AI Builder are trademarks of the Microsoft group of companies. Product icons are Microsoft's official icons, used under its terms for architecture documentation. This is not a Microsoft document.</p>
 </footer>
 

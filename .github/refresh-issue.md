@@ -46,7 +46,15 @@ The window starts at the later of the newest `CHANGELOG.md` entry and the last c
 - [ ] https://learn.microsoft.com/power-platform/admin/monitoring/alerts: alert frequencies, predefined alerts
 - [ ] https://learn.microsoft.com/power-platform/admin/managed-environment-licensing: February 2027 enforcement
 - [ ] https://learn.microsoft.com/ai-builder/endofaibcredits: AI Builder credit dates
-- [ ] https://learn.microsoft.com/power-platform/important-changes-coming: new deprecations
+- [ ] https://learn.microsoft.com/power-platform/important-changes-coming: new deprecations; the Dataverse for Teams dates (15 Nov 2026, 15 Sep 2027, 30 Oct 2027) and unmanaged developer environment dates (15 Nov 2026, 15 Dec 2026, 15 Jan 2027) on sheets 00, 09 and 12
+
+**Strategy and eventualities (sheet 12)**
+- [ ] https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance and https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime: Copilot Managed Runtime still preview? routing still mandatory? app-creation switches unchanged?
+- [ ] https://learn.microsoft.com/power-platform/admin/capacity-storage: storage overage lifecycle stages and exemptions
+- [ ] https://learn.microsoft.com/power-platform/admin/backup-restore-environments and https://learn.microsoft.com/power-platform/admin/recover-environment: retention and recovery windows
+- [ ] https://learn.microsoft.com/power-platform/admin/business-continuity-disaster-recovery: self-service disaster recovery prerequisites, regions, Power Automate opt-in
+- [ ] https://learn.microsoft.com/power-platform/admin/move-environment-tenant: tenant-to-tenant move steps and limits
+- [ ] Every "pre-decided response" on sheet 12 still points at a control that exists; if a control is renamed or retired, update the row and its sheet
 
 **Roadmap signals**
 - [ ] Power Platform and Copilot Studio release plans: https://learn.microsoft.com/power-platform/release-plan/
