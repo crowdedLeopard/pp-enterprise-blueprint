@@ -198,7 +198,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <header class="appbar">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.4</small></span></a>
+      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.5</small></span></a>
       <div class="builton"><span>For</span><svg viewBox="0 0 23 23" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="12" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="12" width="10" height="10" fill="#00A4EF"/><rect x="12" y="12" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft Power Platform</b></div>
     </div>
     <nav class="tabs" aria-label="Sheets">
@@ -874,7 +874,7 @@ footer p{margin:0 0 4px;max-width:110ch}
   <marker id="m6a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mka" d="M0,0L10,5L0,10z"/></marker>
 </defs>
 <text class="s-c" x="20" y="26">SOURCES</text><text class="s-c" x="310" y="26">LAND &amp; MODEL</text><text class="s-c" x="620" y="26">REPORT</text><text class="s-c" x="920" y="26">ACT</text>
-<rect class="s-box" x="20" y="40" width="240" height="46" rx="8"/><image href="{{IC:pp}}" x="236" y="46" width="16" height="16"/><text class="s-h" x="32" y="59">Power Platform Inventory API</text><text class="s-m" x="32" y="76">apps · flows · agents · envs (KQL)</text>
+<rect class="s-box" x="20" y="40" width="240" height="46" rx="8"/><image href="{{IC:pp}}" x="236" y="46" width="16" height="16"/><text class="s-h" x="32" y="59">Power Platform Inventory API</text><text class="s-m" x="32" y="76">assets · connector footprint</text>
 <rect class="s-box" x="20" y="96" width="240" height="46" rx="8"/><text class="s-h" x="32" y="115">Apps &amp; flows usage export</text><text class="s-m" x="32" y="132">ADLS Gen2, daily (preview)</text>
 <rect class="s-box" x="20" y="152" width="240" height="46" rx="8"/><text class="s-h" x="32" y="171">Unified audit log (Purview)</text><text class="s-m" x="32" y="188">maker &amp; admin activity</text>
 <rect class="s-box" x="20" y="208" width="240" height="46" rx="8"/><text class="s-h" x="32" y="227">Application Insights</text><text class="s-m" x="32" y="244">managed envs; flows in preview</text>
@@ -913,7 +913,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <text class="s-m s-ca" x="600" y="438" text-anchor="middle">Changes land in the tenant and appear in the next day's telemetry</text>
 </svg>
     </div>
-    <figcaption><b>The silver layer is where the value is.</b> Raw Power Platform data knows environments and users, not regions, BUs or cost centres. Joining it to Entra org data and the cost-centre hierarchy lets each region see only its own estate through row-level security. The Inventory API needs a delegated admin account, because it doesn't accept service principals or managed identities. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
+    <figcaption><b>The silver layer is where the value is.</b> Raw Power Platform data knows environments and users, not regions, BUs or cost centres. Connector inventory adds each resource's connectors and operations, supporting deprecation, Premium adoption and data-policy reviews. Joining the data to Entra org data and the cost-centre hierarchy lets each region see only its own estate through row-level security. The Inventory API needs a delegated admin account, because it doesn't accept service principals or managed identities. <span class="tap-hint">Tap the diagram to enlarge it.</span></figcaption>
   </figure>
   <div class="details">
     <div class="panel wide">
@@ -2015,11 +2015,12 @@ footer p{margin:0 0 4px;max-width:110ch}
 <section class="sheet" id="src" data-title="Sources" hidden>
   <div class="sheet-hero">
     <div><p class="eyebrow">References</p><h1>Sources</h1>
-      <p class="sum">Product facts reflect Microsoft documentation and message-center posts available on 9 November 2026. Confirm licensing figures and dates against your agreement before budgeting.</p></div>
+      <p class="sum">Product facts reflect Microsoft documentation and message-center posts available on 10 November 2026. Confirm licensing figures and dates against your agreement before budgeting.</p></div>
   </div>
   <div class="panel">
     <ol class="sources">
       <li><a href="https://learn.microsoft.com/en-us/power-platform/guidance/adoption/environment-strategy">Tenant environment strategy at scale</a>, Microsoft Learn (updated 12 Oct 2026)</li>
+      <li><a href="https://learn.microsoft.com/power-platform/admin/power-platform-inventory">Power Platform inventory</a> (updated 6 Nov 2026) and <a href="https://mc.merill.net/message/MC1546312">MC1546312: connector inventory GA by 10 Nov 2026</a></li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/managed-governance">Managed governance</a>, Microsoft Learn</li>
       <li><a href="https://www.itelio.com/en/microsoft-message-center/mc1435797">Environment group rules gallery</a>, message center mirror</li>
@@ -2068,7 +2069,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 </main>
 
 <footer class="wrap">
-  <p>Power Platform Enterprise Blueprint · template rev 3.4 · 9 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
+  <p>Power Platform Enterprise Blueprint · template rev 3.5 · 10 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
   <p>Microsoft, Power Platform, Power Apps, Power Automate, Power Pages, Copilot Studio, Dataverse and AI Builder are trademarks of the Microsoft group of companies. Product icons are Microsoft's official icons, used under its terms for architecture documentation. This is not a Microsoft document.</p>
 </footer>
 
