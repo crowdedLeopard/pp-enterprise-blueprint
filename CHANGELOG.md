@@ -1,5 +1,9 @@
 # Changelog
 
+## rev 3.5 · 2026-11-10
+
+**Connector inventory is announced for general availability by 10 November.** Power Platform Inventory captures the connectors and operations used by each resource, supporting deprecated-connector reviews, Premium connector adoption and data-policy scoping. Added to Reporting (sheet 06). Sources: [Power Platform inventory](https://learn.microsoft.com/power-platform/admin/power-platform-inventory) (updated 6 November 2026) and [MC1546312](https://mc.merill.net/message/MC1546312).
+
 ## rev 3.4 · 2026-11-09
 
 **New sheet 12, Strategy.** Four tabs: *Line of sight* (each outcome on sheet 00 traced to decisions, controls, measures and sheets, plus how every decision D1–D10 is reversed and at what cost), *If Microsoft changes* (Microsoft's scheduled dates with pre-decided responses, and fourteen platform eventualities with their early signal and owner), *If the organisation changes* (acquisition, divestiture, region changes, funding model, regulation, demand, with the tenant-to-tenant move drawn step by step) and *If something breaks* (credits, storage, regional outage, deletions, restores, admin loss and the refresh workflow itself, with Microsoft's recovery numbers). Sheet 00 gains the strategic intent and principles the sheet aligns to.
