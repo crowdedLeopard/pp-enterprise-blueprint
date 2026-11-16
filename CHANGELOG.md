@@ -1,5 +1,9 @@
 # Changelog
 
+## rev 3.5 · 2026-11-16
+
+**Expired creation-deadline warning removed.** The 15 November 2026 cutoff for creating unmanaged developer and Dataverse for Teams environments has passed. The upcoming suspension and decommissioning milestones remain on sheet 12. Source: [Important changes coming](https://learn.microsoft.com/power-platform/important-changes-coming).
+
 ## rev 3.4 · 2026-11-09
 
 **New sheet 12, Strategy.** Four tabs: *Line of sight* (each outcome on sheet 00 traced to decisions, controls, measures and sheets, plus how every decision D1–D10 is reversed and at what cost), *If Microsoft changes* (Microsoft's scheduled dates with pre-decided responses, and fourteen platform eventualities with their early signal and owner), *If the organisation changes* (acquisition, divestiture, region changes, funding model, regulation, demand, with the tenant-to-tenant move drawn step by step) and *If something breaks* (credits, storage, regional outage, deletions, restores, admin loss and the refresh workflow itself, with Microsoft's recovery numbers). Sheet 00 gains the strategic intent and principles the sheet aligns to.
