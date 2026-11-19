@@ -1,5 +1,11 @@
 # Changelog
 
+## rev 3.5 · 2026-11-19
+
+**Expired warning and roadmap source updated.** Removed the 15 November creation-cutoff alert. Microsoft retired Release Planner on 15 November; the AI at Work roadmap is now the primary public roadmap.
+
+**New platform changes recorded.** Sheet 12 now covers the maker-feature retirements announced on 18 November, the planned service-principal authentication for Copilot Studio workflows, and Dataverse knowledge sources for Agent Builder declarative agents. Each has a pre-decided response and owner.
+
 ## rev 3.4 · 2026-11-09
 
 **New sheet 12, Strategy.** Four tabs: *Line of sight* (each outcome on sheet 00 traced to decisions, controls, measures and sheets, plus how every decision D1–D10 is reversed and at what cost), *If Microsoft changes* (Microsoft's scheduled dates with pre-decided responses, and fourteen platform eventualities with their early signal and owner), *If the organisation changes* (acquisition, divestiture, region changes, funding model, regulation, demand, with the tenant-to-tenant move drawn step by step) and *If something breaks* (credits, storage, regional outage, deletions, restores, admin loss and the refresh workflow itself, with Microsoft's recovery numbers). Sheet 00 gains the strategic intent and principles the sheet aligns to.

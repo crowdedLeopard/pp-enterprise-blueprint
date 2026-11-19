@@ -198,7 +198,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <header class="appbar">
   <div class="wrap">
     <div class="bar">
-      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.4</small></span></a>
+      <a class="brand" href="#s00" data-sheet="s00"><img src="{{IC:pp}}" alt="Power Platform icon"><span><b>Enterprise Blueprint</b><small>Power Platform target architecture · template rev 3.5</small></span></a>
       <div class="builton"><span>For</span><svg viewBox="0 0 23 23" aria-hidden="true"><rect x="1" y="1" width="10" height="10" fill="#F25022"/><rect x="12" y="1" width="10" height="10" fill="#7FBA00"/><rect x="1" y="12" width="10" height="10" fill="#00A4EF"/><rect x="12" y="12" width="10" height="10" fill="#FFB900"/></svg><b>Microsoft Power Platform</b></div>
     </div>
     <nav class="tabs" aria-label="Sheets">
@@ -239,12 +239,6 @@ footer p{margin:0 0 4px;max-width:110ch}
   </div>
 
   <div class="details">
-    <div class="panel alert wide">
-      <span class="kicker">Act now · 15 November 2026</span>
-      <h2>Unmanaged developer and Dataverse for Teams environments are retiring</h2>
-      <p>From <b>15 Nov 2026</b> nobody can create an unmanaged developer environment or a Dataverse for Teams environment. Unmanaged developer environments are suspended from <b>15 Dec 2026</b> and deleted from <b>15 Jan 2027</b>. Dataverse for Teams environments keep working until <b>15 Sep 2027</b>, are then suspended, and are decommissioned on <b>30 Oct 2027</b> unless upgraded to Dataverse. Developer environments created by routing are managed and unaffected, and each user can hold one managed developer environment. List both types now (Manage › Environments, filter by type and last activity), convert or move what's still needed, and let the rest expire. Sheet 12 keeps the dates.</p>
-    </div>
-
     <div class="panel alert wide">
       <span class="kicker">In effect</span>
       <h2>AI Builder credits stopped on 1 November 2026</h2>
@@ -1799,7 +1793,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <defs>
   <marker id="m31" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="mk" d="M0,0L10,5L0,10z"/></marker>
 </defs>
-<rect class="s-box" x="20" y="28" width="260" height="62" rx="10"/><text class="s-h" x="32" y="52">Microsoft changes</text><text class="s-m" x="32" y="72">Learn, message center, release plans</text>
+<rect class="s-box" x="20" y="28" width="260" height="62" rx="10"/><text class="s-h" x="32" y="52">Microsoft changes</text><text class="s-m" x="32" y="72">Learn, message center, AI at Work roadmap</text>
 <rect class="s-box" x="20" y="103" width="260" height="62" rx="10"/><text class="s-h" x="32" y="127">Organisation changes</text><text class="s-m" x="32" y="147">M&amp;A, regions, regulation, funding</text>
 <rect class="s-box" x="20" y="178" width="260" height="62" rx="10"/><text class="s-h" x="32" y="202">Platform signals</text><text class="s-m" x="32" y="222">alerts, inventory, cost, audit</text>
 <line class="s-ln" x1="280" y1="59" x2="317" y2="59" marker-end="url(#m31)"/>
@@ -1839,7 +1833,11 @@ footer p{margin:0 0 4px;max-width:110ch}
             <thead><tr><th>Date</th><th>What happens</th><th>Pre-decided response</th><th>Owner</th></tr></thead>
             <tbody>
               <tr><td class="k">15 Nov 2026</td><td>No new unmanaged developer environments and no new Dataverse for Teams environments can be created.</td><td>Already covered: developer environments come only through routing (managed). Nothing to do beyond the inventory below.</td><td>Platform CoE</td></tr>
+              <tr><td class="k">30 Nov 2026</td><td>Copilot in the flow designer, Describe it to design it, AI-generated app descriptions and app/record co-presence retire.</td><td>Update maker guidance. Use the visual designer and manual descriptions; existing flows, apps and data remain.</td><td>Maker enablement</td></tr>
+              <tr><td class="k">11 Dec 2026</td><td>Power Apps Ideas, formula generation and Copilot control renaming retire.</td><td>Use the formula bar and Tree view. Existing formulas and controls remain.</td><td>Maker enablement</td></tr>
               <tr><td class="k">15 Dec 2026</td><td>Existing unmanaged developer environments are suspended; deleted from 15 Jan 2027.</td><td>List them (type Developer, Managed = No). Convert the ones with licensed makers to managed, export solutions from the rest, then let them go.</td><td>Regional hubs</td></tr>
+              <tr><td class="k">17 Dec 2026</td><td>Service-principal authentication for Copilot Studio workflows is planned to reach general availability.</td><td>Pilot workflow identity ownership after release; update the production ALM pattern if adopted.</td><td>Platform CoE</td></tr>
+              <tr><td class="k">31 Dec 2026</td><td>Cross-environment comment import and export is no longer available.</td><td>Keep review context in source-controlled documentation, release notes or the ALM pipeline.</td><td>Delivery teams</td></tr>
               <tr><td class="k">Feb 2027</td><td>Unlicensed users can't open apps or flows in managed environments.</td><td>Run the <i>Users requiring licenses in Managed Environments</i> report monthly from now; keep auto-claim headroom; keep a demote list for environments that can't be licensed in time.</td><td>FinOps office</td></tr>
               <tr><td class="k">15 Sep 2027</td><td>Dataverse for Teams environments not upgraded to Dataverse are suspended; decommissioned on 30 Oct 2027.</td><td>Inventory by last activity. Upgrade the ones still used (needs free Dataverse capacity equal to their size, and licences). Let the rest expire. Existing 2 GB limits and enforcement stay until then.</td><td>Regional hubs</td></tr>
               <tr><td class="k">Contract end</td><td>Existing AI Builder credits stop; AI Builder features draw Copilot Credits.</td><td>Allocation planned per environment on sheet 05; auto-renew off on AI Builder add-ons.</td><td>FinOps office</td></tr>
@@ -1863,6 +1861,7 @@ footer p{margin:0 0 4px;max-width:110ch}
               <tr><td class="k">A new Power Platform geo opens, or a geo's rules change</td><td>Regions page</td><td>Update the region-to-geo row on sheet 00 for new environments. Treat relocating an existing environment as a migration project with its own plan.</td><td>00, 02, 07</td></tr>
               <tr><td class="k">Dataverse storage validation or the capacity model changes</td><td>Capacity page; message center</td><td>The storage ladder on the Operations tab is the playbook; re-check which stages apply and whether pay-as-you-go sandboxes stay exempt.</td><td>05, 12</td></tr>
               <tr><td class="k">Copilot Managed Runtime leaves preview, or its Microsoft-managed group gains rules</td><td>Microsoft 365 admin center › Apps; routing page</td><td>Review the Microsoft-managed default group and the app-creation switches each quarter. Keep its connector allowlist no wider than Zone G.</td><td>02, 10C</td></tr>
+              <tr><td class="k">Dataverse becomes a knowledge source for Agent Builder declarative agents</td><td>MC1558817 · GA 17 Nov 2026</td><td>Review the Work IQ setting and defaults for new production environments; include this path in agent data-access reviews.</td><td>07, 08</td></tr>
               <tr><td class="k">Remaining CoE Starter Kit components fail</td><td>Flow failures; archived repository</td><td>Already not the base. Retire the component; the lakehouse and admin center pages cover the scenario.</td><td>06, 09</td></tr>
               <tr><td class="k">Microsoft's icon pack or a cited Learn page moves</td><td>The build fails in <span class="mono">check.yml</span></td><td>Fix the URL in the build script or the source list. Icons are fetched at build time, never stored in the repository.</td><td>Repository</td></tr>
             </tbody>
@@ -1876,7 +1875,7 @@ footer p{margin:0 0 4px;max-width:110ch}
           <li><b>Removing a rule isn't undoing it.</b> Environments keep the last applied connector policy until it's removed on each one.</li>
           <li><b>Mixed mode hides which policy blocked a maker.</b> Move to ACP-only scope by scope, never tenant-wide in one step.</li>
           <li><b>Copilot Managed Runtime routing can't be removed</b>, and its <i>Everyone</i> rule, once created, can't be deleted and must stay last.</li></ul></div>
-        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (deprecations) coming</a> · <a href="https://learn.microsoft.com/power-platform/admin/advanced-connector-policies">Advanced connector policies: modes and known limitations</a> · <a href="https://learn.microsoft.com/power-platform/admin/wp-data-loss-prevention">Data policies: virtual connector transition</a> · <a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance">Copilot Managed Runtime default governance settings (preview)</a> · <a href="https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime">Environment routing for Copilot Managed Runtime</a> · <a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups</a></p></div>
+        <div class="panel wide"><span class="kicker">Sources</span><p><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (deprecations) coming</a> · <a href="https://mc.merill.net/message/MC1557509">Service principal authentication for Copilot Studio workflows</a> · <a href="https://mc.merill.net/message/MC1558817">Dataverse data for Agent Builder declarative agents</a> · <a href="https://mc.merill.net/message/MC1461529">AI at Work roadmap transition</a> · <a href="https://learn.microsoft.com/power-platform/admin/advanced-connector-policies">Advanced connector policies: modes and known limitations</a> · <a href="https://learn.microsoft.com/power-platform/admin/wp-data-loss-prevention">Data policies: virtual connector transition</a> · <a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance">Copilot Managed Runtime default governance settings (preview)</a> · <a href="https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime">Environment routing for Copilot Managed Runtime</a> · <a href="https://learn.microsoft.com/power-platform/admin/environment-groups">Environment groups</a></p></div>
       </div>
     </div>
 
@@ -2015,7 +2014,7 @@ footer p{margin:0 0 4px;max-width:110ch}
 <section class="sheet" id="src" data-title="Sources" hidden>
   <div class="sheet-hero">
     <div><p class="eyebrow">References</p><h1>Sources</h1>
-      <p class="sum">Product facts reflect Microsoft documentation and message-center posts available on 9 November 2026. Confirm licensing figures and dates against your agreement before budgeting.</p></div>
+      <p class="sum">Product facts reflect Microsoft documentation and message-center posts available on 19 November 2026. Confirm licensing figures and dates against your agreement before budgeting.</p></div>
   </div>
   <div class="panel">
     <ol class="sources">
@@ -2050,11 +2049,11 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li><a href="https://learn.microsoft.com/power-platform/admin/view-license-consumption-issues">License consumption reports</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/pay-as-you-go-meters">Pay-as-you-go meters</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/regions-overview">Regions</a> and <a href="https://learn.microsoft.com/power-platform/admin/automatic-environment-cleanup">automatic environment cleanup</a>, Microsoft Learn</li>
-      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (Test Engine deprecation)</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes (deprecations) coming in Power Platform</a>, Microsoft Learn (updated 18 Nov 2026)</li>
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/govern-agents-identities-overview">Agent identities and Conditional Access</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/faqs-copilot-harness">FAQ for agents powered by the GitHub Copilot harness</a> and <a href="https://learn.microsoft.com/troubleshoot/power-platform/copilot-studio/licensing/authors-access">Copilot Studio authors access</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/connector-endpoint-filtering">Connector endpoint filtering (preview)</a>, Microsoft Learn</li>
-      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Important changes coming: Dataverse for Teams and unmanaged developer environment deprecations</a>, Microsoft Learn</li>
+      <li><a href="https://learn.microsoft.com/power-platform/important-changes-coming">Dataverse for Teams and unmanaged developer environment deprecations</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/governance">Copilot Managed Runtime default governance settings (preview)</a> and <a href="https://learn.microsoft.com/power-platform/admin/default-environment-routing-copilot-managed-runtime">environment routing for Copilot Managed Runtime</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/microsoft-365/admin/manage/apps/">Copilot Managed Runtime overview for admins: app-creation paths and switches</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/move-environment-tenant">Tenant-to-tenant migrations</a>, Microsoft Learn</li>
@@ -2062,13 +2061,16 @@ footer p{margin:0 0 4px;max-width:110ch}
       <li><a href="https://learn.microsoft.com/power-platform/admin/business-continuity-disaster-recovery">Business continuity and self-service disaster recovery</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/automatic-environment-cleanup">Automatic deletion of inactive environments</a>, Microsoft Learn</li>
       <li><a href="https://learn.microsoft.com/power-platform/admin/managed-environment-enable">Enable or disable Managed Environments</a>, <a href="https://learn.microsoft.com/power-platform/developer/cli/reference/environment-management">pac environment-management (preview)</a> and the <a href="https://learn.microsoft.com/business-applications/playbook/enterprise-solutions/power-platform-terraform-provider/">Power Platform Terraform provider</a>, Microsoft Learn</li>
+      <li><a href="https://mc.merill.net/message/MC1557509">MC1557509: Service principal authentication for workflows in Copilot Studio</a>, message center</li>
+      <li><a href="https://mc.merill.net/message/MC1558817">MC1558817: Dataverse data available to Agent Builder declarative agents</a>, message center</li>
+      <li><a href="https://mc.merill.net/message/MC1461529">MC1461529: Release Planner retirement and the AI at Work roadmap</a>, message center</li>
     </ol>
   </div>
 </section>
 </main>
 
 <footer class="wrap">
-  <p>Power Platform Enterprise Blueprint · template rev 3.4 · 9 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
+  <p>Power Platform Enterprise Blueprint · template rev 3.5 · 19 November 2026. The reference organisation is fictional; replace its parameters with your own.</p>
   <p>Microsoft, Power Platform, Power Apps, Power Automate, Power Pages, Copilot Studio, Dataverse and AI Builder are trademarks of the Microsoft group of companies. Product icons are Microsoft's official icons, used under its terms for architecture documentation. This is not a Microsoft document.</p>
 </footer>
 
